@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "new_model_calls": 0,
+  "materialized_files_identical": 26,
+  "resource_and_sensitivity_predictions_and_statuses_identical": true,
+  "wall_differences": [
+    {
+      "id": "d015",
+      "system": "guided",
+      "primary": {
+        "prediction": false,
+        "status": "unknown",
+        "seconds": 20.000643666999963
+      },
+      "replay": {
+        "prediction": false,
+        "status": "refuted_complete",
+        "seconds": 19.80373450099995
+      }
+    },
+    {
+      "id": "d015",
+      "system": "feedback",
+      "primary": {
+        "prediction": false,
+        "status": "unknown",
+        "seconds": 20.00090775000001
+      },
+      "replay": {
+        "prediction": false,
+        "status": "refuted_complete",
+        "seconds": 19.77447691699993
+      }
+    }
+  ],
+  "wall_predictions_identical": true,
+  "elapsed_seconds": 230.865264959,
+  "verified_existing_replay": false,
+  "witness_checks": 25
+}

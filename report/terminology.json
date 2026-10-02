@@ -1,0 +1,38 @@
+{
+  "method_labels": {
+    "clang": "Clang CSA",
+    "dfs": "DFS",
+    "portfolio": "Portfolio",
+    "lookahead": "SMT lookahead",
+    "llm": "LLM-only",
+    "guided": "LLM-guided",
+    "feedback": "LLM-guided + feedback",
+    "selective": "Local-first",
+    "always": "Always-request",
+    "smt_first": "SMT-first*"
+  },
+  "terms": {
+    "LLM-guided search": "Symbolic execution prioritized by LLM branch preferences; model verdicts do not accept witnesses.",
+    "branch preference": "A validated (branch_id, visit, take) tuple used only for state priority.",
+    "retained frontier": "The same pending symbolic states across guidance, feedback and fallback phases.",
+    "source verification": "Checking a zero denominator against source-derived path and definedness constraints.",
+    "confirmed witness": "An input accepted by source verification; compiled C/UBSan validation is reported separately.",
+    "complete refutation": "Exhaustive rejection of the target defect within the supported source model, with no incompleteness event.",
+    "unknown": "No confirmed witness and incomplete exploration or unsupported semantics; not a safety proof.",
+    "operation budget": "A shared cap charging symbolic state pops and, for SMT lookahead, summary-node visits.",
+    "solver-call budget": "A separate cap on solver queries, including lookahead queries.",
+    "end-to-end time": "Parent-observed elapsed time including startup, parsing, provider waiting, search and return.",
+    "model request": "An actual provider invocation; distinct from reuse of recorded branch preferences."
+  },
+  "forbidden_report_aliases": [
+    "neural guidance", "neural search", "neural advice", "Neural guidance",
+    "source check", "Source check", "source-search disposition", "LLM only",
+    "Local first", "local first", "Always request", "always request"
+  ],
+  "notes": [
+    "Method labels are shared by generated tables and Python plots. Narrative prose defines each policy.",
+    "The star marks the separately frozen, later exploratory SMT-first extension.",
+    "Do not rename frozen JSON keys, archived reports, prompt schemas or recorded experiment data.",
+    "Safe/bug remain valid benchmark labels and verbatim model verdicts; safe is not a synonym for complete refutation."
+  ]
+}

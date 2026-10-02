@@ -1,0 +1,163 @@
+{
+  "id": "s008",
+  "system": "always",
+  "prediction": false,
+  "status": "unknown",
+  "findings": [],
+  "stop_reason": "wall_time",
+  "initial_model_used": true,
+  "first": {
+    "key": "timing-corrected-s008-1-always",
+    "source_sha256": "9aae2383a188ac09b28ae9403a57f81dbcaa6b83251112c1504a955388696c6c",
+    "feedback": null,
+    "raw": {
+      "provider": "codex_exec",
+      "codex_version": "codex-cli 0.159.0",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "output": {
+        "findings": [
+          {
+            "site_id": "div-8a82cf71ccc5",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "128",
+            "rationale": "The constant denominator 128 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-9756462d0b6f",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "16",
+            "rationale": "The constant denominator 16 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-96a093d5087e",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "2",
+            "rationale": "The constant denominator 2 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-f90cb20445a5",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "4",
+            "rationale": "The constant denominator 4 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-1f8f62712f3c",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "1024",
+            "rationale": "The constant denominator 1024 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-a9da91076dfc",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "32",
+            "rationale": "The constant denominator 32 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-9d88604a5bd6",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "8",
+            "rationale": "The constant denominator 8 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-225bd4bb842a",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "2048",
+            "rationale": "The constant denominator 2048 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-f4a9e5b8997a",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "64",
+            "rationale": "The constant denominator 64 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-66620714ff56",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "512",
+            "rationale": "The constant denominator 512 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-8cc9e685b8e4",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "256",
+            "rationale": "The constant denominator 256 is nonzero.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-1087d9a221d1",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "(2*d-(11))",
+            "rationale": "For every integer d, 2*d is even, so subtracting 11 produces an odd value and therefore cannot produce zero; the bounded updates also cannot overflow.",
+            "confidence": 1
+          }
+        ],
+        "choices": []
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a0f6f8-79e7-7f11-b26b-e522070ecb21"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_0",
+            "type": "agent_message",
+            "text": "{\"findings\":[{\"site_id\":\"div-8a82cf71ccc5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"128\",\"rationale\":\"The constant denominator 128 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-9756462d0b6f\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"16\",\"rationale\":\"The constant denominator 16 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-96a093d5087e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The constant denominator 2 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-f90cb20445a5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"4\",\"rationale\":\"The constant denominator 4 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-1f8f62712f3c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"1024\",\"rationale\":\"The constant denominator 1024 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-a9da91076dfc\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"32\",\"rationale\":\"The constant denominator 32 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-9d88604a5bd6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"8\",\"rationale\":\"The constant denominator 8 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-225bd4bb842a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2048\",\"rationale\":\"The constant denominator 2048 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-f4a9e5b8997a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"64\",\"rationale\":\"The constant denominator 64 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-66620714ff56\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"512\",\"rationale\":\"The constant denominator 512 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-8cc9e685b8e4\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"256\",\"rationale\":\"The constant denominator 256 is nonzero.\",\"confidence\":1},{\"site_id\":\"div-1087d9a221d1\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"(2*d-(11))\",\"rationale\":\"For every integer d, 2*d is even, so subtracting 11 produces an odd value and therefore cannot produce zero; the bounded updates also cannot overflow.\",\"confidence\":1}],\"choices\":[]}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 19231,
+            "cached_input_tokens": 11392,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 659,
+            "reasoning_output_tokens": 85
+          }
+        }
+      ],
+      "stderr": "2026-10-01T10:17:54.433861Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:17:54.436043Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:17:54.437160Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:17:54.438375Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:17:54.439338Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+      "usage": {
+        "input_tokens": 19231,
+        "cached_input_tokens": 11392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 659,
+        "reasoning_output_tokens": 85
+      },
+      "_client_elapsed_seconds": 18.053840417
+    },
+    "elapsed_seconds": 18.075914666000003
+  },
+  "provider_error": null,
+  "partial_search_counters_available": false,
+  "worker_stderr": "",
+  "elapsed_end_to_end_seconds": 30.002703166000003,
+  "finished_at_utc": "2026-10-01T10:18:24.298848+00:00"
+}

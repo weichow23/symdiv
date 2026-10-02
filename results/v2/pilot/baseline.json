@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "analyzer": "clang-static-analyzer",
+  "checker": "core.DivideZero",
+  "tool_version": "Apple clang version 17.0.0 (clang-1700.4.4.1)",
+  "platform": "macOS-26.1-arm64-arm-64bit",
+  "elapsed_seconds": 0.475012,
+  "cases": [
+    {
+      "file": "sources/c01_constant_zero.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 15
+        }
+      ],
+      "elapsed_seconds": 0.014887749999999998,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c01_constant_zero.c:3:15: warning: Division by zero [core.DivideZero]\n    3 |     return 42 / denominator;\n      |            ~~~^~~~~~~~~~~~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-xut9_53_/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c01_constant_zero.c"
+      ],
+      "id": "c01-constant-zero",
+      "source_sha256": "93db5e36d2eaeaf6496ff1e58a78061dd3bdf3f0de87933967a5c041fcb4b9e8"
+    },
+    {
+      "file": "sources/c02_constant_nonzero.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015434375,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-_nmi1lkp/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c02_constant_nonzero.c"
+      ],
+      "id": "c02-constant-nonzero",
+      "source_sha256": "0a8616f9891c2d2dc30370982db1f41f3d222ebc0fbc118cce22d3a857067ef9"
+    },
+    {
+      "file": "sources/c03_guarded_equal.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 19
+        }
+      ],
+      "elapsed_seconds": 0.016899166000000007,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c03_guarded_equal.c:3:19: warning: Division by zero [core.DivideZero]\n    3 |         return 42 / x;\n      |                ~~~^~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-gtmnw0vs/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c03_guarded_equal.c"
+      ],
+      "id": "c03-guarded-equal",
+      "source_sha256": "f96e75955bcc566d7584b009ce950153fa6945902099394fecc4598f77a59f46"
+    },
+    {
+      "file": "sources/c04_guarded_return.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.016883874999999993,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-hyztau2q/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c04_guarded_return.c"
+      ],
+      "id": "c04-guarded-return",
+      "source_sha256": "c57290d3da8b5d2b3c8a075126b6e75f75fc3092c29674334f0ffeff9d55110b"
+    },
+    {
+      "file": "sources/c05_opposing_bounds.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 19
+        }
+      ],
+      "elapsed_seconds": 0.018877208000000006,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c05_opposing_bounds.c:3:19: warning: Division by zero [core.DivideZero]\n    3 |         return 42 / x;\n      |                ~~~^~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-b1f2hu8r/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c05_opposing_bounds.c"
+      ],
+      "id": "c05-opposing-bounds",
+      "source_sha256": "0f80a499d3b7611376d1b374ead2b5eb15c2382c82ea1779cebda9224a9c33e6"
+    },
+    {
+      "file": "sources/c06_impossible_bounds.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.056000666000000004,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-gjbaz51e/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c06_impossible_bounds.c"
+      ],
+      "id": "c06-impossible-bounds",
+      "source_sha256": "9218b836764173ecae1f88c3218e9cd185cc53cacb1f12e89dc79483f334a239"
+    },
+    {
+      "file": "sources/c07_difference_equal.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 19
+        }
+      ],
+      "elapsed_seconds": 0.03847129200000002,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c07_difference_equal.c:3:19: warning: Division by zero [core.DivideZero]\n    3 |         return 42 / (x - y);\n      |                ~~~^~~~~~~~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-6skfcsdp/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c07_difference_equal.c"
+      ],
+      "id": "c07-difference-equal",
+      "source_sha256": "e7f46b31ff0be9569b6f51b476486269f756b390a8142492b4f015ba431132af"
+    },
+    {
+      "file": "sources/c08_difference_unequal.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.01992787500000004,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-ry3bhdgc/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c08_difference_unequal.c"
+      ],
+      "id": "c08-difference-unequal",
+      "source_sha256": "0bd998b63886a82fe061a3bca39461186ea6353434c5e0a7ac0f2c27d94974a6"
+    },
+    {
+      "file": "sources/c09_affine_boundary.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.014678999999999998,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-hprt7w43/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c09_affine_boundary.c"
+      ],
+      "id": "c09-affine-boundary",
+      "source_sha256": "4db0169ddd91f1d01ed7479f3da39849526ba1e272c6bb614d08ef3570921eda"
+    },
+    {
+      "file": "sources/c10_affine_strict.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015981625,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-fh50m738/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c10_affine_strict.c"
+      ],
+      "id": "c10-affine-strict",
+      "source_sha256": "a3b3649953438c073bd85696a30ca1987961f20607b5a4fb34e3f20baab27378"
+    },
+    {
+      "file": "sources/c11_nested_equalities.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 4,
+          "column": 23
+        }
+      ],
+      "elapsed_seconds": 0.01571941600000004,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c11_nested_equalities.c:4:23: warning: Division by zero [core.DivideZero]\n    4 |             return 42 / x;\n      |                    ~~~^~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-f_tqfg6p/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c11_nested_equalities.c"
+      ],
+      "id": "c11-nested-equalities",
+      "source_sha256": "3cb33c8db87245504b8a438af21348e38d68973d469fc651d30029a944e2d610"
+    },
+    {
+      "file": "sources/c12_nested_contradiction.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015380792000000032,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-9h1gudks/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c12_nested_contradiction.c"
+      ],
+      "id": "c12-nested-contradiction",
+      "source_sha256": "74f90b8b5e152b3865e37afb8ff732b5d056ab051aef73358a70b13e371c5400"
+    },
+    {
+      "file": "sources/c13_else_zero.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 4,
+          "column": 15
+        }
+      ],
+      "elapsed_seconds": 0.015544916999999991,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c13_else_zero.c:4:15: warning: Division by zero [core.DivideZero]\n    4 |     return 42 / x;\n      |            ~~~^~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-6uznf8zg/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c13_else_zero.c"
+      ],
+      "id": "c13-else-zero",
+      "source_sha256": "4e5345407e52ad1d6b22ff3ed4e78296d55280d837ce06dcd43e2a7df1e4322f"
+    },
+    {
+      "file": "sources/c14_else_nonzero.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.014849959000000024,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-w38zvuca/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c14_else_nonzero.c"
+      ],
+      "id": "c14-else-nonzero",
+      "source_sha256": "0df6c0d803799e0c5f005a5081f2da7133c00d11ecc952ca91314d9cd3589bb1"
+    },
+    {
+      "file": "sources/c15_modulo_zero.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 19
+        }
+      ],
+      "elapsed_seconds": 0.014927250000000003,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c15_modulo_zero.c:3:19: warning: Division by zero [core.DivideZero]\n    3 |         return 42 % x;\n      |                ~~~^~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-9yz__09s/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c15_modulo_zero.c"
+      ],
+      "id": "c15-modulo-zero",
+      "source_sha256": "5eaf22792ef088b31b6bf4f2a59c2550438bbc64cbbfd0f08191c1ac2aafd42d"
+    },
+    {
+      "file": "sources/c16_modulo_guarded.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015009208999999968,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-ew_hgxbe/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c16_modulo_guarded.c"
+      ],
+      "id": "c16-modulo-guarded",
+      "source_sha256": "2a191bc8261e3fdafd434e6765859118f2829d292c937086f75780853570348b"
+    },
+    {
+      "file": "sources/c17_assignment_zero.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 3,
+          "column": 15
+        }
+      ],
+      "elapsed_seconds": 0.015094457999999977,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c17_assignment_zero.c:3:15: warning: Division by zero [core.DivideZero]\n    3 |     return 42 / denominator;\n      |            ~~~^~~~~~~~~~~~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-fl2lqi6q/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c17_assignment_zero.c"
+      ],
+      "id": "c17-assignment-zero",
+      "source_sha256": "d0ad944476e43e16edd9d701a2475b3cf52bc2c4125591f6a96872b86479c4d8"
+    },
+    {
+      "file": "sources/c18_assignment_guarded.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.014935417000000006,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-06xj0976/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c18_assignment_guarded.c"
+      ],
+      "id": "c18-assignment-guarded",
+      "source_sha256": "3129c956dfeb1e95967e57058984ac03c9aab5dc473bd52a9fa56ce705febbcc"
+    },
+    {
+      "file": "sources/c19_two_variable_equal.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015015166999999996,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-f4ssf10s/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c19_two_variable_equal.c"
+      ],
+      "id": "c19-two-variable-equal",
+      "source_sha256": "93f43d86aef63f1f95efb1b22f197dc6f274e15c57685aae3684dbee3de49a37"
+    },
+    {
+      "file": "sources/c20_two_variable_unequal.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015661166000000004,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-94ayvobx/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c20_two_variable_unequal.c"
+      ],
+      "id": "c20-two-variable-unequal",
+      "source_sha256": "f5be4b384e1a95e0d8ada0674c3bb524a1c5f36397e6b7bf6a34608784aae98d"
+    },
+    {
+      "file": "sources/c21_unconstrained.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.01530975000000001,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-r_794u44/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c21_unconstrained.c"
+      ],
+      "id": "c21-unconstrained",
+      "source_sha256": "e9f0663a57399d5758bae256e11ff59d23bfcf53e3a4709c232a4208e6088cd2"
+    },
+    {
+      "file": "sources/c22_bitwise_nonzero.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015401916999999987,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-y5nfjz7a/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c22_bitwise_nonzero.c"
+      ],
+      "id": "c22-bitwise-nonzero",
+      "source_sha256": "b2a32c957cec811a7c02d573c039893ee7b5c39343850575fee281351a260195"
+    },
+    {
+      "file": "sources/c23_loop_to_zero.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 5,
+          "column": 15
+        }
+      ],
+      "elapsed_seconds": 0.016123,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/pilot/sources/c23_loop_to_zero.c:5:15: warning: Division by zero [core.DivideZero]\n    5 |     return 42 / denominator;\n      |            ~~~^~~~~~~~~~~~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-0x4w5d0a/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c23_loop_to_zero.c"
+      ],
+      "id": "c23-loop-to-zero",
+      "source_sha256": "8420326bb70d3805d0458f3a4f4e25b65fc070e3c609fb1591b11b99ee163988"
+    },
+    {
+      "file": "sources/c24_loop_guarded.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.016387708,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-u_gzdaer/report.sarif",
+        "[local workspace]/benchmarks/pilot/sources/c24_loop_guarded.c"
+      ],
+      "id": "c24-loop-guarded",
+      "source_sha256": "4563fce4238aca8e2ca63b44dc3b8154faf25bb3887f90455bf8869146573df8"
+    }
+  ],
+  "failed_cases": [],
+  "manifest_sha256": "c5fb0f55e2f64d5688484f4a35bdfe70883ea9cb6d12a5029e40469fa571b674",
+  "recorded_at_utc": "2026-09-29T15:51:47.092750+00:00"
+}

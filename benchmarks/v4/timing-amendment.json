@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "created_at_utc": "2026-10-01T10:16:52.675586+00:00",
+  "reason": "Correct cross-process clock origins on macOS Python 3.9; retain outer deadline, accurate interrupted-call cost, and fresh-response guard. Entire invalid partial timing cohort archived; all 75 new trials repeat the unchanged preselected design. Resource semantics and outputs unchanged.",
+  "original_freeze_sha256": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+  "files": {
+    "scripts/run_v4.py": {
+      "original_sha256": "0755f067f74291f833a9dfc85ab6b13f0eab9d4b2d9b04938a433d8643643a6e",
+      "corrected_sha256": "d750642e7e7ed7d36b787f5fe25cbfe38bd7a64093d79b4525355435e52283ec"
+    }
+  },
+  "dependencies": {
+    "src/symdiv/timing.py": "1c2e172550b4d1b532d4aefcb0ea23f6df4c9c6f6b736e0caf1e7a60514a15c6",
+    "docs/v4-timing-amendment.md": "12ca7de125349c8eb88497aa65bab9e1174c88bdfa60cc418e941a4c3560fad2",
+    "docs/v4-clock-correction.md": "d892d706af67ffe5450067536c2bcac6d08314a0b1fb9d8677d3d398a9c4446d"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "tool": "built-in GPT-Image",
+  "mode": "generate",
+  "conceptual_illustration": true,
+  "experimental_data": false,
+  "image": "report/figures/v4/teaser.png",
+  "prompt": "report/figures/v4/teaser-prompt.txt",
+  "dimensions": [
+    2172,
+    724
+  ],
+  "sha256": "a73412f2b2e100e13402ee27aa96dd4d32ef06e17cdece33461aa3a4af8df746",
+  "prompt_sha256": "37b3c0639ca0ebd242c564db70f6b6e614fd44c2f7ec7e0193daa46dd38e706d",
+  "image_edits": [],
+  "research_model_ledger_changed": false
+}

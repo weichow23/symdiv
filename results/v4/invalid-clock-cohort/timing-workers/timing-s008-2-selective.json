@@ -1,0 +1,15 @@
+{
+  "id": "s008",
+  "system": "selective",
+  "prediction": false,
+  "status": "unknown",
+  "findings": [],
+  "stop_reason": "wall_time",
+  "initial_model_used": false,
+  "first": null,
+  "provider_error": null,
+  "partial_search_counters_available": false,
+  "worker_stderr": "",
+  "elapsed_end_to_end_seconds": 30.00217354199998,
+  "finished_at_utc": "2026-10-01T10:12:30.299727+00:00"
+}

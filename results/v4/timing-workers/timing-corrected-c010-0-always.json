@@ -1,0 +1,165 @@
+{
+  "status": "refuted_complete",
+  "prediction": false,
+  "policy": "guided",
+  "states": 23,
+  "solver_calls": 21,
+  "seed_batches": 6,
+  "remaining_tasks": 0,
+  "stop_reason": null,
+  "incomplete": [],
+  "elapsed_seconds": 11.689082375,
+  "findings": [],
+  "feedback": [
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 3,
+          "take": true,
+          "line": 3
+        }
+      ]
+    },
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": false,
+          "line": 3
+        }
+      ]
+    },
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": false,
+          "line": 3
+        }
+      ]
+    }
+  ],
+  "last_trace": [
+    {
+      "branch_id": "br-8e1954d4b663",
+      "visit": 1,
+      "take": false,
+      "line": 3
+    }
+  ],
+  "guidance_error": null,
+  "repair_error": null,
+  "feedback_trigger": null,
+  "feedback_attempted": false,
+  "feedback_used": false,
+  "repair_wait_seconds": 0.0,
+  "initial_states": 0,
+  "id": "c010",
+  "system": "always",
+  "elapsed_end_to_end_seconds": 11.779435707999937,
+  "initial_model_used": true,
+  "provider_error": null,
+  "first": {
+    "key": "timing-corrected-c010-0-always",
+    "source_sha256": "1c9809d3a54cb156c695721557f5cefd4fa38b565353963a840afde12f47c0c8",
+    "feedback": null,
+    "raw": {
+      "provider": "codex_exec",
+      "codex_version": "codex-cli 0.159.0",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "output": {
+        "findings": [
+          {
+            "site_id": "div-0582154e7ddd",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "10",
+            "rationale": "The denominator is the nonzero constant 10 on both loop iterations.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-66e63d32d07c",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "number",
+            "rationale": "At this site, number is 10 on the first iteration and 1 on the second; the loop exits before number becomes a denominator again after reaching 0.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-106e124df99e",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "10",
+            "rationale": "The denominator is the nonzero constant 10 on both loop iterations.",
+            "confidence": 1
+          }
+        ],
+        "choices": []
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a0f6ff-4dc8-7820-b472-0669a4b9fdd8"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_0",
+            "type": "agent_message",
+            "text": "{\"findings\":[{\"site_id\":\"div-0582154e7ddd\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"10\",\"rationale\":\"The denominator is the nonzero constant 10 on both loop iterations.\",\"confidence\":1},{\"site_id\":\"div-66e63d32d07c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"number\",\"rationale\":\"At this site, number is 10 on the first iteration and 1 on the second; the loop exits before number becomes a denominator again after reaching 0.\",\"confidence\":1},{\"site_id\":\"div-106e124df99e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"10\",\"rationale\":\"The denominator is the nonzero constant 10 on both loop iterations.\",\"confidence\":1}],\"choices\":[]}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 17962,
+            "cached_input_tokens": 16384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 296,
+            "reasoning_output_tokens": 113
+          }
+        }
+      ],
+      "stderr": "2026-10-01T10:25:21.869616Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:21.871733Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:21.873449Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:21.874382Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:21.875331Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+      "usage": {
+        "input_tokens": 17962,
+        "cached_input_tokens": 16384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 296,
+        "reasoning_output_tokens": 113
+      },
+      "_client_elapsed_seconds": 11.627583959
+    },
+    "elapsed_seconds": 11.648884083
+  },
+  "clock": "fresh actual wall clock including preparation, provider process, parsing and search",
+  "finished_at_utc": "2026-10-01T10:25:33.521935+00:00"
+}

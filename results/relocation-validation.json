@@ -1,0 +1,38 @@
+{
+  "moved_tracked_files": 133,
+  "all_moved_bytes_identical": true,
+  "video_directory_inode_unchanged": true,
+  "git_history_location": "../.git",
+  "old_virtual_environment": "tmp/pre-relocation-venv",
+  "recorded_at_utc": "2026-09-29T23:41:31.983833+00:00",
+  "project_directory": "project/",
+  "fresh_virtual_environment": true,
+  "tests_passed": 62,
+  "tests_seconds": 1.99,
+  "reproduction": {
+    "passed": true,
+    "new_model_calls": 0,
+    "materialized_files_identical": 24,
+    "checks": [
+      {
+        "stratum": "pilot",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      },
+      {
+        "stratum": "juliet",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      }
+    ],
+    "elapsed_seconds": 12.484361125,
+    "workspace": "[local workspace]/project"
+  },
+  "report_rebuild_passed": true,
+  "archived_v2_pdf_unchanged": true,
+  "new_model_calls": 0,
+  "method_changed": false,
+  "proposal": "docs/improvement-plan.md",
+  "official_assignment_verified": "2026-09-30",
+  "deadline_singapore": "2026-11-30T23:59:00+08:00"
+}

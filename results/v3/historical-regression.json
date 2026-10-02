@@ -1,0 +1,440 @@
+[
+  {
+    "cohort": "pilot",
+    "id": "c01-constant-zero",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c02-constant-nonzero",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c03-guarded-equal",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c04-guarded-return",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c05-opposing-bounds",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c06-impossible-bounds",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c07-difference-equal",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c08-difference-unequal",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c09-affine-boundary",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c10-affine-strict",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c11-nested-equalities",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 5,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c12-nested-contradiction",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 8,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c13-else-zero",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c14-else-nonzero",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c15-modulo-zero",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c16-modulo-guarded",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c17-assignment-zero",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c18-assignment-guarded",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 5,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c19-two-variable-equal",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 3,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c20-two-variable-unequal",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 4,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c21-unconstrained",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 2,
+    "reason": []
+  },
+  {
+    "cohort": "pilot",
+    "id": "c22-bitwise-nonzero",
+    "expected": false,
+    "status": "unknown",
+    "prediction": false,
+    "states": 2,
+    "reason": [
+      "case22: solver_unknown: canceled"
+    ]
+  },
+  {
+    "cohort": "pilot",
+    "id": "c23-loop-to-zero",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 29,
+    "reason": [
+      "case23: loop bound reached (8)"
+    ]
+  },
+  {
+    "cohort": "pilot",
+    "id": "c24-loop-guarded",
+    "expected": false,
+    "status": "unknown",
+    "prediction": false,
+    "states": 55,
+    "reason": [
+      "case24: loop bound reached (8)"
+    ]
+  },
+  {
+    "cohort": "juliet",
+    "id": "j001",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 28,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j002",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 10,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j003",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 10,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j004",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 64,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j005",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 64,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j006",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 19,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j007",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 72,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j008",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 36,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j009",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 24,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j010",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 19,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j011",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 12,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j012",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 8,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j013",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 5,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j014",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 58,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j015",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 66,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j016",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 8,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j017",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 10,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j018",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 12,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j019",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 5,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j020",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 40,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j021",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 16,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j022",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 10,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j023",
+    "expected": true,
+    "status": "verified_sat",
+    "prediction": true,
+    "states": 19,
+    "reason": []
+  },
+  {
+    "cohort": "juliet",
+    "id": "j024",
+    "expected": false,
+    "status": "refuted_complete",
+    "prediction": false,
+    "states": 72,
+    "reason": []
+  }
+]

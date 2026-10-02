@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "name": "symdiv-pilot-24",
+  "language": "C11",
+  "task": "integer division or remainder by zero",
+  "root": ".",
+  "label_policy": "A case is positive iff some integer input reaches its sole division/remainder site with denominator zero under mathematical-integer path semantics; signed-overflow-dependent witnesses are excluded.",
+  "cases": [
+    {"id": "c01-constant-zero", "file": "sources/c01_constant_zero.c", "expected_bug": true, "category": "constant"},
+    {"id": "c02-constant-nonzero", "file": "sources/c02_constant_nonzero.c", "expected_bug": false, "category": "constant"},
+    {"id": "c03-guarded-equal", "file": "sources/c03_guarded_equal.c", "expected_bug": true, "category": "branch"},
+    {"id": "c04-guarded-return", "file": "sources/c04_guarded_return.c", "expected_bug": false, "category": "branch"},
+    {"id": "c05-opposing-bounds", "file": "sources/c05_opposing_bounds.c", "expected_bug": true, "category": "constraint"},
+    {"id": "c06-impossible-bounds", "file": "sources/c06_impossible_bounds.c", "expected_bug": false, "category": "constraint"},
+    {"id": "c07-difference-equal", "file": "sources/c07_difference_equal.c", "expected_bug": true, "category": "relational"},
+    {"id": "c08-difference-unequal", "file": "sources/c08_difference_unequal.c", "expected_bug": false, "category": "relational"},
+    {"id": "c09-affine-boundary", "file": "sources/c09_affine_boundary.c", "expected_bug": true, "category": "arithmetic"},
+    {"id": "c10-affine-strict", "file": "sources/c10_affine_strict.c", "expected_bug": false, "category": "arithmetic"},
+    {"id": "c11-nested-equalities", "file": "sources/c11_nested_equalities.c", "expected_bug": true, "category": "nested-branch"},
+    {"id": "c12-nested-contradiction", "file": "sources/c12_nested_contradiction.c", "expected_bug": false, "category": "nested-branch"},
+    {"id": "c13-else-zero", "file": "sources/c13_else_zero.c", "expected_bug": true, "category": "else-path"},
+    {"id": "c14-else-nonzero", "file": "sources/c14_else_nonzero.c", "expected_bug": false, "category": "else-path"},
+    {"id": "c15-modulo-zero", "file": "sources/c15_modulo_zero.c", "expected_bug": true, "category": "remainder"},
+    {"id": "c16-modulo-guarded", "file": "sources/c16_modulo_guarded.c", "expected_bug": false, "category": "remainder"},
+    {"id": "c17-assignment-zero", "file": "sources/c17_assignment_zero.c", "expected_bug": true, "category": "dataflow"},
+    {"id": "c18-assignment-guarded", "file": "sources/c18_assignment_guarded.c", "expected_bug": false, "category": "dataflow"},
+    {"id": "c19-two-variable-equal", "file": "sources/c19_two_variable_equal.c", "expected_bug": true, "category": "multi-variable"},
+    {"id": "c20-two-variable-unequal", "file": "sources/c20_two_variable_unequal.c", "expected_bug": false, "category": "multi-variable"},
+    {"id": "c21-unconstrained", "file": "sources/c21_unconstrained.c", "expected_bug": true, "category": "latent-input"},
+    {"id": "c22-bitwise-nonzero", "file": "sources/c22_bitwise_nonzero.c", "expected_bug": false, "category": "unsupported-semantics"},
+    {"id": "c23-loop-to-zero", "file": "sources/c23_loop_to_zero.c", "expected_bug": true, "category": "loop"},
+    {"id": "c24-loop-guarded", "file": "sources/c24_loop_guarded.c", "expected_bug": false, "category": "loop"}
+  ]
+}
+

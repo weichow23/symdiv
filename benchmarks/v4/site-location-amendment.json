@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-10-01T10:48:04.821141+00:00",
+  "original_freeze_sha256": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+  "reason": "Post-study operator-location correction; c008 rerun separately. Original resource replay explicitly retains archived location mapping. No original findings or timing trials replaced.",
+  "files": {
+    "src/symdiv/extract.py": {
+      "original_sha256": "1d4e80f7b5df4f3f8e85192b416ef3720cb98159ca3d3400426618764aa04b54",
+      "corrected_sha256": "673c43f77ef639d4b95387422520f5e75da1253dd3447c13b19a690e65a549f4"
+    },
+    "src/symdiv/ground.py": {
+      "original_sha256": "37b438ad128ed84b1797c44c3ad1de3c5fe91104bd5a67bbe64a41cd9bf3c1e3",
+      "corrected_sha256": "5a5930756699f0c2dc098f8cc5b9878a828e967ab9e748dede72614769f2bfe4"
+    },
+    "src/symdiv/search.py": {
+      "original_sha256": "c37cdcb34376433005d9f29db433d927e71402cbd22ad4d215e8871c02d22b23",
+      "corrected_sha256": "1f4f8b83426c05f8482e7b0936aed1472b1096e10ca5d6a3f9a5f4a7b132b9fd"
+    },
+    "scripts/run_v4.py": {
+      "original_sha256": "d750642e7e7ed7d36b787f5fe25cbfe38bd7a64093d79b4525355435e52283ec",
+      "corrected_sha256": "06f5fdf4ce5d646d4bfa53df655e155423ab34e03034013941a5b3e01b8481af"
+    },
+    "scripts/run_v4_smt_first.py": {
+      "original_sha256": "8c91667d3140410f0d37e25739eb4b9af781e2175a49df04b9d7603f6cd7430a",
+      "corrected_sha256": "c62c3b7ad504bae1dbb29de9abca4b91c43aab4b95a28169c05c79611e65084d"
+    }
+  },
+  "dependencies": {
+    "docs/v4-site-location-fix.md": "a1cea851f3b66c7050f2fea7be44a82743187d157b2517d9319c482630cb6224",
+    "scripts/check_v4_site_fix.py": "b431189c0bc19b2eca800389d1db5b422385f4b0581d8675230226dd32a60714"
+  }
+}

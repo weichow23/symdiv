@@ -1,0 +1,10 @@
+{
+  "key": "timing-s008-2-lookahead",
+  "original_freeze_sha256": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+  "original_code_commit": "9028aaa",
+  "requested_wall_budget_seconds": 30,
+  "watchdog_threshold_seconds": 45,
+  "exception": "subprocess.TimeoutExpired: wall worker s008/lookahead timed out after 45 seconds",
+  "new_model_calls": 0,
+  "handling": "Retain once as unknown in primary timing cohort; do not rerun."
+}

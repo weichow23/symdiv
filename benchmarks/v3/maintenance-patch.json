@@ -1,0 +1,25 @@
+{
+  "reason": "Read independent query_budget, honor explicit zero, and scale sensitivity budgets from the configured ratio. Frozen v3 uses 256/128 so historical budget values are unchanged. Original freeze and results retained.",
+  "files": {
+    "scripts/run_v3.py": {
+      "original_sha256": "4469eacf4d37020dead71f9c99043963c9a666dab8460af9bb76803bd656ca17",
+      "corrected_sha256": "7baaa0055530895c29d3355bca19d13659889cd4d54e32a5a65a6553bc4a9fcc"
+    },
+    "src/symdiv/extract.py": {
+      "original_sha256": "1d4e80f7b5df4f3f8e85192b416ef3720cb98159ca3d3400426618764aa04b54",
+      "corrected_sha256": "673c43f77ef639d4b95387422520f5e75da1253dd3447c13b19a690e65a549f4"
+    },
+    "src/symdiv/ground.py": {
+      "original_sha256": "37b438ad128ed84b1797c44c3ad1de3c5fe91104bd5a67bbe64a41cd9bf3c1e3",
+      "corrected_sha256": "5a5930756699f0c2dc098f8cc5b9878a828e967ab9e748dede72614769f2bfe4"
+    },
+    "src/symdiv/search.py": {
+      "original_sha256": "c37cdcb34376433005d9f29db433d927e71402cbd22ad4d215e8871c02d22b23",
+      "corrected_sha256": "1f4f8b83426c05f8482e7b0936aed1472b1096e10ca5d6a3f9a5f4a7b132b9fd"
+    }
+  },
+  "dependencies": {
+    "src/symdiv/budgets.py": "18da5be260af236fd277a24c83bdd857b35c10caa64f1b08e2df7eb7d8fa91e8"
+  },
+  "site_location_repair": "Post-study nested-operator identity repair; v3 catalogs unchanged. See docs/v4-site-location-fix.md."
+}

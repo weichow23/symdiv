@@ -1,0 +1,61 @@
+{
+  "key": "c020-initial",
+  "source_sha256": "a6f0a960070ffc1f90ecb626079a1030ab4b978e0ef21b1263a5509a409ce4eb",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-fa089798eb7b",
+          "verdict": "unknown",
+          "path_conditions": [],
+          "denominator": "x",
+          "rationale": "The denominator is a mutable global, which is unsupported; the only cataloged branch occurs after the division and cannot constrain the value at the site.",
+          "confidence": 0.99
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6d6-94b6-7903-8b7d-3c8cfe144ae0"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-fa089798eb7b\",\"verdict\":\"unknown\",\"path_conditions\":[],\"denominator\":\"x\",\"rationale\":\"The denominator is a mutable global, which is unsupported; the only cataloged branch occurs after the division and cannot constrain the value at the site.\",\"confidence\":0.99}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17678,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 163,
+          "reasoning_output_tokens": 79
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:40:53.053375Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:53.058632Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:53.060418Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:53.061824Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:53.062778Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:53.064243Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17678,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 163,
+      "reasoning_output_tokens": 79
+    },
+    "_client_elapsed_seconds": 8.674799
+  },
+  "elapsed_seconds": 8.697599499999999
+}

@@ -1,0 +1,267 @@
+{
+  "schema_version": 3,
+  "frozen_at_utc": "2026-09-30T00:28:09.107295+00:00",
+  "name": "v3-primary-26",
+  "root": "../..",
+  "cases": [
+    {
+      "id": "d013",
+      "file": "benchmarks/v3-diagnostic/sources/d013.c",
+      "expected_bug": false,
+      "category": "correlated",
+      "depth": 5,
+      "sha256": "d4250bd45d9813f3282f642206f4c50a8898aa74c6b0113df1243455b2ef072b",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j007",
+      "file": "benchmarks/v3-juliet/sources/j007.c",
+      "expected_bug": false,
+      "category": "rand-04",
+      "site_count": 4,
+      "sha256": "ac6fc694bfcf4bec1ce1b987554b3666dd5eb2a71c420c190ff7d299bbf10d93",
+      "cohort": "juliet"
+    },
+    {
+      "id": "d003",
+      "file": "benchmarks/v3-diagnostic/sources/d003.c",
+      "expected_bug": true,
+      "category": "independent",
+      "depth": 3,
+      "sha256": "a68bc963635a436a3987fdd885de1c8c70cde67fea3d9eb1d1a55809140ad934",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d009",
+      "file": "benchmarks/v3-diagnostic/sources/d009.c",
+      "expected_bug": false,
+      "category": "loop",
+      "depth": 3,
+      "sha256": "2a3f0c71065f9dbe5ab7e164cd70cbb40a7c40777dd8a3578ea5d037484ba218",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d018",
+      "file": "benchmarks/v3-diagnostic/sources/d018.c",
+      "expected_bug": true,
+      "category": "correlated",
+      "depth": 3,
+      "sha256": "17d5808a9e1035d400275b0d35798dc0181b39595b53c9f3010bda1e251666ca",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d012",
+      "file": "benchmarks/v3-diagnostic/sources/d012.c",
+      "expected_bug": true,
+      "category": "correlated",
+      "depth": 5,
+      "sha256": "f195b32bdd09d9c21f7a6e9bf47f6d24f02d360705859fc9112adbf38bd076e8",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d001",
+      "file": "benchmarks/v3-diagnostic/sources/d001.c",
+      "expected_bug": true,
+      "category": "correlated",
+      "depth": 7,
+      "sha256": "cbd4bf7c85068bc698599758db3c83e77eda129077d50ad74e918943b7f6e549",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j002",
+      "file": "benchmarks/v3-juliet/sources/j002.c",
+      "expected_bug": false,
+      "category": "rand-02",
+      "site_count": 4,
+      "sha256": "e0dac698c70556feb5fd192f247c6e269ebb6ba336caefc115584e1d86eb6d85",
+      "cohort": "juliet"
+    },
+    {
+      "id": "j005",
+      "file": "benchmarks/v3-juliet/sources/j005.c",
+      "expected_bug": true,
+      "category": "rand-04",
+      "site_count": 1,
+      "sha256": "8a79fb4476e5294315abb0ecbdcdca33ee28744dbe4d708780f98d0eb7b63284",
+      "cohort": "juliet"
+    },
+    {
+      "id": "d017",
+      "file": "benchmarks/v3-diagnostic/sources/d017.c",
+      "expected_bug": true,
+      "category": "independent",
+      "depth": 5,
+      "sha256": "ab1235ba9daab457cde3b3bd9d201cc1b6a749641872704d36f422964150bc1e",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d010",
+      "file": "benchmarks/v3-diagnostic/sources/d010.c",
+      "expected_bug": false,
+      "category": "independent",
+      "depth": 7,
+      "sha256": "d7958f7eac92ffdda33fcbe37ffcd97eaae046518a3651fa7a156a53aa58b2f4",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j001",
+      "file": "benchmarks/v3-juliet/sources/j001.c",
+      "expected_bug": true,
+      "category": "zero-04",
+      "site_count": 1,
+      "sha256": "63c3fb8a9cd8c776a2a4195cf94eb61ea98aa58cd2a8ded8313d15e6dc12ad93",
+      "cohort": "juliet"
+    },
+    {
+      "id": "j004",
+      "file": "benchmarks/v3-juliet/sources/j004.c",
+      "expected_bug": false,
+      "category": "zero-04",
+      "site_count": 4,
+      "sha256": "1cddfdcf1c12695e586c43733ac5de94e3078ba6065eaebb49eded6731ff20a5",
+      "cohort": "juliet"
+    },
+    {
+      "id": "d011",
+      "file": "benchmarks/v3-diagnostic/sources/d011.c",
+      "expected_bug": false,
+      "category": "correlated",
+      "depth": 3,
+      "sha256": "ae895ca0cd85c4123a9271fbebaff07010a3d72e73bf9787211b6d1393af077e",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d014",
+      "file": "benchmarks/v3-diagnostic/sources/d014.c",
+      "expected_bug": true,
+      "category": "loop",
+      "depth": 3,
+      "sha256": "328e92f39e439a4aead9f79b3e0146142a1c7e7ef3c90778215c6418a77fdec3",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d007",
+      "file": "benchmarks/v3-diagnostic/sources/d007.c",
+      "expected_bug": true,
+      "category": "independent",
+      "depth": 7,
+      "sha256": "6f77ced8b5076a4165dc89da17efbaa1b04390c701c0927842ddf65f60afa9e4",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d002",
+      "file": "benchmarks/v3-diagnostic/sources/d002.c",
+      "expected_bug": false,
+      "category": "independent",
+      "depth": 3,
+      "sha256": "c2ebdbd1552e02dd37b3a81c9ef357a3eb26dff4e6219a009de0fe0ddefe1a71",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d008",
+      "file": "benchmarks/v3-diagnostic/sources/d008.c",
+      "expected_bug": false,
+      "category": "independent",
+      "depth": 5,
+      "sha256": "eec933f44be91a87af8e8cc1644b21ee0c4ab834e9c8dfea192cfd6a025fcf43",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d016",
+      "file": "benchmarks/v3-diagnostic/sources/d016.c",
+      "expected_bug": true,
+      "category": "loop",
+      "depth": 7,
+      "sha256": "e84862bad8cd32e2f72efb09a533b8382a622c1521a511eb6eb6f98de6deff53",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d015",
+      "file": "benchmarks/v3-diagnostic/sources/d015.c",
+      "expected_bug": false,
+      "category": "correlated",
+      "depth": 7,
+      "sha256": "a276e4a961510aea82eb81a475f52dbd584abe6dc85a984aa3fd379ebf0ae5f3",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j006",
+      "file": "benchmarks/v3-juliet/sources/j006.c",
+      "expected_bug": true,
+      "category": "zero-02",
+      "site_count": 1,
+      "sha256": "6beeeeceed089f85e95cec03a0e1c8d73c15d4a9207a522f23e11b14febcb440",
+      "cohort": "juliet"
+    },
+    {
+      "id": "d004",
+      "file": "benchmarks/v3-diagnostic/sources/d004.c",
+      "expected_bug": false,
+      "category": "loop",
+      "depth": 7,
+      "sha256": "f868f00809da055326f56f36520922b5c59febcf73f78764d302eb2a149ebe15",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j003",
+      "file": "benchmarks/v3-juliet/sources/j003.c",
+      "expected_bug": false,
+      "category": "zero-02",
+      "site_count": 4,
+      "sha256": "54b6b000341f28c7fe1e741e1bba34e58af34857cadd8d81e7d4a6434e4fedad",
+      "cohort": "juliet"
+    },
+    {
+      "id": "d005",
+      "file": "benchmarks/v3-diagnostic/sources/d005.c",
+      "expected_bug": false,
+      "category": "loop",
+      "depth": 5,
+      "sha256": "e64982c241fddcdc3e3581eb279b4dac56624610415437d9b8274cce62eeb90a",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "d006",
+      "file": "benchmarks/v3-diagnostic/sources/d006.c",
+      "expected_bug": true,
+      "category": "loop",
+      "depth": 5,
+      "sha256": "f647e77db380588a8002a58f87d1856cd0c26ea479b1fe2651d118aad44dd942",
+      "cohort": "diagnostic"
+    },
+    {
+      "id": "j008",
+      "file": "benchmarks/v3-juliet/sources/j008.c",
+      "expected_bug": true,
+      "category": "rand-02",
+      "site_count": 1,
+      "sha256": "47fb0980ad5b11ac97978f74809eea2a604c8fc476533ec31efdbd8bb14b5a4a",
+      "cohort": "juliet"
+    }
+  ],
+  "files": {
+    "benchmarks/v3-diagnostic/manifest.json": "7807422fb3099f6ba30969356d53a725802b11a5f733178f07dd3ead129040be",
+    "benchmarks/v3-juliet/manifest.json": "6a6eb241b934443382c3f8757ca3b7c29c3ac71301cd7b82fbec32b9971d65c4",
+    "configs/v3.json": "3324948657d830f2abebc6691afe64388235240d90e7c991a4cd0d4f8b6617ef",
+    "prompts/path_guidance_v3.txt": "cc6085f2301a1bdee955d285df001fea96697029db6de7c1173faaf3be346c79",
+    "schemas/path-guidance-v3.schema.json": "df4bfa5d8bc403f6c370bf023794b455ab345a4028ad332887cf6d844dd6c283",
+    "scripts/build_v3_diagnostics.py": "373f0428df96a960caa855b86cd26e2624ac4e398baf918466b1ebe8e5969393",
+    "scripts/import_juliet_cwe369.py": "0d17f5f3316ddb6b88a33ebefa4bf3d9a3e06860b65fa8ba6e78552abdb3c633",
+    "scripts/import_v3_juliet.py": "ce927c577955ee2efb1e7ae7e9fc16036196f1b592c583750b93a5f3b9c28943",
+    "scripts/run_v3.py": "4469eacf4d37020dead71f9c99043963c9a666dab8460af9bb76803bd656ca17",
+    "src/symdiv/__init__.py": "adf3eb54afedbd5944e977b3dcae9c30fea0734f5d6a9b6d3d53ea4986196518",
+    "src/symdiv/__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+    "src/symdiv/baseline.py": "a4ebdad4dcd838dc021921a0bd542707a25f445df50d269475b06bcf39c29992",
+    "src/symdiv/cli.py": "adf8b94caadeb69a02c51ced9e0aa47f52faa0bad3b103a42ef8761ec6a466f5",
+    "src/symdiv/evaluate.py": "46f8a3fbf669f83ab5e4bb40e24e80a5e8dabc14dcf5ef2db0c30c018364c93b",
+    "src/symdiv/expressions.py": "921994f9e2607e1760e26e65e4ab47a09ef1a4d793b0c5e41b1d72ecf44ef581",
+    "src/symdiv/extract.py": "1d4e80f7b5df4f3f8e85192b416ef3720cb98159ca3d3400426618764aa04b54",
+    "src/symdiv/ground.py": "37b438ad128ed84b1797c44c3ad1de3c5fe91104bd5a67bbe64a41cd9bf3c1e3",
+    "src/symdiv/guidance.py": "8ae0a1fd8c9715310341313e01146ae4ac628c2bcaa4710770dcd9f211070001",
+    "src/symdiv/model.py": "ecd0aa3957bcbbd0f78db2e75281e42c3b8c5a4ee6e19bf3dcee0444622fe774",
+    "src/symdiv/provider.py": "da845c7bb0dd53da3de2ef4a477d57d382e2dce62463f286f563d756bf72df23",
+    "src/symdiv/search.py": "c37cdcb34376433005d9f29db433d927e71402cbd22ad4d215e8871c02d22b23",
+    "src/symdiv/verify.py": "5560177519588322da7fb95fb37e0bb14e9e72ace3c7a11b01cdb170f302b5aa"
+  },
+  "protocol": "Authored diagnostics and new external flow families kept separate. Labels never enter model input. First real response shared by LLM-only and both guided arms; at most one correction per positive/unknown model proposal, after 48 states and a recorded source failure, with nonempty frontier. Then DFS on retained frontier. Primary 128 states/256 solver calls, sensitivity 64 and 512; three fixed random seeds. Wall-time projection uses 20 s including recorded model latency and measured preparation/search. No retries or outcome-based selection."
+}

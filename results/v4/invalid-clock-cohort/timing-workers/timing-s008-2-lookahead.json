@@ -1,0 +1,18 @@
+{
+  "id": "s008",
+  "system": "lookahead",
+  "key": "timing-s008-2-lookahead",
+  "repetition": 2,
+  "prediction": false,
+  "status": "unknown",
+  "findings": [],
+  "stop_reason": "original_supervisor_timeout",
+  "elapsed_end_to_end_seconds": 45.0,
+  "elapsed_time_is_lower_bound": true,
+  "initial_model_used": false,
+  "provider_error": null,
+  "first": null,
+  "partial_search_counters_available": false,
+  "clock": "Original process watchdog exceeded 45 seconds before terminating. Threshold is a lower bound, not a precise elapsed measurement.",
+  "failure_record": "timing-initial-failure.json"
+}

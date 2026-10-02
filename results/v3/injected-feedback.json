@@ -1,0 +1,833 @@
+{
+  "kind": "injected_wrong_advice_not_natural_model_error",
+  "source_sha256": "fab6cd6d82bcc7c6cd1714cb5009f5de96b07bf24705491f014d360682bfab72",
+  "file": "benchmarks/v3-robustness/injected.c",
+  "injected": {
+    "findings": [
+      {
+        "site_id": "div-4d6fda11e95c",
+        "verdict": "bug",
+        "path_conditions": [],
+        "denominator": "(d+59)",
+        "rationale": "Deliberately injected wrong all-true path for a separate mechanism test.",
+        "confidence": 1
+      }
+    ],
+    "choices": [
+      {
+        "branch_id": "br-c0570f06dfb7",
+        "visit": 1,
+        "take": true
+      },
+      {
+        "branch_id": "br-3cc42e058fee",
+        "visit": 1,
+        "take": true
+      },
+      {
+        "branch_id": "br-557dc83dec28",
+        "visit": 1,
+        "take": true
+      },
+      {
+        "branch_id": "br-acc07faee3d7",
+        "visit": 1,
+        "take": true
+      },
+      {
+        "branch_id": "br-46f415c944f4",
+        "visit": 1,
+        "take": true
+      },
+      {
+        "branch_id": "br-783de1dbad8d",
+        "visit": 1,
+        "take": true
+      }
+    ]
+  },
+  "probe": {
+    "status": "paused",
+    "prediction": false,
+    "policy": "guided",
+    "states": 48,
+    "solver_calls": 53,
+    "seed_batches": 6,
+    "remaining_tasks": 12,
+    "stop_reason": null,
+    "incomplete": [],
+    "elapsed_seconds": 0.091494,
+    "findings": [],
+    "feedback": [
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": true,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 + 2 + 4 - 8 + 16 + 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": true,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 + 2 - 4 + 8 + 16 + 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": false,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": true,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": true,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 - 2 + 4 + 8 + 16 + 32 + 59 == 0"
+        ]
+      }
+    ],
+    "last_trace": [
+      {
+        "branch_id": "br-c0570f06dfb7",
+        "visit": 1,
+        "take": false,
+        "line": 3
+      },
+      {
+        "branch_id": "br-3cc42e058fee",
+        "visit": 1,
+        "take": true,
+        "line": 4
+      }
+    ]
+  },
+  "repair_raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-4d6fda11e95c",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d+59)",
+          "rationale": "Taking only x1>0 true yields d=-1+2-4-8-16-32=-59, so the denominator is zero without earlier undefined behavior.",
+          "confidence": 1
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-c0570f06dfb7",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-3cc42e058fee",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-557dc83dec28",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-acc07faee3d7",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-46f415c944f4",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-783de1dbad8d",
+          "visit": 1,
+          "take": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0efbf-6d26-7773-b659-ce7627215f03"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-4d6fda11e95c\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d+59)\",\"rationale\":\"Taking only x1>0 true yields d=-1+2-4-8-16-32=-59, so the denominator is zero without earlier undefined behavior.\",\"confidence\":1}],\"choices\":[{\"branch_id\":\"br-c0570f06dfb7\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-3cc42e058fee\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-557dc83dec28\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-acc07faee3d7\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-46f415c944f4\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-783de1dbad8d\",\"visit\":1,\"take\":false}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 19452,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 303,
+          "reasoning_output_tokens": 84
+        }
+      }
+    ],
+    "stderr": "2026-09-30T00:38:15.084036Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-30T00:38:15.086075Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 19452,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 303,
+      "reasoning_output_tokens": 84
+    },
+    "_client_elapsed_seconds": 10.730987083
+  },
+  "with_repair": {
+    "status": "verified_sat",
+    "prediction": true,
+    "policy": "guided",
+    "states": 57,
+    "solver_calls": 62,
+    "seed_batches": 7,
+    "remaining_tasks": 15,
+    "stop_reason": null,
+    "incomplete": [],
+    "elapsed_seconds": 10.861270208999999,
+    "findings": [
+      {
+        "site": {
+          "site_id": "div-4d6fda11e95c",
+          "file": "benchmarks/v3-robustness/injected.c",
+          "function": "f",
+          "line": 9,
+          "column": 12,
+          "operator": "/",
+          "denominator": "(d+59)",
+          "function_source": "int f(int x0, int x1, int x2, int x3, int x4, int x5) {\n    int d=0;\n    if(x0>0) d+=1; else d-=1;\n    if(x1>0) d+=2; else d-=2;\n    if(x2>0) d+=4; else d-=4;\n    if(x3>0) d+=8; else d-=8;\n    if(x4>0) d+=16; else d-=16;\n    if(x5>0) d+=32; else d-=32;\n    return 100/(d+59);\n}"
+        },
+        "verification": {
+          "status": "verified_sat",
+          "accepted": true,
+          "reason": "source-derived path and zero denominator; no neural constraints",
+          "model": {
+            "f:x0:1": "0",
+            "f:x1:2": "1",
+            "f:x2:3": "0",
+            "f:x3:4": "0",
+            "f:x4:5": "0",
+            "f:x5:6": "0",
+            "at_site:d": "-59",
+            "at_site:x0": "0",
+            "at_site:x1": "1",
+            "at_site:x2": "0",
+            "at_site:x3": "0",
+            "at_site:x4": "0",
+            "at_site:x5": "0"
+          }
+        },
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": false,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": false,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": false,
+            "line": 8
+          }
+        ],
+        "found_seconds": 10.861231834,
+        "found_states": 57,
+        "found_solver_calls": 62
+      }
+    ],
+    "feedback": [
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": true,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 + 2 + 4 - 8 + 16 + 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": true,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 + 2 - 4 + 8 + 16 + 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": true,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": false,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": true,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": true,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 - 2 + 4 + 8 + 16 + 32 + 59 == 0"
+        ]
+      }
+    ],
+    "last_trace": [
+      {
+        "branch_id": "br-c0570f06dfb7",
+        "visit": 1,
+        "take": false,
+        "line": 3
+      },
+      {
+        "branch_id": "br-3cc42e058fee",
+        "visit": 1,
+        "take": true,
+        "line": 4
+      },
+      {
+        "branch_id": "br-557dc83dec28",
+        "visit": 1,
+        "take": false,
+        "line": 5
+      },
+      {
+        "branch_id": "br-acc07faee3d7",
+        "visit": 1,
+        "take": false,
+        "line": 6
+      },
+      {
+        "branch_id": "br-46f415c944f4",
+        "visit": 1,
+        "take": false,
+        "line": 7
+      },
+      {
+        "branch_id": "br-783de1dbad8d",
+        "visit": 1,
+        "take": false,
+        "line": 8
+      }
+    ]
+  },
+  "without_repair": {
+    "status": "verified_sat",
+    "prediction": true,
+    "policy": "dfs",
+    "states": 109,
+    "solver_calls": 129,
+    "seed_batches": 22,
+    "remaining_tasks": 11,
+    "stop_reason": null,
+    "incomplete": [],
+    "elapsed_seconds": 0.23100070899999992,
+    "findings": [
+      {
+        "site": {
+          "site_id": "div-4d6fda11e95c",
+          "file": "benchmarks/v3-robustness/injected.c",
+          "function": "f",
+          "line": 9,
+          "column": 12,
+          "operator": "/",
+          "denominator": "(d+59)",
+          "function_source": "int f(int x0, int x1, int x2, int x3, int x4, int x5) {\n    int d=0;\n    if(x0>0) d+=1; else d-=1;\n    if(x1>0) d+=2; else d-=2;\n    if(x2>0) d+=4; else d-=4;\n    if(x3>0) d+=8; else d-=8;\n    if(x4>0) d+=16; else d-=16;\n    if(x5>0) d+=32; else d-=32;\n    return 100/(d+59);\n}"
+        },
+        "verification": {
+          "status": "verified_sat",
+          "accepted": true,
+          "reason": "source-derived path and zero denominator; no neural constraints",
+          "model": {
+            "f:x0:1": "0",
+            "f:x1:2": "1",
+            "f:x2:3": "0",
+            "f:x3:4": "0",
+            "f:x4:5": "0",
+            "f:x5:6": "0",
+            "at_site:d": "-59",
+            "at_site:x0": "0",
+            "at_site:x1": "1",
+            "at_site:x2": "0",
+            "at_site:x3": "0",
+            "at_site:x4": "0",
+            "at_site:x5": "0"
+          }
+        },
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": false,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": false,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": false,
+            "line": 8
+          }
+        ],
+        "found_seconds": 0.23097445900000046,
+        "found_states": 109,
+        "found_solver_calls": 129
+      }
+    ],
+    "feedback": [
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": false,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 - 1 + 2 - 4 - 8 + 16 + 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": false,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": true,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": false,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 - 1 + 2 - 4 - 8 + 16 - 32 + 59 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-4d6fda11e95c",
+        "line": 9,
+        "trace": [
+          {
+            "branch_id": "br-c0570f06dfb7",
+            "visit": 1,
+            "take": false,
+            "line": 3
+          },
+          {
+            "branch_id": "br-3cc42e058fee",
+            "visit": 1,
+            "take": true,
+            "line": 4
+          },
+          {
+            "branch_id": "br-557dc83dec28",
+            "visit": 1,
+            "take": false,
+            "line": 5
+          },
+          {
+            "branch_id": "br-acc07faee3d7",
+            "visit": 1,
+            "take": false,
+            "line": 6
+          },
+          {
+            "branch_id": "br-46f415c944f4",
+            "visit": 1,
+            "take": false,
+            "line": 7
+          },
+          {
+            "branch_id": "br-783de1dbad8d",
+            "visit": 1,
+            "take": true,
+            "line": 8
+          }
+        ],
+        "unsat_core": [
+          "0 - 1 + 2 - 4 - 8 - 16 + 32 + 59 == 0"
+        ]
+      }
+    ],
+    "last_trace": [
+      {
+        "branch_id": "br-c0570f06dfb7",
+        "visit": 1,
+        "take": false,
+        "line": 3
+      },
+      {
+        "branch_id": "br-3cc42e058fee",
+        "visit": 1,
+        "take": true,
+        "line": 4
+      },
+      {
+        "branch_id": "br-557dc83dec28",
+        "visit": 1,
+        "take": false,
+        "line": 5
+      },
+      {
+        "branch_id": "br-acc07faee3d7",
+        "visit": 1,
+        "take": false,
+        "line": 6
+      },
+      {
+        "branch_id": "br-46f415c944f4",
+        "visit": 1,
+        "take": false,
+        "line": 7
+      },
+      {
+        "branch_id": "br-783de1dbad8d",
+        "visit": 1,
+        "take": false,
+        "line": 8
+      }
+    ]
+  },
+  "new_model_calls": 1
+}

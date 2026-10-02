@@ -1,0 +1,725 @@
+{
+  "upstream": {
+    "commit": "91941c24ccc26c2b49d88af4301528b9e3029eaa",
+    "url": "https://raw.githubusercontent.com/danmar/cppcheck/91941c24ccc26c2b49d88af4301528b9e3029eaa/test/testother.cpp",
+    "sha256": "f5609f0e9346d801b23afcf39219665e23e2f6f51b25951c2fe8f350e5389d02"
+  },
+  "rule": "All unchanged standalone C11 snippets with integer division from zeroDiv* regression methods, excluding diagnostic-format-only zeroDivErrorPath. No outcome or model-based selection.",
+  "screening": [
+    {
+      "upstream_method": "zeroDiv1",
+      "snippet": 1,
+      "upstream_line": 409,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:5: error: use of undeclared identifier 'cout'\n    2 |     cout << 1. / 0;\n      |     ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv1",
+      "snippet": 2,
+      "upstream_line": 414,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:5: error: use of undeclared identifier 'cout'\n    2 |     cout << 42 / (double)0;\n      |     ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv1",
+      "snippet": 3,
+      "upstream_line": 419,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:5: error: use of undeclared identifier 'cout'\n    2 |     cout << 42 / (float)0;\n      |     ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv1",
+      "snippet": 4,
+      "upstream_line": 424,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:5: error: use of undeclared identifier 'cout'\n    2 |     cout << 42 / (int)0;\n      |     ^\ncandidate.c:2:16: warning: division by zero is undefined [-Wdivision-by-zero]\n    2 |     cout << 42 / (int)0;\n      |                ^ ~~~~~~\n1 warning and 1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv2",
+      "snippet": 1,
+      "upstream_line": 431,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:4:24: error: use of undeclared identifier 'n'\n    4 |     for(int i = 0; i < n; i ++)\n      |                        ^\ncandidate.c:8:5: error: use of undeclared identifier 'cout'\n    8 |     cout<<b/sum;\n      |     ^\ncandidate.c:8:11: error: use of undeclared identifier 'b'\n    8 |     cout<<b/sum;\n      |           ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 1,
+      "upstream_line": 444,
+      "included": true,
+      "id": "c001"
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 2,
+      "upstream_line": 449,
+      "included": true,
+      "id": "c002"
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 3,
+      "upstream_line": 454,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:13: error: expected ')'\n    1 | void foo(int& i) {\n      |             ^\ncandidate.c:1:9: note: to match this '('\n    1 | void foo(int& i) {\n      |         ^\ncandidate.c:1:13: warning: omitting the parameter name in a function definition is a C23 extension [-Wc23-extensions]\n    1 | void foo(int& i) {\n      |             ^\ncandidate.c:2:5: error: use of undeclared identifier 'i'\n    2 |     i /= 0;\n      |     ^\n1 warning and 2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 4,
+      "upstream_line": 459,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:13: error: expected ')'\n    1 | void foo(int& i) {\n      |             ^\ncandidate.c:1:9: note: to match this '('\n    1 | void foo(int& i) {\n      |         ^\ncandidate.c:1:13: warning: omitting the parameter name in a function definition is a C23 extension [-Wc23-extensions]\n    1 | void foo(int& i) {\n      |             ^\ncandidate.c:2:5: error: use of undeclared identifier 'i'\n    2 |     i %= 0;\n      |     ^\n1 warning and 2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 5,
+      "upstream_line": 464,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:1: error: unknown type name 'uint8_t'\n    1 | uint8_t foo(uint8_t i) {\n      | ^\ncandidate.c:1:13: error: unknown type name 'uint8_t'\n    1 | uint8_t foo(uint8_t i) {\n      |             ^\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 1,
+      "upstream_line": 471,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0x6;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 2,
+      "upstream_line": 477,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0x0;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 3,
+      "upstream_line": 482,
+      "included": true,
+      "id": "c003"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 4,
+      "upstream_line": 488,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0L;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 5,
+      "upstream_line": 493,
+      "included": true,
+      "id": "c004"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 6,
+      "upstream_line": 499,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0ul;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 7,
+      "upstream_line": 504,
+      "included": true,
+      "id": "c005"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 8,
+      "upstream_line": 512,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0.0;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 9,
+      "upstream_line": 518,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0.5;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv5",
+      "snippet": 1,
+      "upstream_line": 526,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:13: error: use of undeclared identifier 'b'\n    3 |    long a = b / 0;\n      |             ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv5",
+      "snippet": 2,
+      "upstream_line": 531,
+      "included": true,
+      "id": "c006"
+    },
+    {
+      "upstream_method": "zeroDiv6",
+      "snippet": 1,
+      "upstream_line": 539,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:12: error: use of undeclared identifier 'b'\n    3 |    int a = b % 0;\n      |            ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv6",
+      "snippet": 2,
+      "upstream_line": 544,
+      "included": true,
+      "id": "c007"
+    },
+    {
+      "upstream_method": "zeroDiv7",
+      "snippet": 1,
+      "upstream_line": 553,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:11: error: use of undeclared identifier 'x'\n    2 |   int a = x/2*3/0;\n      |           ^\ncandidate.c:3:11: error: use of undeclared identifier 'y'\n    3 |   int b = y/2*3%0;\n      |           ^\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv7",
+      "snippet": 2,
+      "upstream_line": 558,
+      "included": true,
+      "id": "c008"
+    },
+    {
+      "upstream_method": "zeroDiv8",
+      "snippet": 1,
+      "upstream_line": 568,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:3: error: call to undeclared function 'do_something'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n    3 |   do_something(a);\n      |   ^\ncandidate.c:4:3: error: void function 'f' should not return a value [-Wreturn-mismatch]\n    4 |   return 4 / a;\n      |   ^      ~~~~~\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv9",
+      "snippet": 1,
+      "upstream_line": 578,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:9: error: use of undeclared identifier 'rOuterValue'\n    3 |    if( (rOuterValue >>= fStepHelp) ) {\n      |         ^\ncandidate.c:6:8: error: use of undeclared identifier 'sal_Int32'\n    6 |        sal_Int32 nIntervalCount = static_cast< sal_Int32 >(fStepMain / fStepHelp);\n      |        ^\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv10",
+      "snippet": 1,
+      "upstream_line": 592,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:6: error: expected ';' after expression\n    2 |   std::cout\n      |      ^\n      |      ;\ncandidate.c:2:3: error: use of undeclared identifier 'std'\n    2 |   std::cout\n      |   ^\ncandidate.c:2:6: error: expected expression\n    2 |   std::cout\n      |      ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv11",
+      "snippet": 1,
+      "upstream_line": 602,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:7: error: redefinition of 'res'\n    3 |   int res = (a*2)/0;\n      |       ^\ncandidate.c:2:7: note: previous definition is here\n    2 |   int res = (a+2)/0;\n      |       ^\ncandidate.c:2:18: warning: division by zero is undefined [-Wdivision-by-zero]\n    2 |   int res = (a+2)/0;\n      |                  ^~\ncandidate.c:3:18: warning: division by zero is undefined [-Wdivision-by-zero]\n    3 |   int res = (a*2)/0;\n      |                  ^~\n2 warnings and 1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv11",
+      "snippet": 2,
+      "upstream_line": 608,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:14: error: use of undeclared identifier 'a'\n    2 |   int res = (a+2)/0;\n      |              ^\ncandidate.c:3:7: error: redefinition of 'res'\n    3 |   int res = (a*2)/0;\n      |       ^\ncandidate.c:2:7: note: previous definition is here\n    2 |   int res = (a+2)/0;\n      |       ^\ncandidate.c:3:14: error: use of undeclared identifier 'a'\n    3 |   int res = (a*2)/0;\n      |              ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv12",
+      "snippet": 1,
+      "upstream_line": 617,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:1: error: unknown type name 'intmax_t'\n    1 | intmax_t f() {\n      | ^\ncandidate.c:2:14: error: call to undeclared function 'imaxabs'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n    2 |   return 1 / imaxabs(0);\n      |              ^\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv13",
+      "snippet": 1,
+      "upstream_line": 624,
+      "included": true,
+      "id": "c009"
+    },
+    {
+      "upstream_method": "zeroDiv14",
+      "snippet": 1,
+      "upstream_line": 634,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:5:8: error: expected ';' after expression\n    5 |     std::cout << ix / (i >> 1) << std::endl;\n      |        ^\n      |        ;\ncandidate.c:5:5: error: use of undeclared identifier 'std'\n    5 |     std::cout << ix / (i >> 1) << std::endl;\n      |     ^\ncandidate.c:5:8: error: expected expression\n    5 |     std::cout << ix / (i >> 1) << std::endl;\n      |        ^\ncandidate.c:6:8: error: expected ';' after expression\n    6 |     std::cout << dx / (i >> 1) << std::endl;\n      |        ^\n      |        ;\ncandidate.c:6:5: error: use of undeclared identifier 'std'\n    6 |     std::cout << dx / (i >> 1) << std::endl;\n      |     ^\ncandidate.c:6:8: error: expected expression\n    6 |     std::cout << dx / (i >> 1) << std::endl;\n      |        ^\n6 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv15",
+      "snippet": 1,
+      "upstream_line": 645,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:5: error: conflicting types for 'f'\n    2 | int f() {\n      |     ^\ncandidate.c:1:5: note: previous definition is here\n    1 | int f(int i) { return i - 1; }\n      |     ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv16",
+      "snippet": 1,
+      "upstream_line": 657,
+      "included": true,
+      "id": "c010"
+    },
+    {
+      "upstream_method": "zeroDiv16",
+      "snippet": 2,
+      "upstream_line": 667,
+      "included": true,
+      "id": "c011"
+    },
+    {
+      "upstream_method": "zeroDiv17",
+      "snippet": 1,
+      "upstream_line": 680,
+      "included": true,
+      "id": "c012"
+    },
+    {
+      "upstream_method": "zeroDiv18",
+      "snippet": 1,
+      "upstream_line": 690,
+      "included": true,
+      "id": "c013"
+    },
+    {
+      "upstream_method": "zeroDiv19",
+      "snippet": 1,
+      "upstream_line": 701,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:9: error: expected expression\n    3 |         int j = 10 / i;\n      |         ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv20",
+      "snippet": 1,
+      "upstream_line": 710,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:1: error: unknown type name 'uint16_t'\n    1 | uint16_t f(void)\n      | ^\ncandidate.c:3:5: error: use of undeclared identifier 'uint16_t'\n    3 |     uint16_t x = 0xFFFFU;\n      |     ^\ncandidate.c:4:18: error: use of undeclared identifier 'x'\n    4 |     return 42/(++x);\n      |                  ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDiv21",
+      "snippet": 1,
+      "upstream_line": 720,
+      "included": true,
+      "id": "c014"
+    },
+    {
+      "upstream_method": "zeroDiv22",
+      "snippet": 1,
+      "upstream_line": 731,
+      "included": true,
+      "id": "c015"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 1,
+      "upstream_line": 738,
+      "included": true,
+      "id": "c016"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 2,
+      "upstream_line": 744,
+      "included": true,
+      "id": "c017"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 3,
+      "upstream_line": 750,
+      "included": true,
+      "id": "c018"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 4,
+      "upstream_line": 756,
+      "included": true,
+      "id": "c019"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 5,
+      "upstream_line": 763,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:25: error: use of undeclared identifier 'c'\n    1 | void f1(int x, int y) { c=x/y; }\n      |                         ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 6,
+      "upstream_line": 773,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:20: error: call to undeclared function 'do_something'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n    2 |   unsigned int x = do_something();\n      |                    ^\ncandidate.c:4:7: error: use of undeclared identifier 'some'\n    4 |   x = some+calculation;\n      |       ^\ncandidate.c:4:12: error: use of undeclared identifier 'calculation'\n    4 |   x = some+calculation;\n      |            ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 7,
+      "upstream_line": 783,
+      "included": true,
+      "id": "c020"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 8,
+      "upstream_line": 793,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:11: error: use of undeclared identifier 'some'\n    3 |   int x = some + calculation;\n      |           ^\ncandidate.c:3:18: error: use of undeclared identifier 'calculation'\n    3 |   int x = some + calculation;\n      |                  ^\n2 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 9,
+      "upstream_line": 803,
+      "included": true,
+      "id": "c021"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 10,
+      "upstream_line": 810,
+      "included": true,
+      "id": "c022"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 11,
+      "upstream_line": 818,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:13: error: use of undeclared identifier 'new'\n    2 | double* p1= new double[1];\n      |             ^\ncandidate.c:2:16: error: expected ';' at end of declaration\n    2 | double* p1= new double[1];\n      |                ^\n      |                ;\ncandidate.c:2:23: error: expected identifier or '('\n    2 | double* p1= new double[1];\n      |                       ^\ncandidate.c:3:13: error: use of undeclared identifier 'new'\n    3 | double* p2= new double[1];\n      |             ^\ncandidate.c:3:16: error: expected ';' at end of declaration\n    3 | double* p2= new double[1];\n      |                ^\n      |                ;\ncandidate.c:3:23: error: expected identifier or '('\n    3 | double* p2= new double[1];\n      |                       ^\ncandidate.c:4:13: error: use of undeclared identifier 'new'\n    4 | double* p3= new double[1];\n      |             ^\ncandidate.c:4:16: error: expected ';' at end of declaration\n    4 | double* p3= new double[1];\n      |                ^\n      |                ;\ncandidate.c:4:23: error: expected identifier or '('\n    4 | double* p3= new double[1];\n      |                       ^\n9 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 12,
+      "upstream_line": 827,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:3:7: error: call to undeclared function 'func'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]\n    3 |   if (func(b)) {}\n      |       ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 13,
+      "upstream_line": 834,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:2:12: error: use of undeclared identifier 'a'\n    2 |   int r = (a?b:c) / d;\n      |            ^\ncandidate.c:2:14: error: use of undeclared identifier 'b'\n    2 |   int r = (a?b:c) / d;\n      |              ^\ncandidate.c:2:16: error: use of undeclared identifier 'c'\n    2 |   int r = (a?b:c) / d;\n      |                ^\n3 errors generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 14,
+      "upstream_line": 840,
+      "included": true,
+      "id": "c023"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 15,
+      "upstream_line": 846,
+      "included": true,
+      "id": "c024"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 16,
+      "upstream_line": 852,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:7:5: error: use of undeclared identifier 'a'\n    7 |     a = b / -x;\n      |     ^\n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 17,
+      "upstream_line": 862,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:4:7: error: must use 'struct' tag to refer to type 'A'\n    4 | int f(A* a) {\n      |       ^\n      |       struct \n1 error generated.\n"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 18,
+      "upstream_line": 873,
+      "included": true,
+      "id": "c025"
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 19,
+      "upstream_line": 893,
+      "included": false,
+      "reason": "not standalone C11",
+      "diagnostics": "candidate.c:1:8: error: unknown type name 'uint16_t'\n    1 | void f(uint16_t num, uint8_t radix) {\n      |        ^\ncandidate.c:1:22: error: unknown type name 'uint8_t'\n    1 | void f(uint16_t num, uint8_t radix) {\n      |                      ^\n2 errors generated.\n"
+    }
+  ],
+  "cases": [
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 1,
+      "upstream_line": 444,
+      "id": "c001",
+      "file": "sources/c001.c",
+      "sha256": "13c55858c3d3686f893ddfd4614981eadcb1c0f5ca6aa9e69af97c1ef8ee2c76",
+      "upstream_expected_diagnostic": "[test.cpp:2:14]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv3",
+      "snippet": 2,
+      "upstream_line": 449,
+      "id": "c002",
+      "file": "sources/c002.c",
+      "sha256": "e77f1c5446345aef9d9cbd1d5045447d584cfcdf844c784442e05a6ead078344",
+      "upstream_expected_diagnostic": "[test.cpp:2:14]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 3,
+      "upstream_line": 482,
+      "id": "c003",
+      "file": "sources/c003.c",
+      "sha256": "21b174ba03307151eb581e524ca852b25c81490f89a33f670b2747df60d36505",
+      "upstream_expected_diagnostic": "[test.cpp:3:15]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 5,
+      "upstream_line": 493,
+      "id": "c004",
+      "file": "sources/c004.c",
+      "sha256": "0050d4a751a432f839990c977b9b6ed6f1f2219caa4e5f169288a9cb179692b4",
+      "upstream_expected_diagnostic": "[test.cpp:3:15]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv4",
+      "snippet": 7,
+      "upstream_line": 504,
+      "id": "c005",
+      "file": "sources/c005.c",
+      "sha256": "bae499d3b7bd88630c75c656ea277b6a501a38a21fc0847cc6d5a0812b43ed14",
+      "upstream_expected_diagnostic": "[test.cpp:3:15]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv5",
+      "snippet": 2,
+      "upstream_line": 531,
+      "id": "c006",
+      "file": "sources/c006.c",
+      "sha256": "7b4c0ec95234845fe72233bce1345d2b8d9ec49406f1dd05c03f75db939aedd9",
+      "upstream_expected_diagnostic": "[test.cpp:3:15]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv6",
+      "snippet": 2,
+      "upstream_line": 544,
+      "id": "c007",
+      "file": "sources/c007.c",
+      "sha256": "919e42bed004b778cc67eaf8c44e5c05d0349a0079c0fc57cfc446989082c1ae",
+      "upstream_expected_diagnostic": "[test.cpp:3:14]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv7",
+      "snippet": 2,
+      "upstream_line": 558,
+      "id": "c008",
+      "file": "sources/c008.c",
+      "sha256": "1972a5e37401330534dc46f0159ecf74f50b6566163fbaef7298b2d7a7d59578",
+      "upstream_expected_diagnostic": "[test.cpp:2:16]: (error) Division by zero. [zerodiv]\n[test.cpp:3:16]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 3
+    },
+    {
+      "upstream_method": "zeroDiv13",
+      "snippet": 1,
+      "upstream_line": 624,
+      "id": "c009",
+      "file": "sources/c009.c",
+      "sha256": "6828d0b7d0944d7da7263ef4441e9adcee437f68639d439db91136bdc63de448",
+      "upstream_expected_diagnostic": "[test.cpp:4:25]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv16",
+      "snippet": 1,
+      "upstream_line": 657,
+      "id": "c010",
+      "file": "sources/c010.c",
+      "sha256": "1c9809d3a54cb156c695721557f5cefd4fa38b565353963a840afde12f47c0c8",
+      "upstream_expected_diagnostic": "",
+      "site_count": 3
+    },
+    {
+      "upstream_method": "zeroDiv16",
+      "snippet": 2,
+      "upstream_line": 667,
+      "id": "c011",
+      "file": "sources/c011.c",
+      "sha256": "b41f93cb2a662a8f4af62598d8d5f5a0c3ef4abb3a2c1eefc22de81c502810c8",
+      "upstream_expected_diagnostic": "",
+      "site_count": 3
+    },
+    {
+      "upstream_method": "zeroDiv17",
+      "snippet": 1,
+      "upstream_line": 680,
+      "id": "c012",
+      "file": "sources/c012.c",
+      "sha256": "fb805e3b6a7f1d886afa8ed166468c04fb23d0fd13a7bb64a8d9dc65e0c75958",
+      "upstream_expected_diagnostic": "",
+      "site_count": 2
+    },
+    {
+      "upstream_method": "zeroDiv18",
+      "snippet": 1,
+      "upstream_line": 690,
+      "id": "c013",
+      "file": "sources/c013.c",
+      "sha256": "78d9a5dc15b4849f9ac46ad530a0a18d056ead8a3e22cf7d5386d4ce68cca021",
+      "upstream_expected_diagnostic": "[test.cpp:2:11] -> [test.cpp:3:14]: (warning) Either the condition 'x==y' is redundant or there is division by zero at line 3. [zerodivcond]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDiv21",
+      "snippet": 1,
+      "upstream_line": 720,
+      "id": "c014",
+      "file": "sources/c014.c",
+      "sha256": "d69d8f016edc0e9aaebaff6f2f1b51d8bd80bed65d9b9739124d49bfb6ee6efe",
+      "upstream_expected_diagnostic": "[test.cpp:2:14]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 2
+    },
+    {
+      "upstream_method": "zeroDiv22",
+      "snippet": 1,
+      "upstream_line": 731,
+      "id": "c015",
+      "file": "sources/c015.c",
+      "sha256": "095b1c9c0ed2f3122a84382f5b09a07e35fdff2ff98197ce50a1570f0584a004",
+      "upstream_expected_diagnostic": "[test.cpp:2:36]: (error) Division by zero. [zerodiv]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 1,
+      "upstream_line": 738,
+      "id": "c016",
+      "file": "sources/c016.c",
+      "sha256": "baa0ce60a5d813fae1d1766d9585f65b5036538444edd78f0a00efc023e3915c",
+      "upstream_expected_diagnostic": "[test.cpp:3:9] -> [test.cpp:2:14]: (warning) Either the condition 'x>0' is redundant or there is division by zero at line 2. [zerodivcond]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 2,
+      "upstream_line": 744,
+      "id": "c017",
+      "file": "sources/c017.c",
+      "sha256": "76accef88e3365b5dcdc148f9b6b954e8da1f99b64a58b36010de124faf12686",
+      "upstream_expected_diagnostic": "[test.cpp:3:9] -> [test.cpp:2:14]: (warning) Either the condition 'x>=1' is redundant or there is division by zero at line 2. [zerodivcond]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 3,
+      "upstream_line": 750,
+      "id": "c018",
+      "file": "sources/c018.c",
+      "sha256": "c9a449c51f918016918b28f70a9fea008a36cb776ca9dc9805f481547efc39d3",
+      "upstream_expected_diagnostic": "[test.cpp:3:9] -> [test.cpp:2:14]: (warning) Either the condition 'x==0' is redundant or there is division by zero at line 2. [zerodivcond]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 4,
+      "upstream_line": 756,
+      "id": "c019",
+      "file": "sources/c019.c",
+      "sha256": "4738a58bb2c4f19d5520c87bd451cf97ef191bad7ca1aef2e697ebb1e62f7ed3",
+      "upstream_expected_diagnostic": "[test.cpp:3:9] -> [test.cpp:2:14]: (warning) Either the condition 'x!=0' is redundant or there is division by zero at line 2. [zerodivcond]\n",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 7,
+      "upstream_line": 783,
+      "id": "c020",
+      "file": "sources/c020.c",
+      "sha256": "a6f0a960070ffc1f90ecb626079a1030ab4b978e0ef21b1263a5509a409ce4eb",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 9,
+      "upstream_line": 803,
+      "id": "c021",
+      "file": "sources/c021.c",
+      "sha256": "8971aa285599684b2fa58dcc6f39fe284a1405958cd108182414b1e769b0ff73",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 10,
+      "upstream_line": 810,
+      "id": "c022",
+      "file": "sources/c022.c",
+      "sha256": "1a82772d4c678dda7e35d0a34627384cce9e655c13f0b339de0cf59e04b6e69b",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 14,
+      "upstream_line": 840,
+      "id": "c023",
+      "file": "sources/c023.c",
+      "sha256": "04c9fdca732c6da0f8d087fcd39d2bdc410baf93bbe72084696df1a26247abbf",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 15,
+      "upstream_line": 846,
+      "id": "c024",
+      "file": "sources/c024.c",
+      "sha256": "96d79d7a68471b6047ac432fcb8e3fd3c33065bd3a08a66bfb8ebbfc4e1a347c",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    },
+    {
+      "upstream_method": "zeroDivCond",
+      "snippet": 18,
+      "upstream_line": 873,
+      "id": "c025",
+      "file": "sources/c025.c",
+      "sha256": "6384b6c5196178b0b73472bd51084e0e9a962f4bdadf1e2f39e92c35f2aac86c",
+      "upstream_expected_diagnostic": "",
+      "site_count": 1
+    }
+  ]
+}

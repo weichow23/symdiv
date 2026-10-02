@@ -1,0 +1,328 @@
+{
+  "source": "int f(int a,int b,int c){int d=0;if(a>0)d+=1;else d-=1;if(b>0)d+=2;else d-=2;if(c>0)d+=4;else d-=4;return 100/(d+3);}\n",
+  "source_sha256": "9f3f7d6a5b08a224c4759c95e53fe3e8a358bc79472d1ec845049823958f7ce7",
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-144df6044d8d",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d+3)",
+          "rationale": "Taking a<=0, b>0, and c<=0 makes d=-1+2-4=-3, so the denominator is zero.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-ea4ef548d6c8",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-af88a426ee49",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-d9deb2a4a4cf",
+          "visit": 1,
+          "take": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0efb1-f93b-79e3-8496-c12a0a6a8a50"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-144df6044d8d\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d+3)\",\"rationale\":\"Taking a<=0, b>0, and c<=0 makes d=-1+2-4=-3, so the denominator is zero.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-ea4ef548d6c8\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-af88a426ee49\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-d9deb2a4a4cf\",\"visit\":1,\"take\":false}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17818,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 311,
+          "reasoning_output_tokens": 156
+        }
+      }
+    ],
+    "stderr": "2026-09-30T00:23:33.454753Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-30T00:23:33.456583Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17818,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 311,
+      "reasoning_output_tokens": 156
+    },
+    "_client_elapsed_seconds": 17.3577315
+  },
+  "dfs": {
+    "status": "verified_sat",
+    "prediction": true,
+    "policy": "dfs",
+    "states": 25,
+    "solver_calls": 29,
+    "seed_batches": 6,
+    "remaining_tasks": 1,
+    "stop_reason": null,
+    "incomplete": [],
+    "elapsed_seconds": 0.047874624999998616,
+    "findings": [
+      {
+        "site": {
+          "site_id": "div-144df6044d8d",
+          "file": "tmp/v3-smoke.c",
+          "function": "f",
+          "line": 1,
+          "column": 107,
+          "operator": "/",
+          "denominator": "(d+3)",
+          "function_source": "int f(int a,int b,int c){int d=0;if(a>0)d+=1;else d-=1;if(b>0)d+=2;else d-=2;if(c>0)d+=4;else d-=4;return 100/(d+3);}"
+        },
+        "verification": {
+          "status": "verified_sat",
+          "accepted": true,
+          "reason": "source-derived path and zero denominator; no neural constraints",
+          "model": {
+            "f:a:1": "0",
+            "f:b:2": "1",
+            "f:c:3": "0",
+            "at_site:a": "0",
+            "at_site:b": "1",
+            "at_site:c": "0",
+            "at_site:d": "-3"
+          }
+        },
+        "trace": [
+          {
+            "branch_id": "br-ea4ef548d6c8",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          },
+          {
+            "branch_id": "br-af88a426ee49",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          },
+          {
+            "branch_id": "br-d9deb2a4a4cf",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          }
+        ],
+        "found_seconds": 0.04784762499999928,
+        "found_states": 25,
+        "found_solver_calls": 29
+      }
+    ],
+    "feedback": [
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-144df6044d8d",
+        "line": 1,
+        "trace": [
+          {
+            "branch_id": "br-ea4ef548d6c8",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          },
+          {
+            "branch_id": "br-af88a426ee49",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          },
+          {
+            "branch_id": "br-d9deb2a4a4cf",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 - 2 + 4 + 3 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-144df6044d8d",
+        "line": 1,
+        "trace": [
+          {
+            "branch_id": "br-ea4ef548d6c8",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          },
+          {
+            "branch_id": "br-af88a426ee49",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          },
+          {
+            "branch_id": "br-d9deb2a4a4cf",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          }
+        ],
+        "unsat_core": [
+          "0 + 1 - 2 - 4 + 3 == 0"
+        ]
+      },
+      {
+        "kind": "zero_denominator_unsat",
+        "site_id": "div-144df6044d8d",
+        "line": 1,
+        "trace": [
+          {
+            "branch_id": "br-ea4ef548d6c8",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          },
+          {
+            "branch_id": "br-af88a426ee49",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          },
+          {
+            "branch_id": "br-d9deb2a4a4cf",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          }
+        ],
+        "unsat_core": [
+          "0 - 1 + 2 + 4 + 3 == 0"
+        ]
+      }
+    ],
+    "last_trace": [
+      {
+        "branch_id": "br-ea4ef548d6c8",
+        "visit": 1,
+        "take": false,
+        "line": 1
+      },
+      {
+        "branch_id": "br-af88a426ee49",
+        "visit": 1,
+        "take": true,
+        "line": 1
+      },
+      {
+        "branch_id": "br-d9deb2a4a4cf",
+        "visit": 1,
+        "take": false,
+        "line": 1
+      }
+    ]
+  },
+  "guided": {
+    "status": "verified_sat",
+    "prediction": true,
+    "policy": "guided",
+    "states": 9,
+    "solver_calls": 8,
+    "seed_batches": 1,
+    "remaining_tasks": 3,
+    "stop_reason": null,
+    "incomplete": [],
+    "elapsed_seconds": 0.00842587500000036,
+    "findings": [
+      {
+        "site": {
+          "site_id": "div-144df6044d8d",
+          "file": "tmp/v3-smoke.c",
+          "function": "f",
+          "line": 1,
+          "column": 107,
+          "operator": "/",
+          "denominator": "(d+3)",
+          "function_source": "int f(int a,int b,int c){int d=0;if(a>0)d+=1;else d-=1;if(b>0)d+=2;else d-=2;if(c>0)d+=4;else d-=4;return 100/(d+3);}"
+        },
+        "verification": {
+          "status": "verified_sat",
+          "accepted": true,
+          "reason": "source-derived path and zero denominator; no neural constraints",
+          "model": {
+            "f:a:1": "0",
+            "f:b:2": "1",
+            "f:c:3": "0",
+            "at_site:a": "0",
+            "at_site:b": "1",
+            "at_site:c": "0",
+            "at_site:d": "-3"
+          }
+        },
+        "trace": [
+          {
+            "branch_id": "br-ea4ef548d6c8",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          },
+          {
+            "branch_id": "br-af88a426ee49",
+            "visit": 1,
+            "take": true,
+            "line": 1
+          },
+          {
+            "branch_id": "br-d9deb2a4a4cf",
+            "visit": 1,
+            "take": false,
+            "line": 1
+          }
+        ],
+        "found_seconds": 0.008401583000001267,
+        "found_states": 9,
+        "found_solver_calls": 8
+      }
+    ],
+    "feedback": [],
+    "last_trace": [
+      {
+        "branch_id": "br-ea4ef548d6c8",
+        "visit": 1,
+        "take": false,
+        "line": 1
+      },
+      {
+        "branch_id": "br-af88a426ee49",
+        "visit": 1,
+        "take": true,
+        "line": 1
+      },
+      {
+        "branch_id": "br-d9deb2a4a4cf",
+        "visit": 1,
+        "take": false,
+        "line": 1
+      }
+    ]
+  }
+}

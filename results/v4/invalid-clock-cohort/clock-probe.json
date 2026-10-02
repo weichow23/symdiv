@@ -1,0 +1,13 @@
+{
+  "python": "3.9.6 (default, Oct 17 2025, 17:15:53) \n[Clang 17.0.0 (clang-1700.4.4.1)]",
+  "parent": {
+    "monotonic": 0.330649,
+    "shared": 1039832.413262
+  },
+  "child": {
+    "monotonic": 0.015868333,
+    "shared": 1039832.450587
+  },
+  "parent_monotonic_minus_child": 0.314780667,
+  "shared_child_minus_parent": 0.03732500004116446
+}

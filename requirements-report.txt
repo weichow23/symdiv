@@ -1,0 +1,4 @@
+# Optional: regenerate the committed Python figures; no model/API calls.
+# Python >=3.9. These do not change the analyzer's pinned Z3 dependency.
+matplotlib==3.9.4
+numpy==2.0.2

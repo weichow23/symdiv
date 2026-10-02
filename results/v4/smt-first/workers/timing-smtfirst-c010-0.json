@@ -1,0 +1,102 @@
+{
+  "status": "refuted_complete",
+  "prediction": false,
+  "policy": "coverage",
+  "states": 36,
+  "solver_calls": 27,
+  "seed_batches": 6,
+  "remaining_tasks": 0,
+  "stop_reason": null,
+  "incomplete": [],
+  "elapsed_seconds": 0.032065291999999995,
+  "findings": [],
+  "feedback": [
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": false,
+          "line": 3
+        }
+      ]
+    },
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": false,
+          "line": 3
+        }
+      ]
+    },
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 3,
+          "take": true,
+          "line": 3
+        }
+      ]
+    }
+  ],
+  "last_trace": [
+    {
+      "branch_id": "br-8e1954d4b663",
+      "visit": 1,
+      "take": true,
+      "line": 3
+    },
+    {
+      "branch_id": "br-8e1954d4b663",
+      "visit": 2,
+      "take": true,
+      "line": 3
+    },
+    {
+      "branch_id": "br-8e1954d4b663",
+      "visit": 3,
+      "take": false,
+      "line": 3
+    }
+  ],
+  "id": "c010",
+  "repetition": 0,
+  "key": "timing-smtfirst-c010-0",
+  "system": "smt_first",
+  "lookahead": {
+    "status": "no_sat_advice",
+    "summary_states": 13,
+    "summary_queries": 6,
+    "seconds": 0.006330790999999988,
+    "choices": 0
+  },
+  "first": null,
+  "initial_model_used": false,
+  "provider_error": null,
+  "elapsed_end_to_end_seconds": 0.11078787500000001,
+  "finished_at_utc": "2026-10-01T10:33:31.111465+00:00"
+}

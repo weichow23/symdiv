@@ -1,0 +1,77 @@
+{
+  "key": "c011-initial",
+  "source_sha256": "b41f93cb2a662a8f4af62598d8d5f5a0c3ef4abb3a2c1eefc22de81c502810c8",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-3a77f0b63a98",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "10",
+          "rationale": "The denominator is the nonzero constant 10 on both loop iterations.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-98fd8267d196",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "10",
+          "rationale": "The remainder denominator is the nonzero constant 10 on both loop iterations.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-7435ae34d09f",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "number",
+          "rationale": "At this site, number is 10 on the first iteration and 1 on the second; it becomes 0 only after the site's final execution.",
+          "confidence": 1
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6dc-37c4-7563-9f4c-1de48655ec26"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-3a77f0b63a98\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"10\",\"rationale\":\"The denominator is the nonzero constant 10 on both loop iterations.\",\"confidence\":1},{\"site_id\":\"div-98fd8267d196\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"10\",\"rationale\":\"The remainder denominator is the nonzero constant 10 on both loop iterations.\",\"confidence\":1},{\"site_id\":\"div-7435ae34d09f\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"number\",\"rationale\":\"At this site, number is 10 on the first iteration and 1 on the second; it becomes 0 only after the site's final execution.\",\"confidence\":1}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17807,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 296,
+          "reasoning_output_tokens": 113
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:47:02.474082Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:47:02.476814Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:47:02.478554Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:47:02.479556Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:47:02.480466Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:47:02.481642Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17807,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 296,
+      "reasoning_output_tokens": 113
+    },
+    "_client_elapsed_seconds": 11.358839541999998
+  },
+  "elapsed_seconds": 11.381800124999984
+}

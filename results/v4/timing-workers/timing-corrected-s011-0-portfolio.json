@@ -1,0 +1,590 @@
+{
+  "status": "verified_sat",
+  "prediction": true,
+  "policy": "coverage",
+  "states": 3473,
+  "solver_calls": 2989,
+  "seed_batches": 392,
+  "remaining_tasks": 91,
+  "stop_reason": null,
+  "incomplete": [],
+  "elapsed_seconds": 17.066097458999998,
+  "findings": [
+    {
+      "site": {
+        "site_id": "div-45c80357d5d1",
+        "file": "benchmarks/v4-stress/sources/s011.c",
+        "function": "subject",
+        "line": 9,
+        "column": 10,
+        "operator": "/",
+        "denominator": "(d-(36))",
+        "function_source": "int subject(void) {\n  int d=0, w=2;\n  for(int i=0;i<8;i++) {\n    int x=rand();\n    if(x%3==1) d+=w; else d-=w;\n    w+=3;\n  }\n  return 100/(d-(36));\n}"
+      },
+      "verification": {
+        "status": "verified_sat",
+        "accepted": true,
+        "reason": "source-derived path and zero denominator; no neural constraints",
+        "model": {
+          "subject:rand:1": "2",
+          "subject:rand:3": "3",
+          "subject:rand:25": "54015",
+          "subject:rand:32": "1",
+          "subject:rand:74": "50020",
+          "subject:rand:75": "9459",
+          "subject:rand:179": "35458",
+          "subject:rand:239": "70513",
+          "at_site:d": "36",
+          "at_site:w": "26"
+        }
+      },
+      "trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false,
+          "line": 4
+        }
+      ],
+      "found_seconds": 17.065993042,
+      "found_states": 3473,
+      "found_solver_calls": 2989
+    }
+  ],
+  "feedback": [
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": true,
+          "line": 4
+        }
+      ]
+    },
+    {
+      "kind": "zero_denominator_unsat",
+      "site_id": "div-45c80357d5d1",
+      "line": 9,
+      "trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false,
+          "line": 4
+        }
+      ],
+      "unsat_core": [
+        "0 - 2 - (2 + 3) +\n2 +\n3 +\n3 +\n2 +\n3 +\n3 +\n3 +\n2 +\n3 +\n3 +\n3 +\n3 +\n2 +\n3 +\n3 +\n3 +\n3 +\n3 -\n(2 + 3 + 3 + 3 + 3 + 3 + 3) -\n(2 + 3 + 3 + 3 + 3 + 3 + 3 + 3) -\n36 ==\n0"
+      ]
+    },
+    {
+      "kind": "unreachable_branch",
+      "trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": true,
+          "line": 4
+        }
+      ]
+    }
+  ],
+  "last_trace": [
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 1,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 1,
+      "take": false,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 2,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 2,
+      "take": false,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 3,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 3,
+      "take": false,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 4,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 4,
+      "take": true,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 5,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 5,
+      "take": true,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 6,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 6,
+      "take": false,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 7,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 7,
+      "take": true,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 8,
+      "take": true,
+      "line": 4
+    },
+    {
+      "branch_id": "br-114230874211",
+      "visit": 8,
+      "take": true,
+      "line": 6
+    },
+    {
+      "branch_id": "br-b31e225b2be2",
+      "visit": 9,
+      "take": false,
+      "line": 4
+    }
+  ],
+  "id": "s011",
+  "system": "portfolio",
+  "elapsed_end_to_end_seconds": 17.206957499999987,
+  "initial_model_used": false,
+  "provider_error": null,
+  "first": null,
+  "clock": "fresh actual wall clock including preparation, provider process, parsing and search",
+  "finished_at_utc": "2026-10-01T10:22:32.278682+00:00"
+}

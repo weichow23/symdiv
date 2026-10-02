@@ -1,0 +1,61 @@
+{
+  "key": "c007-initial",
+  "source_sha256": "919e42bed004b778cc67eaf8c44e5c05d0349a0079c0fc57cfc446989082c1ae",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-719d042bed70",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "0",
+          "rationale": "The denominator is the integer constant zero, so every execution reaching the initializer immediately performs remainder by zero; function entry reaches it unconditionally with no earlier undefined behavior.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6e4-ec99-7670-9f29-a0454488bcbc"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-719d042bed70\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"The denominator is the integer constant zero, so every execution reaching the initializer immediately performs remainder by zero; function entry reaches it unconditionally with no earlier undefined behavior.\",\"confidence\":1.0}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17599,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 85,
+          "reasoning_output_tokens": 0
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:56:33.055599Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:56:33.058070Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:56:33.059510Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:56:33.060478Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:56:33.061678Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:56:33.062687Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17599,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 85,
+      "reasoning_output_tokens": 0
+    },
+    "_client_elapsed_seconds": 9.316007833000072
+  },
+  "elapsed_seconds": 9.340504832999954
+}

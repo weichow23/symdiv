@@ -1,0 +1,49 @@
+\begin{table*}[t]
+\caption{File-level warning classification. Pilot neural predictions are replayed historical responses; Juliet uses fresh model calls. An inconclusive site emits no warning and is reported separately.}
+\label{tab:classification}
+\centering\small
+\begin{tabular}{llrrrrrrrr}\toprule
+Stratum & System & TP & FP & TN & FN & Precision & Recall & F1 & Accuracy\\\midrule
+Pilot & Clang CSA & 9 & 0 & 12 & 3 & 100.0\% & 75.0\% & 85.7\% & 87.5\%\\
+Pilot & LLM-only & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+Pilot & SymDiv v2 & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+Pilot & Symbolic-only & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+\midrule
+Juliet & Clang CSA & 6 & 0 & 12 & 6 & 100.0\% & 50.0\% & 66.7\% & 75.0\%\\
+Juliet & LLM-only & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+Juliet & SymDiv v2 & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+Juliet & Symbolic-only & 12 & 0 & 12 & 0 & 100.0\% & 100.0\% & 100.0\% & 100.0\%\\
+\bottomrule\end{tabular}
+\end{table*}
+\begin{table}[t]
+\caption{Site dispositions. H is the hybrid gate; S is symbolic-only. Model-safe is not a source safety proof.}
+\label{tab:dispositions}
+\centering\small
+\begin{tabular}{lrrrr}\toprule
+Outcome & Pilot H & Pilot S & Juliet H & Juliet S\\\midrule
+Accepted witness & 12 & 12 & 12 & 12\\
+Model-safe & 12 & 0 & 32 & 0\\
+Refuted proposal & 0 & 10 & 0 & 32\\
+Inconclusive & 0 & 2 & 0 & 0\\
+Model-unknown & 0 & 0 & 0 & 0\\
+Missing & 0 & 0 & 0 & 0\\
+Invalid & 0 & 0 & 0 & 0\\
+\bottomrule\end{tabular}
+\end{table}
+\begin{table}[t]
+\caption{Measured costs. Pilot model latency and tokens are historical; the v2 pilot is an offline replay. Harness time also includes symbolic-only queries.}
+\label{tab:costs}
+\centering\small
+\begin{tabular}{lrr}\toprule
+Measure & Pilot & Juliet\\\midrule
+New model calls & 0 & 24\\
+Saved model input tokens & 404,081 & 425,535\\
+Saved model output tokens & 2,730 & 4,648\\
+Saved model total tokens & 406,811 & 430,183\\
+Request-time sum (s) & 266.750 & 236.214\\
+Request median (s) & 10.168 & 9.790\\
+Request IQR (s) & 3.321 & 3.237\\
+CSA wall time (s) & 0.475 & 0.477\\
+v2 harness wall time (s) & 6.004 & 241.062\\
+\bottomrule\end{tabular}
+\end{table}

@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "analyzer": "symdiv-source-grounded-v2",
+  "provider": "codex_exec",
+  "model": "gpt-5.6-sol",
+  "prompt": "prompts/path_analysis.md",
+  "prompt_sha256": "9b892afca1f5cfdb687398b9d2b6f13fc3953b8c790a2adf6bb743b58e1ad05d",
+  "manifest_sha256": "e514c4b698e3191139151a757439ab8f6853f92c5b43b7e97b4928765d595fac",
+  "code_sha256": "a2a0850a10a0c95818982a4a26f8ef129fe25030a2ebfe7fe58266de214caa96",
+  "configuration": {
+    "provider": "codex_exec",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "codex_command": "codex",
+    "output_schema": "schemas/symdiv-response.schema.json",
+    "prompt": "prompts/path_analysis.md",
+    "timeout_seconds": 300,
+    "max_calls": 1,
+    "max_total_tokens": 50000,
+    "max_retries": 0,
+    "loop_bound": 8,
+    "state_limit": 4096,
+    "z3_timeout_ms": 5000
+  },
+  "recorded_at_utc": "2026-09-29T15:48:20.014449+00:00",
+  "environment": {
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "z3": "4.13.3",
+    "clang": "Apple clang version 17.0.0 (clang-1700.4.4.1)"
+  },
+  "cases": [
+    {
+      "id": "j001",
+      "file": "sources/j001.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-94b2ea568ed6",
+            "file": "sources/j001.c",
+            "function": "fn_003",
+            "line": 12,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    data = 7;\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-94b2ea568ed6",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The denominator is copied from the outer data after it is assigned 7, so it is nonzero at this site.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-e9f5c8f7634c",
+            "file": "sources/j001.c",
+            "function": "fn_002",
+            "line": 25,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e9f5c8f7634c",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder executes only inside the branch guarded by data != 0, with no intervening assignment to data.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "inconclusive",
+            "accepted": false,
+            "reason": "path feasibility solver returned unknown",
+            "model": {}
+          },
+          "exploration_incomplete": [
+            "path feasibility solver returned unknown"
+          ]
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "f40e20e6ad2d371d6a7c2cf78ee32c3141dec1afdaf040f34e309515cd40cdc5",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-94b2ea568ed6",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The denominator is copied from the outer data after it is assigned 7, so it is nonzero at this site.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-e9f5c8f7634c",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder executes only inside the branch guarded by data != 0, with no intervening assignment to data.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edda-4623-74b0-8970-4b92cfe38e05"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-94b2ea568ed6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The denominator is copied from the outer data after it is assigned 7, so it is nonzero at this site.\",\"confidence\":1.0},{\"site_id\":\"div-e9f5c8f7634c\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder executes only inside the branch guarded by data != 0, with no intervening assignment to data.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17772,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 141,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:48:20.148975Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:48:20.150527Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17772,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 141,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.896370125
+      },
+      "input_tokens": 17772,
+      "output_tokens": 141,
+      "client_elapsed_seconds": 9.896370125,
+      "symbolic_seconds": 40.12886525,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 50.059560041
+    }
+  ],
+  "total_tokens": 17913,
+  "model_calls": 1,
+  "stop_reason": null,
+  "schema_sha256": "c336ebfdf94756aea98c0a10d382637701c14dd398ef2b960ea5faa4fd0888f8",
+  "elapsed_seconds": 50.060149834,
+  "failed_cases": []
+}

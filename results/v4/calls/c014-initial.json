@@ -1,0 +1,69 @@
+{
+  "key": "c014-initial",
+  "source_sha256": "d69d8f016edc0e9aaebaff6f2f1b51d8bd80bed65d9b9739124d49bfb6ee6efe",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-e10418570c50",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "((1 / n) - 1)",
+          "rationale": "With n = 1, the inner division evaluates to 1, making the outer denominator zero without earlier undefined behavior.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-4b21e1ae211c",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "n",
+          "rationale": "With n = 0, the inner division has a zero denominator and is the first undefined operation reached.",
+          "confidence": 1
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6e0-640b-7f71-a284-07f57c2f95bc"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-e10418570c50\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"((1 / n) - 1)\",\"rationale\":\"With n = 1, the inner division evaluates to 1, making the outer denominator zero without earlier undefined behavior.\",\"confidence\":1},{\"site_id\":\"div-4b21e1ae211c\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"n\",\"rationale\":\"With n = 0, the inner division has a zero denominator and is the first undefined operation reached.\",\"confidence\":1}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17666,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 252,
+          "reasoning_output_tokens": 111
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:51:35.953505Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:51:35.956198Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:51:35.957980Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:51:35.959039Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:51:35.959945Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:51:35.961009Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17666,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 252,
+      "reasoning_output_tokens": 111
+    },
+    "_client_elapsed_seconds": 9.685422124999945
+  },
+  "elapsed_seconds": 9.71083416700003
+}

@@ -1,0 +1,179 @@
+{
+  "suite_url": "https://samate.nist.gov/SARD/test-suites/112",
+  "archive_url": "https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-c-cplusplus-v1-3.zip",
+  "archive_sha256": "ada9d7e1c323d283446df3f55bdee0d00bda1fed786785fe98764d58688f38eb",
+  "source": "verified official NIST archive",
+  "license": "CC0-1.0 / public domain; see NOTICE.md",
+  "shuffle_seed": 6215,
+  "header_sha256": "8e3d40576e87c0a07ffb3278d09c25cb8eb4f95b1fa5829ec2ff758dbb5636f0",
+  "cases": [
+    {
+      "id": "j001",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_04.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_04.c",
+      "upstream_sha256": "a9a1ef5b8a111062b20b9c159bfad00b686ccde903c39d2e2d67b34dab1b41a6",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "04",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_04_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j002",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_02.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_02.c",
+      "upstream_sha256": "83baa1a7e7c684c3ec2179cf2dd251303203bb3e822664b64ddd0ce4b001e63b",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "02",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_02_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j003",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_02.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_02.c",
+      "upstream_sha256": "1773afed94b4b3088109edd8ce398c6aa6de33e54b74845e6a35e764917f26b9",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "02",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_02_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j004",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_04.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_04.c",
+      "upstream_sha256": "a9a1ef5b8a111062b20b9c159bfad00b686ccde903c39d2e2d67b34dab1b41a6",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "04",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_04_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j005",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_04.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_04.c",
+      "upstream_sha256": "30e73187bb6ca0fbb1f96d57493bba8f17eeb48e0106af79a04d93305918e0d6",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "04",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_04_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j006",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_02.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_02.c",
+      "upstream_sha256": "1773afed94b4b3088109edd8ce398c6aa6de33e54b74845e6a35e764917f26b9",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "02",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_02_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j007",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_04.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_04.c",
+      "upstream_sha256": "30e73187bb6ca0fbb1f96d57493bba8f17eeb48e0106af79a04d93305918e0d6",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "04",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_04_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j008",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_02.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_02.c",
+      "upstream_sha256": "83baa1a7e7c684c3ec2179cf2dd251303203bb3e822664b64ddd0ce4b001e63b",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "02",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_02_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "name": "v3-juliet-new-flows-8",
+  "language": "C11",
+  "task": "integer division or remainder by zero",
+  "root": ".",
+  "label_policy": "Upstream bad branch is positive; entire good branch (all helpers) is negative. File-level any-site warning. rand() results are independent integers in [0,2147483647]; 32-bit int and unsigned int.",
+  "cases": [
+    {
+      "id": "j001",
+      "file": "sources/j001.c",
+      "expected_bug": true,
+      "category": "zero-04",
+      "site_count": 1,
+      "sha256": "63c3fb8a9cd8c776a2a4195cf94eb61ea98aa58cd2a8ded8313d15e6dc12ad93"
+    },
+    {
+      "id": "j002",
+      "file": "sources/j002.c",
+      "expected_bug": false,
+      "category": "rand-02",
+      "site_count": 4,
+      "sha256": "e0dac698c70556feb5fd192f247c6e269ebb6ba336caefc115584e1d86eb6d85"
+    },
+    {
+      "id": "j003",
+      "file": "sources/j003.c",
+      "expected_bug": false,
+      "category": "zero-02",
+      "site_count": 4,
+      "sha256": "54b6b000341f28c7fe1e741e1bba34e58af34857cadd8d81e7d4a6434e4fedad"
+    },
+    {
+      "id": "j004",
+      "file": "sources/j004.c",
+      "expected_bug": false,
+      "category": "zero-04",
+      "site_count": 4,
+      "sha256": "1cddfdcf1c12695e586c43733ac5de94e3078ba6065eaebb49eded6731ff20a5"
+    },
+    {
+      "id": "j005",
+      "file": "sources/j005.c",
+      "expected_bug": true,
+      "category": "rand-04",
+      "site_count": 1,
+      "sha256": "8a79fb4476e5294315abb0ecbdcdca33ee28744dbe4d708780f98d0eb7b63284"
+    },
+    {
+      "id": "j006",
+      "file": "sources/j006.c",
+      "expected_bug": true,
+      "category": "zero-02",
+      "site_count": 1,
+      "sha256": "6beeeeceed089f85e95cec03a0e1c8d73c15d4a9207a522f23e11b14febcb440"
+    },
+    {
+      "id": "j007",
+      "file": "sources/j007.c",
+      "expected_bug": false,
+      "category": "rand-04",
+      "site_count": 4,
+      "sha256": "ac6fc694bfcf4bec1ce1b987554b3666dd5eb2a71c420c190ff7d299bbf10d93"
+    },
+    {
+      "id": "j008",
+      "file": "sources/j008.c",
+      "expected_bug": true,
+      "category": "rand-02",
+      "site_count": 1,
+      "sha256": "47fb0980ad5b11ac97978f74809eea2a604c8fc476533ec31efdbd8bb14b5a4a"
+    }
+  ]
+}

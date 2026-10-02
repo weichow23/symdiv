@@ -1,0 +1,2773 @@
+{
+  "schema_version": 2,
+  "analyzer": "symdiv-source-grounded-v2",
+  "provider": "replay",
+  "model": "gpt-5.6-sol",
+  "prompt": "prompts/path_analysis.md",
+  "prompt_sha256": "9b892afca1f5cfdb687398b9d2b6f13fc3953b8c790a2adf6bb743b58e1ad05d",
+  "manifest_sha256": "c5fb0f55e2f64d5688484f4a35bdfe70883ea9cb6d12a5029e40469fa571b674",
+  "code_sha256": "22d93771c6631e0d5e25f2ec55ce2b389e8391365d13e3eb1f1139a923f108a2",
+  "configuration": {
+    "provider": "replay",
+    "model": "gpt-5.6-sol",
+    "prompt": "prompts/path_analysis.md",
+    "replay_run": "results/v2/pilot/recordings.json",
+    "loop_bound": 8,
+    "state_limit": 4096,
+    "z3_timeout_ms": 5000
+  },
+  "recorded_at_utc": "2026-09-29T16:06:18.704445+00:00",
+  "environment": {
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "z3": "4.13.3",
+    "clang": "Apple clang version 17.0.0 (clang-1700.4.4.1)"
+  },
+  "cases": [
+    {
+      "id": "c01-constant-zero",
+      "file": "sources/c01_constant_zero.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-0a5bcc9efca2",
+            "file": "sources/c01_constant_zero.c",
+            "function": "case01",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case01(void) {\n    int denominator = 0;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-0a5bcc9efca2",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "denominator",
+            "rationale": "The local variable denominator is assigned 0 immediately before the reachable division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:denominator": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:denominator": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "93db5e36d2eaeaf6496ff1e58a78061dd3bdf3f0de87933967a5c041fcb4b9e8",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-67cada239c85",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "denominator",
+              "rationale": "The local variable denominator is assigned 0 immediately before the reachable division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf13-75a5-7661-a051-b1a47e857545"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-67cada239c85\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"denominator\",\"rationale\":\"The local variable denominator is assigned 0 immediately before the reachable division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16825,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 65,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:48:38.698899Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:38.700795Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:38.702203Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16825,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 65,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.039542041,
+        "_replay_site_id_map": {
+          "div-67cada239c85": "div-0a5bcc9efca2"
+        }
+      },
+      "input_tokens": 16825,
+      "output_tokens": 65,
+      "client_elapsed_seconds": 9.039542041,
+      "symbolic_seconds": 0.016300999999999996,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.029223582999999997
+    },
+    {
+      "id": "c02-constant-nonzero",
+      "file": "sources/c02_constant_nonzero.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e5b0d0c5a957",
+            "file": "sources/c02_constant_nonzero.c",
+            "function": "case02",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case02(void) {\n    int denominator = 7;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e5b0d0c5a957",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "denominator",
+            "rationale": "The denominator is initialized to 7 and is not modified before the division, so it is nonzero on every path reaching the site.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0a8616f9891c2d2dc30370982db1f41f3d222ebc0fbc118cce22d3a857067ef9",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-7466d15f76bd",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "denominator",
+              "rationale": "The denominator is initialized to 7 and is not modified before the division, so it is nonzero on every path reaching the site.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf13-9923-7013-9d91-3cfc535d13e8"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-7466d15f76bd\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"denominator\",\"rationale\":\"The denominator is initialized to 7 and is not modified before the division, so it is nonzero on every path reaching the site.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16827,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 80,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:48:47.784911Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:47.786461Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:47.787337Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16827,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.473704666,
+        "_replay_site_id_map": {
+          "div-7466d15f76bd": "div-e5b0d0c5a957"
+        }
+      },
+      "input_tokens": 16827,
+      "output_tokens": 80,
+      "client_elapsed_seconds": 8.473704666,
+      "symbolic_seconds": 0.014840167000000001,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.028584250000000005
+    },
+    {
+      "id": "c03-guarded-equal",
+      "file": "sources/c03_guarded_equal.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-14dad3e89de6",
+            "file": "sources/c03_guarded_equal.c",
+            "function": "case03",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case03(int x) {\n    if (x == 0)\n        return 42 / x;\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-14dad3e89de6",
+            "verdict": "bug",
+            "path_conditions": [
+              "x == 0"
+            ],
+            "denominator": "x",
+            "rationale": "The division is reached when the branch condition x == 0 holds, so its denominator is zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case03:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case03:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "f96e75955bcc566d7584b009ce950153fa6945902099394fecc4598f77a59f46",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-452246b4daf4",
+              "verdict": "bug",
+              "path_conditions": [
+                "x == 0"
+              ],
+              "denominator": "x",
+              "rationale": "The division is reached when the branch condition x == 0 holds, so its denominator is zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf13-ba69-7a70-b890-93bea983e2f8"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-452246b4daf4\",\"verdict\":\"bug\",\"path_conditions\":[\"x == 0\"],\"denominator\":\"x\",\"rationale\":\"The division is reached when the branch condition x == 0 holds, so its denominator is zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16832,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 76,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:48:56.303149Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:56.304686Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:56.305733Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16832,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 76,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.482416749999999,
+        "_replay_site_id_map": {
+          "div-452246b4daf4": "div-14dad3e89de6"
+        }
+      },
+      "input_tokens": 16832,
+      "output_tokens": 76,
+      "client_elapsed_seconds": 9.482416749999999,
+      "symbolic_seconds": 0.02539970900000002,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.039355792
+    },
+    {
+      "id": "c04-guarded-return",
+      "file": "sources/c04_guarded_return.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b762b599b4ce",
+            "file": "sources/c04_guarded_return.c",
+            "function": "case04",
+            "line": 4,
+            "column": 12,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case04(int x) {\n    if (x == 0)\n        return 0;\n    return 42 / x;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b762b599b4ce",
+            "verdict": "safe",
+            "path_conditions": [
+              "x != 0"
+            ],
+            "denominator": "x",
+            "rationale": "The x == 0 branch returns before the division, so every execution reaching the site has x != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "c57290d3da8b5d2b3c8a075126b6e75f75fc3092c29674334f0ffeff9d55110b",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-2a22bccdbf89",
+              "verdict": "safe",
+              "path_conditions": [
+                "x != 0"
+              ],
+              "denominator": "x",
+              "rationale": "The x == 0 branch returns before the division, so every execution reaching the site has x != 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf13-dfa3-7b73-945d-df8c78364866"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-2a22bccdbf89\",\"verdict\":\"safe\",\"path_conditions\":[\"x != 0\"],\"denominator\":\"x\",\"rationale\":\"The x == 0 branch returns before the division, so every execution reaching the site has x != 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16833,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 80,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:05.832508Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:05.833992Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:05.834825Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16833,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.526980041999998,
+        "_replay_site_id_map": {
+          "div-2a22bccdbf89": "div-b762b599b4ce"
+        }
+      },
+      "input_tokens": 16833,
+      "output_tokens": 80,
+      "client_elapsed_seconds": 8.526980041999998,
+      "symbolic_seconds": 0.024396208000000003,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.03846137500000002
+    },
+    {
+      "id": "c05-opposing-bounds",
+      "file": "sources/c05_opposing_bounds.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b72a047bd18c",
+            "file": "sources/c05_opposing_bounds.c",
+            "function": "case05",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case05(int x) {\n    if (x <= 0 && x >= 0)\n        return 42 / x;\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b72a047bd18c",
+            "verdict": "bug",
+            "path_conditions": [
+              "x <= 0",
+              "x >= 0"
+            ],
+            "denominator": "x",
+            "rationale": "The return expression is reached when x is both <= 0 and >= 0, which forces x == 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case05:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case05:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0f80a499d3b7611376d1b374ead2b5eb15c2382c82ea1779cebda9224a9c33e6",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4fb5cf72bf18",
+              "verdict": "bug",
+              "path_conditions": [
+                "x <= 0",
+                "x >= 0"
+              ],
+              "denominator": "x",
+              "rationale": "The return expression is reached when x is both <= 0 and >= 0, which forces x == 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-011e-77d2-a4ce-39f013a2a296"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4fb5cf72bf18\",\"verdict\":\"bug\",\"path_conditions\":[\"x <= 0\",\"x >= 0\"],\"denominator\":\"x\",\"rationale\":\"The return expression is reached when x is both <= 0 and >= 0, which forces x == 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16838,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 86,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:14.403817Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:14.405318Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:14.406563Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16838,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 86,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.312391625000004,
+        "_replay_site_id_map": {
+          "div-4fb5cf72bf18": "div-b72a047bd18c"
+        }
+      },
+      "input_tokens": 16838,
+      "output_tokens": 86,
+      "client_elapsed_seconds": 10.312391625000004,
+      "symbolic_seconds": 0.024909292,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.038752166000000005
+    },
+    {
+      "id": "c06-impossible-bounds",
+      "file": "sources/c06_impossible_bounds.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4525442e813b",
+            "file": "sources/c06_impossible_bounds.c",
+            "function": "case06",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case06(int x) {\n    if (x < 0 && x > 0)\n        return 42 / x;\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4525442e813b",
+            "verdict": "safe",
+            "path_conditions": [
+              "x < 0",
+              "x > 0"
+            ],
+            "denominator": "x",
+            "rationale": "The site is unreachable because x cannot be both less than and greater than zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "9218b836764173ecae1f88c3218e9cd185cc53cacb1f12e89dc79483f334a239",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-b4212c77784f",
+              "verdict": "safe",
+              "path_conditions": [
+                "x < 0",
+                "x > 0"
+              ],
+              "denominator": "x",
+              "rationale": "The site is unreachable because x cannot be both less than and greater than zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-2997-7701-81d7-ce3476c8cb26"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-b4212c77784f\",\"verdict\":\"safe\",\"path_conditions\":[\"x < 0\",\"x > 0\"],\"denominator\":\"x\",\"rationale\":\"The site is unreachable because x cannot be both less than and greater than zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16837,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 157,
+              "reasoning_output_tokens": 78
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:24.764611Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:24.766294Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:24.767663Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16837,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 157,
+          "reasoning_output_tokens": 78
+        },
+        "_client_elapsed_seconds": 11.008982250000003,
+        "_replay_site_id_map": {
+          "div-b4212c77784f": "div-4525442e813b"
+        }
+      },
+      "input_tokens": 16837,
+      "output_tokens": 157,
+      "client_elapsed_seconds": 11.008982250000003,
+      "symbolic_seconds": 0.02356766699999996,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.03764804200000002
+    },
+    {
+      "id": "c07-difference-equal",
+      "file": "sources/c07_difference_equal.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-71cbd726a5ea",
+            "file": "sources/c07_difference_equal.c",
+            "function": "case07",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - y)",
+            "function_source": "int case07(int x, int y) {\n    if (x == y)\n        return 42 / (x - y);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-71cbd726a5ea",
+            "verdict": "bug",
+            "path_conditions": [
+              "x == y"
+            ],
+            "denominator": "(x - y)",
+            "rationale": "The division is reached when x == y, which makes x - y equal to zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case07:x:1": "0",
+              "case07:y:2": "0",
+              "at_site:x": "0",
+              "at_site:y": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case07:x:1": "0",
+              "case07:y:2": "0",
+              "at_site:x": "0",
+              "at_site:y": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "e7f46b31ff0be9569b6f51b476486269f756b390a8142492b4f015ba431132af",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-aee8dc7d93f4",
+              "verdict": "bug",
+              "path_conditions": [
+                "x == y"
+              ],
+              "denominator": "(x - y)",
+              "rationale": "The division is reached when x == y, which makes x - y equal to zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-54c2-7033-8e15-901d40c93a0b"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-aee8dc7d93f4\",\"verdict\":\"bug\",\"path_conditions\":[\"x == y\"],\"denominator\":\"(x - y)\",\"rationale\":\"The division is reached when x == y, which makes x - y equal to zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16841,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 79,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:35.815125Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:35.816874Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:35.818117Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16841,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 79,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.838568291999998,
+        "_replay_site_id_map": {
+          "div-aee8dc7d93f4": "div-71cbd726a5ea"
+        }
+      },
+      "input_tokens": 16841,
+      "output_tokens": 79,
+      "client_elapsed_seconds": 8.838568291999998,
+      "symbolic_seconds": 0.018542499999999962,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.032645959
+    },
+    {
+      "id": "c08-difference-unequal",
+      "file": "sources/c08_difference_unequal.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-dc4d31581844",
+            "file": "sources/c08_difference_unequal.c",
+            "function": "case08",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - y)",
+            "function_source": "int case08(int x, int y) {\n    if (x != y)\n        return 42 / (x - y);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-dc4d31581844",
+            "verdict": "safe",
+            "path_conditions": [
+              "x != y"
+            ],
+            "denominator": "(x - y)",
+            "rationale": "The division is reached only when x != y, which forces x - y to be nonzero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0bd998b63886a82fe061a3bca39461186ea6353434c5e0a7ac0f2c27d94974a6",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-dd1416ec8ea9",
+              "verdict": "safe",
+              "path_conditions": [
+                "x != y"
+              ],
+              "denominator": "(x - y)",
+              "rationale": "The division is reached only when x != y, which forces x - y to be nonzero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-7776-7913-bc69-8bed2ec5f637"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-dd1416ec8ea9\",\"verdict\":\"safe\",\"path_conditions\":[\"x != y\"],\"denominator\":\"(x - y)\",\"rationale\":\"The division is reached only when x != y, which forces x - y to be nonzero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16839,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 79,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:44.699227Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:44.700993Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:44.702416Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16839,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 79,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.976039291000006,
+        "_replay_site_id_map": {
+          "div-dd1416ec8ea9": "div-dc4d31581844"
+        }
+      },
+      "input_tokens": 16839,
+      "output_tokens": 79,
+      "client_elapsed_seconds": 8.976039291000006,
+      "symbolic_seconds": 0.01845945900000001,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.03238491700000001
+    },
+    {
+      "id": "c09-affine-boundary",
+      "file": "sources/c09_affine_boundary.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4b59cbdd040d",
+            "file": "sources/c09_affine_boundary.c",
+            "function": "case09",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - 3)",
+            "function_source": "int case09(int x) {\n    if (x >= 3)\n        return 42 / (x - 3);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4b59cbdd040d",
+            "verdict": "bug",
+            "path_conditions": [
+              "x >= 3"
+            ],
+            "denominator": "(x - 3)",
+            "rationale": "The branch reaches the division when x >= 3; choosing x == 3 makes the denominator zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source path and hypothesis reach a zero denominator",
+            "model": {
+              "case09:x:1": "3",
+              "at_site:x": "3"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source path and hypothesis reach a zero denominator",
+            "model": {
+              "case09:x:1": "3",
+              "at_site:x": "3"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "4db0169ddd91f1d01ed7479f3da39849526ba1e272c6bb614d08ef3570921eda",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-f2f522ce9ae1",
+              "verdict": "bug",
+              "path_conditions": [
+                "x >= 3"
+              ],
+              "denominator": "(x - 3)",
+              "rationale": "The branch reaches the division when x >= 3; choosing x == 3 makes the denominator zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-9ab5-79f0-8089-18a9dec043ba"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-f2f522ce9ae1\",\"verdict\":\"bug\",\"path_conditions\":[\"x >= 3\"],\"denominator\":\"(x - 3)\",\"rationale\":\"The branch reaches the division when x >= 3; choosing x == 3 makes the denominator zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16840,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 83,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:49:53.723145Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:53.724967Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:49:53.725731Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16840,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 83,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.563878500000001,
+        "_replay_site_id_map": {
+          "div-f2f522ce9ae1": "div-4b59cbdd040d"
+        }
+      },
+      "input_tokens": 16840,
+      "output_tokens": 83,
+      "client_elapsed_seconds": 8.563878500000001,
+      "symbolic_seconds": 0.022258500000000014,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.03641108300000001
+    },
+    {
+      "id": "c10-affine-strict",
+      "file": "sources/c10_affine_strict.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-c8fefca3b57e",
+            "file": "sources/c10_affine_strict.c",
+            "function": "case10",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - 3)",
+            "function_source": "int case10(int x) {\n    if (x > 3)\n        return 42 / (x - 3);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-c8fefca3b57e",
+            "verdict": "safe",
+            "path_conditions": [
+              "x > 3"
+            ],
+            "denominator": "(x - 3)",
+            "rationale": "Reaching the division requires x > 3, which forces x - 3 to be nonzero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "a3b3649953438c073bd85696a30ca1987961f20607b5a4fb34e3f20baab27378",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-cf3b76764735",
+              "verdict": "safe",
+              "path_conditions": [
+                "x > 3"
+              ],
+              "denominator": "(x - 3)",
+              "rationale": "Reaching the division requires x > 3, which forces x - 3 to be nonzero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-bc52-7113-8cc4-ff2f6e6d3ce7"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-cf3b76764735\",\"verdict\":\"safe\",\"path_conditions\":[\"x > 3\"],\"denominator\":\"(x - 3)\",\"rationale\":\"Reaching the division requires x > 3, which forces x - 3 to be nonzero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16839,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 82,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:02.327979Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:02.329946Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:02.331349Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16839,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 82,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.789981249999997,
+        "_replay_site_id_map": {
+          "div-cf3b76764735": "div-c8fefca3b57e"
+        }
+      },
+      "input_tokens": 16839,
+      "output_tokens": 82,
+      "client_elapsed_seconds": 8.789981249999997,
+      "symbolic_seconds": 0.02163733299999998,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.035334332999999996
+    },
+    {
+      "id": "c11-nested-equalities",
+      "file": "sources/c11_nested_equalities.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-ace9bcf74b42",
+            "file": "sources/c11_nested_equalities.c",
+            "function": "case11",
+            "line": 4,
+            "column": 20,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case11(int x) {\n    if (x >= 0) {\n        if (x <= 0)\n            return 42 / x;\n    }\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-ace9bcf74b42",
+            "verdict": "bug",
+            "path_conditions": [
+              "x >= 0",
+              "x <= 0"
+            ],
+            "denominator": "x",
+            "rationale": "Both branch conditions hold when x == 0, reaching the division with a zero denominator.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case11:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case11:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "3cb33c8db87245504b8a438af21348e38d68973d469fc651d30029a944e2d610",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4ce5494adce0",
+              "verdict": "bug",
+              "path_conditions": [
+                "x >= 0",
+                "x <= 0"
+              ],
+              "denominator": "x",
+              "rationale": "Both branch conditions hold when x == 0, reaching the division with a zero denominator.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-ded6-7aa1-9d00-a3bf110041ae"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4ce5494adce0\",\"verdict\":\"bug\",\"path_conditions\":[\"x >= 0\",\"x <= 0\"],\"denominator\":\"x\",\"rationale\":\"Both branch conditions hold when x == 0, reaching the division with a zero denominator.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16844,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 80,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:11.163504Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:11.165215Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:11.166686Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16844,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.70469645899999,
+        "_replay_site_id_map": {
+          "div-4ce5494adce0": "div-ace9bcf74b42"
+        }
+      },
+      "input_tokens": 16844,
+      "output_tokens": 80,
+      "client_elapsed_seconds": 7.70469645899999,
+      "symbolic_seconds": 0.021262249999999983,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.03531924999999997
+    },
+    {
+      "id": "c12-nested-contradiction",
+      "file": "sources/c12_nested_contradiction.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-c0b108fcfc41",
+            "file": "sources/c12_nested_contradiction.c",
+            "function": "case12",
+            "line": 4,
+            "column": 20,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case12(int x) {\n    if (x > 0) {\n        if (x < 0)\n            return 42 / x;\n    }\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-c0b108fcfc41",
+            "verdict": "safe",
+            "path_conditions": [
+              "x > 0",
+              "x < 0"
+            ],
+            "denominator": "x",
+            "rationale": "The division is reachable only if x is simultaneously greater than and less than zero, which is infeasible.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "74f90b8b5e152b3865e37afb8ff732b5d056ab051aef73358a70b13e371c5400",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-383856802074",
+              "verdict": "safe",
+              "path_conditions": [
+                "x > 0",
+                "x < 0"
+              ],
+              "denominator": "x",
+              "rationale": "The division is reachable only if x is simultaneously greater than and less than zero, which is infeasible.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf14-fd1e-7200-9b9e-aa664657be24"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-383856802074\",\"verdict\":\"safe\",\"path_conditions\":[\"x > 0\",\"x < 0\"],\"denominator\":\"x\",\"rationale\":\"The division is reachable only if x is simultaneously greater than and less than zero, which is infeasible.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16841,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 80,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:18.915960Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:18.918711Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:18.920322Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16841,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 80,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.553005165999991,
+        "_replay_site_id_map": {
+          "div-383856802074": "div-c0b108fcfc41"
+        }
+      },
+      "input_tokens": 16841,
+      "output_tokens": 80,
+      "client_elapsed_seconds": 10.553005165999991,
+      "symbolic_seconds": 0.025813375000000027,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.039532917
+    },
+    {
+      "id": "c13-else-zero",
+      "file": "sources/c13_else_zero.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-5823ca77551c",
+            "file": "sources/c13_else_zero.c",
+            "function": "case13",
+            "line": 4,
+            "column": 12,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case13(int x) {\n    if (x != 0)\n        return 0;\n    return 42 / x;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-5823ca77551c",
+            "verdict": "bug",
+            "path_conditions": [
+              "x == 0"
+            ],
+            "denominator": "x",
+            "rationale": "The division is reached only when the early-return condition x != 0 is false, so x is zero at the site.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case13:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case13:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "4e5345407e52ad1d6b22ff3ed4e78296d55280d837ce06dcd43e2a7df1e4322f",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-403ac2450df2",
+              "verdict": "bug",
+              "path_conditions": [
+                "x == 0"
+              ],
+              "denominator": "x",
+              "rationale": "The division is reached only when the early-return condition x != 0 is false, so x is zero at the site.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf15-2684-7183-98d5-ba2b9588b51a"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-403ac2450df2\",\"verdict\":\"bug\",\"path_conditions\":[\"x == 0\"],\"denominator\":\"x\",\"rationale\":\"The division is reached only when the early-return condition x != 0 is false, so x is zero at the site.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16832,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 81,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:29.513321Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:29.515021Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:29.516236Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16832,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 81,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 12.565883041999996,
+        "_replay_site_id_map": {
+          "div-403ac2450df2": "div-5823ca77551c"
+        }
+      },
+      "input_tokens": 16832,
+      "output_tokens": 81,
+      "client_elapsed_seconds": 12.565883041999996,
+      "symbolic_seconds": 0.025037625000000063,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.03945549999999998
+    },
+    {
+      "id": "c14-else-nonzero",
+      "file": "sources/c14_else_nonzero.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-64de732ea619",
+            "file": "sources/c14_else_nonzero.c",
+            "function": "case14",
+            "line": 4,
+            "column": 12,
+            "operator": "/",
+            "denominator": "x",
+            "function_source": "int case14(int x) {\n    if (x == 0)\n        return 0;\n    return 42 / x;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-64de732ea619",
+            "verdict": "safe",
+            "path_conditions": [
+              "x != 0"
+            ],
+            "denominator": "x",
+            "rationale": "The x == 0 branch returns before the division, so every execution reaching the site has x != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0df6c0d803799e0c5f005a5081f2da7133c00d11ecc952ca91314d9cd3589bb1",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-fd1ef2e7804a",
+              "verdict": "safe",
+              "path_conditions": [
+                "x != 0"
+              ],
+              "denominator": "x",
+              "rationale": "The x == 0 branch returns before the division, so every execution reaching the site has x != 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf15-57c6-7580-a859-87341255dd36"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-fd1ef2e7804a\",\"verdict\":\"safe\",\"path_conditions\":[\"x != 0\"],\"denominator\":\"x\",\"rationale\":\"The x == 0 branch returns before the division, so every execution reaching the site has x != 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16834,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 81,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:42.124043Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:42.125647Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:42.127079Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16834,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 81,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 17.789176417000007,
+        "_replay_site_id_map": {
+          "div-fd1ef2e7804a": "div-64de732ea619"
+        }
+      },
+      "input_tokens": 16834,
+      "output_tokens": 81,
+      "client_elapsed_seconds": 17.789176417000007,
+      "symbolic_seconds": 0.03132679199999999,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.04559991699999999
+    },
+    {
+      "id": "c15-modulo-zero",
+      "file": "sources/c15_modulo_zero.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e6efb3db538d",
+            "file": "sources/c15_modulo_zero.c",
+            "function": "case15",
+            "line": 3,
+            "column": 16,
+            "operator": "%",
+            "denominator": "x",
+            "function_source": "int case15(int x) {\n    if (x == 0)\n        return 42 % x;\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e6efb3db538d",
+            "verdict": "bug",
+            "path_conditions": [
+              "x == 0"
+            ],
+            "denominator": "x",
+            "rationale": "The remainder expression is reached when x == 0, so its denominator is zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case15:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case15:x:1": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "5eaf22792ef088b31b6bf4f2a59c2550438bbc64cbbfd0f08191c1ac2aafd42d",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-d0cf44c5a7c1",
+              "verdict": "bug",
+              "path_conditions": [
+                "x == 0"
+              ],
+              "denominator": "x",
+              "rationale": "The remainder expression is reached when x == 0, so its denominator is zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf15-9d71-7880-a64a-7065e6284a7e"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-d0cf44c5a7c1\",\"verdict\":\"bug\",\"path_conditions\":[\"x == 0\"],\"denominator\":\"x\",\"rationale\":\"The remainder expression is reached when x == 0, so its denominator is zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16834,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 76,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:50:59.958740Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:59.960588Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:50:59.962088Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16834,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 76,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.261350875000005,
+        "_replay_site_id_map": {
+          "div-d0cf44c5a7c1": "div-e6efb3db538d"
+        }
+      },
+      "input_tokens": 16834,
+      "output_tokens": 76,
+      "client_elapsed_seconds": 8.261350875000005,
+      "symbolic_seconds": 0.026280458999999978,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.04132058300000008
+    },
+    {
+      "id": "c16-modulo-guarded",
+      "file": "sources/c16_modulo_guarded.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b6014e1bd6e3",
+            "file": "sources/c16_modulo_guarded.c",
+            "function": "case16",
+            "line": 4,
+            "column": 12,
+            "operator": "%",
+            "denominator": "x",
+            "function_source": "int case16(int x) {\n    if (x == 0)\n        return 0;\n    return 42 % x;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b6014e1bd6e3",
+            "verdict": "safe",
+            "path_conditions": [
+              "x != 0"
+            ],
+            "denominator": "x",
+            "rationale": "The site is reached only after the x == 0 branch returns, so x is nonzero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "2a191bc8261e3fdafd434e6765859118f2829d292c937086f75780853570348b",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-dcd165809e38",
+              "verdict": "safe",
+              "path_conditions": [
+                "x != 0"
+              ],
+              "denominator": "x",
+              "rationale": "The site is reached only after the x == 0 branch returns, so x is nonzero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf15-bde2-7cc1-89d3-3d51f88f575a"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-dcd165809e38\",\"verdict\":\"safe\",\"path_conditions\":[\"x != 0\"],\"denominator\":\"x\",\"rationale\":\"The site is reached only after the x == 0 branch returns, so x is nonzero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16830,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 75,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:51:08.263872Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:08.265507Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:08.266808Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16830,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 75,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.578444958999995,
+        "_replay_site_id_map": {
+          "div-dcd165809e38": "div-b6014e1bd6e3"
+        }
+      },
+      "input_tokens": 16830,
+      "output_tokens": 75,
+      "client_elapsed_seconds": 10.578444958999995,
+      "symbolic_seconds": 0.02676845800000005,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.041120292
+    },
+    {
+      "id": "c17-assignment-zero",
+      "file": "sources/c17_assignment_zero.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-483bd53f35fe",
+            "file": "sources/c17_assignment_zero.c",
+            "function": "case17",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case17(int x) {\n    int denominator = x - x;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-483bd53f35fe",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "denominator",
+            "rationale": "For every integer x, the assignment sets denominator to x - x, which equals zero, and execution then reaches the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case17:x:1": "0",
+              "at_site:denominator": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case17:x:1": "0",
+              "at_site:denominator": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "d0ad944476e43e16edd9d701a2475b3cf52bc2c4125591f6a96872b86479c4d8",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4339288e3ffb",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "denominator",
+              "rationale": "For every integer x, the assignment sets denominator to x - x, which equals zero, and execution then reaches the division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf15-e75e-70f1-80a5-13153d105fc3"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4339288e3ffb\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"denominator\",\"rationale\":\"For every integer x, the assignment sets denominator to x - x, which equals zero, and execution then reaches the division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16829,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 78,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:51:18.884285Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:18.886764Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:18.888436Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16829,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 78,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.137878916999995,
+        "_replay_site_id_map": {
+          "div-4339288e3ffb": "div-483bd53f35fe"
+        }
+      },
+      "input_tokens": 16829,
+      "output_tokens": 78,
+      "client_elapsed_seconds": 10.137878916999995,
+      "symbolic_seconds": 0.017145042,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.031270583999999935
+    },
+    {
+      "id": "c18-assignment-guarded",
+      "file": "sources/c18_assignment_guarded.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-9bfc04626bf5",
+            "file": "sources/c18_assignment_guarded.c",
+            "function": "case18",
+            "line": 5,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case18(int x) {\n    int denominator = x;\n    if (denominator == 0)\n        return 0;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-9bfc04626bf5",
+            "verdict": "safe",
+            "path_conditions": [
+              "denominator != 0"
+            ],
+            "denominator": "denominator",
+            "rationale": "The zero-denominator branch returns before the division, so every execution reaching the site has denominator != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "3129c956dfeb1e95967e57058984ac03c9aab5dc473bd52a9fa56ce705febbcc",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-ee0363cf2189",
+              "verdict": "safe",
+              "path_conditions": [
+                "denominator != 0"
+              ],
+              "denominator": "denominator",
+              "rationale": "The zero-denominator branch returns before the division, so every execution reaching the site has denominator != 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf16-0f26-7683-a331-1a55e8690f1a"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-ee0363cf2189\",\"verdict\":\"safe\",\"path_conditions\":[\"denominator != 0\"],\"denominator\":\"denominator\",\"rationale\":\"The zero-denominator branch returns before the division, so every execution reaching the site has denominator != 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16839,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 79,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:51:29.067701Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:29.069318Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:29.070495Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16839,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 79,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.059145166000008,
+        "_replay_site_id_map": {
+          "div-ee0363cf2189": "div-9bfc04626bf5"
+        }
+      },
+      "input_tokens": 16839,
+      "output_tokens": 79,
+      "client_elapsed_seconds": 9.059145166000008,
+      "symbolic_seconds": 0.025347958000000004,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.03921208399999998
+    },
+    {
+      "id": "c19-two-variable-equal",
+      "file": "sources/c19_two_variable_equal.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-f4a13a7e3515",
+            "file": "sources/c19_two_variable_equal.c",
+            "function": "case19",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - y + 2)",
+            "function_source": "int case19(int x, int y) {\n    if (x + 2 == y)\n        return 42 / (x - y + 2);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-f4a13a7e3515",
+            "verdict": "bug",
+            "path_conditions": [
+              "x + 2 == y"
+            ],
+            "denominator": "(x - y + 2)",
+            "rationale": "For example, x == 0 and y == 2 satisfy the branch condition and make the denominator zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source path and hypothesis reach a zero denominator",
+            "model": {
+              "case19:x:1": "-2147483648",
+              "case19:y:2": "-2147483646",
+              "at_site:x": "-2147483648",
+              "at_site:y": "-2147483646"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source path and hypothesis reach a zero denominator",
+            "model": {
+              "case19:x:1": "-2147483648",
+              "case19:y:2": "-2147483646",
+              "at_site:x": "-2147483648",
+              "at_site:y": "-2147483646"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "93f43d86aef63f1f95efb1b22f197dc6f274e15c57685aae3684dbee3de49a37",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-6c2e78a53fc8",
+              "verdict": "bug",
+              "path_conditions": [
+                "x + 2 == y"
+              ],
+              "denominator": "(x - y + 2)",
+              "rationale": "For example, x == 0 and y == 2 satisfy the branch condition and make the denominator zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf16-32b3-7212-823e-889ea98a42f6"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-6c2e78a53fc8\",\"verdict\":\"bug\",\"path_conditions\":[\"x + 2 == y\"],\"denominator\":\"(x - y + 2)\",\"rationale\":\"For example, x == 0 and y == 2 satisfy the branch condition and make the denominator zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16851,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 168,
+              "reasoning_output_tokens": 76
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:51:38.168428Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:38.171171Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:38.172682Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16851,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 168,
+          "reasoning_output_tokens": 76
+        },
+        "_client_elapsed_seconds": 16.21955870900001,
+        "_replay_site_id_map": {
+          "div-6c2e78a53fc8": "div-f4a13a7e3515"
+        }
+      },
+      "input_tokens": 16851,
+      "output_tokens": 168,
+      "client_elapsed_seconds": 16.21955870900001,
+      "symbolic_seconds": 0.02441800000000005,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.03841587499999999
+    },
+    {
+      "id": "c20-two-variable-unequal",
+      "file": "sources/c20_two_variable_unequal.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4f7aef3a43cb",
+            "file": "sources/c20_two_variable_unequal.c",
+            "function": "case20",
+            "line": 3,
+            "column": 16,
+            "operator": "/",
+            "denominator": "(x - y + 2)",
+            "function_source": "int case20(int x, int y) {\n    if (x + 2 != y)\n        return 42 / (x - y + 2);\n    return 0;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4f7aef3a43cb",
+            "verdict": "safe",
+            "path_conditions": [
+              "x + 2 != y"
+            ],
+            "denominator": "(x - y + 2)",
+            "rationale": "Reaching the division requires x + 2 != y, which forces x - y + 2 != 0.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "f5be4b384e1a95e0d8ada0674c3bb524a1c5f36397e6b7bf6a34608784aae98d",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-85790ab8a5cb",
+              "verdict": "safe",
+              "path_conditions": [
+                "x + 2 != y"
+              ],
+              "denominator": "(x - y + 2)",
+              "rationale": "Reaching the division requires x + 2 != y, which forces x - y + 2 != 0.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf16-723c-7d53-b8d0-1aa3684bb5bd"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-85790ab8a5cb\",\"verdict\":\"safe\",\"path_conditions\":[\"x + 2 != y\"],\"denominator\":\"(x - y + 2)\",\"rationale\":\"Reaching the division requires x + 2 != y, which forces x - y + 2 != 0.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16849,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 237,
+              "reasoning_output_tokens": 145
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:51:54.433134Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:54.434836Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:51:54.436061Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16849,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 237,
+          "reasoning_output_tokens": 145
+        },
+        "_client_elapsed_seconds": 12.869901166999995,
+        "_replay_site_id_map": {
+          "div-85790ab8a5cb": "div-4f7aef3a43cb"
+        }
+      },
+      "input_tokens": 16849,
+      "output_tokens": 237,
+      "client_elapsed_seconds": 12.869901166999995,
+      "symbolic_seconds": 0.02062645800000007,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.03472125000000004
+    },
+    {
+      "id": "c21-unconstrained",
+      "file": "sources/c21_unconstrained.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-9b664cd5aa8c",
+            "file": "sources/c21_unconstrained.c",
+            "function": "case21",
+            "line": 2,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case21(int denominator) {\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-9b664cd5aa8c",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "denominator",
+            "rationale": "The parameter is unconstrained, so execution can reach the division with denominator equal to zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case21:denominator:1": "0",
+              "at_site:denominator": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case21:denominator:1": "0",
+              "at_site:denominator": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "e9f0663a57399d5758bae256e11ff59d23bfcf53e3a4709c232a4208e6088cd2",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-673dde81a930",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "denominator",
+              "rationale": "The parameter is unconstrained, so execution can reach the division with denominator equal to zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf16-a4a9-7253-96cb-886d0ac864d6"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-673dde81a930\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"denominator\",\"rationale\":\"The parameter is unconstrained, so execution can reach the division with denominator equal to zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16819,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 69,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:52:07.342650Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:07.344372Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:07.345160Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16819,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 69,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.199052375000008,
+        "_replay_site_id_map": {
+          "div-673dde81a930": "div-9b664cd5aa8c"
+        }
+      },
+      "input_tokens": 16819,
+      "output_tokens": 69,
+      "client_elapsed_seconds": 10.199052375000008,
+      "symbolic_seconds": 0.016958750000000022,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.030939708999999982
+    },
+    {
+      "id": "c22-bitwise-nonzero",
+      "file": "sources/c22_bitwise_nonzero.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-883204237f65",
+            "file": "sources/c22_bitwise_nonzero.c",
+            "function": "case22",
+            "line": 2,
+            "column": 12,
+            "operator": "/",
+            "denominator": "(int)(x | 1u)",
+            "function_source": "int case22(unsigned int x) {\n    return 42 / (int)(x | 1u);\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-883204237f65",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "(int)(x | 1u)",
+            "rationale": "The bitwise OR forces the unsigned value's least significant bit to 1, so the cast denominator cannot be zero.",
+            "confidence": 0.98
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "inconclusive",
+            "accepted": false,
+            "reason": "solver_unknown: timeout",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "b2a32c957cec811a7c02d573c039893ee7b5c39343850575fee281351a260195",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-d676de59422c",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "(int)(x | 1u)",
+              "rationale": "The bitwise OR forces the unsigned value's least significant bit to 1, so the cast denominator cannot be zero.",
+              "confidence": 0.98
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf16-ccaf-7863-ad74-d6b758289da4"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-d676de59422c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"(int)(x | 1u)\",\"rationale\":\"The bitwise OR forces the unsigned value's least significant bit to 1, so the cast denominator cannot be zero.\",\"confidence\":0.98}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16832,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 420,
+              "reasoning_output_tokens": 336
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:52:17.588303Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:17.589840Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:17.591261Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:20.653950Z  WARN codex_analytics::client: failed to send events request: error sending request for url (https://chatgpt.com/backend-api/codex/analytics-events/events)\n",
+        "usage": {
+          "input_tokens": 16832,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 420,
+          "reasoning_output_tokens": 336
+        },
+        "_client_elapsed_seconds": 21.031347957999998,
+        "_replay_site_id_map": {
+          "div-d676de59422c": "div-883204237f65"
+        }
+      },
+      "input_tokens": 16832,
+      "output_tokens": 420,
+      "client_elapsed_seconds": 21.031347957999998,
+      "symbolic_seconds": 5.023731334000001,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 5.037959166
+    },
+    {
+      "id": "c23-loop-to-zero",
+      "file": "sources/c23_loop_to_zero.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-86c9e391db98",
+            "file": "sources/c23_loop_to_zero.c",
+            "function": "case23",
+            "line": 5,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case23(int x) {\n    int denominator = x;\n    while (denominator > 0)\n        denominator--;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-86c9e391db98",
+            "verdict": "bug",
+            "path_conditions": [
+              "x >= 0"
+            ],
+            "denominator": "denominator",
+            "rationale": "If x is nonnegative, the loop leaves denominator equal to zero before the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case23:x:1": "0",
+              "at_site:denominator": "0",
+              "at_site:x": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "case23:x:1": "0",
+              "at_site:denominator": "0",
+              "at_site:x": "0"
+            }
+          },
+          "exploration_incomplete": [
+            "loop bound reached (8)"
+          ]
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "8420326bb70d3805d0458f3a4f4e25b65fc070e3c609fb1591b11b99ee163988",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-3e8d6985b4f1",
+              "verdict": "bug",
+              "path_conditions": [
+                "x >= 0"
+              ],
+              "denominator": "denominator",
+              "rationale": "If x is nonnegative, the loop leaves denominator equal to zero before the division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf17-1f03-7113-b5ea-970bde789651"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-3e8d6985b4f1\",\"verdict\":\"bug\",\"path_conditions\":[\"x >= 0\"],\"denominator\":\"denominator\",\"rationale\":\"If x is nonnegative, the loop leaves denominator equal to zero before the division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16842,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 167,
+              "reasoning_output_tokens": 87
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:52:38.664811Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:38.666300Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:38.667213Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16842,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 167,
+          "reasoning_output_tokens": 87
+        },
+        "_client_elapsed_seconds": 12.00795904200001,
+        "_replay_site_id_map": {
+          "div-3e8d6985b4f1": "div-86c9e391db98"
+        }
+      },
+      "input_tokens": 16842,
+      "output_tokens": 167,
+      "client_elapsed_seconds": 12.00795904200001,
+      "symbolic_seconds": 0.06662999999999997,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 0.08216020900000043
+    },
+    {
+      "id": "c24-loop-guarded",
+      "file": "sources/c24_loop_guarded.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-eb7d7a341760",
+            "file": "sources/c24_loop_guarded.c",
+            "function": "case24",
+            "line": 7,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case24(int x) {\n    int denominator = x;\n    while (denominator > 0)\n        denominator--;\n    if (denominator == 0)\n        return 0;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-eb7d7a341760",
+            "verdict": "safe",
+            "path_conditions": [
+              "x < 0"
+            ],
+            "denominator": "denominator",
+            "rationale": "If x is nonnegative, denominator becomes or remains zero and the function returns early. The division is reached only when x < 0, so denominator is nonzero.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "inconclusive",
+            "accepted": false,
+            "reason": "loop bound reached (8)",
+            "model": {}
+          },
+          "exploration_incomplete": [
+            "loop bound reached (8)"
+          ]
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "4563fce4238aca8e2ca63b44dc3b8154faf25bb3887f90455bf8869146573df8",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4c9c1544243b",
+              "verdict": "safe",
+              "path_conditions": [
+                "x < 0"
+              ],
+              "denominator": "denominator",
+              "rationale": "If x is nonnegative, denominator becomes or remains zero and the function returns early. The division is reached only when x < 0, so denominator is nonzero.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf17-4e1b-7ad1-a5f4-4ee2c30933fc"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4c9c1544243b\",\"verdict\":\"safe\",\"path_conditions\":[\"x < 0\"],\"denominator\":\"denominator\",\"rationale\":\"If x is nonnegative, denominator becomes or remains zero and the function returns early. The division is reached only when x < 0, so denominator is nonzero.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16854,
+              "cached_input_tokens": 15360,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 172,
+              "reasoning_output_tokens": 77
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:52:50.720615Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:50.722616Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:50.724091Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:52:54.485972Z ERROR codex_api::endpoint::responses_websocket: failed to connect to websocket: IO error: tls handshake eof, url: wss://chatgpt.com/backend-api/codex/responses\n2026-09-20T13:52:54.486898Z  WARN codex_core::session_startup_prewarm: startup websocket prewarm setup failed: stream disconnected before completion: tls handshake eof\n",
+        "usage": {
+          "input_tokens": 16854,
+          "cached_input_tokens": 15360,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 172,
+          "reasoning_output_tokens": 77
+        },
+        "_client_elapsed_seconds": 15.760277333000005,
+        "_replay_site_id_map": {
+          "div-4c9c1544243b": "div-eb7d7a341760"
+        }
+      },
+      "input_tokens": 16854,
+      "output_tokens": 172,
+      "client_elapsed_seconds": 15.760277333000005,
+      "symbolic_seconds": 0.07490245899999959,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 0.08938854200000002
+    }
+  ],
+  "total_tokens": 0,
+  "model_calls": 0,
+  "stop_reason": null,
+  "replay_run_sha256": "1798bf4c5d2bb8d44056c1217efb93fc0745b404866ef5bf41fd348c0fd2ed61",
+  "replayed_model_tokens": 406811,
+  "elapsed_seconds": 6.003563708000001,
+  "failed_cases": []
+}

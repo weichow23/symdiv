@@ -1,0 +1,85 @@
+{
+  "key": "sitefix-c008-initial",
+  "source_sha256": "1972a5e37401330534dc46f0159ecf74f50b6566163fbaef7298b2d7a7d59578",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-840f0080b787",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2",
+          "rationale": "The constant denominator is nonzero, and this operation is reached before any earlier undefined behavior.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-cd339a5a7ce5",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "0",
+          "rationale": "For example, x = 0 avoids signed overflow in the preceding arithmetic and reaches division by the constant zero denominator.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-677e2e31c8b3",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "0",
+          "rationale": "This site is unreachable before undefined behavior because the preceding statement always encounters its division by zero or earlier signed overflow.",
+          "confidence": 0.99
+        },
+        {
+          "site_id": "div-ba73aad2a796",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2",
+          "rationale": "The denominator is the nonzero constant 2; moreover, the preceding statement prevents this operation from being reached before undefined behavior.",
+          "confidence": 1
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f714-65a2-72a3-a647-1fab5149aaa7"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-840f0080b787\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The constant denominator is nonzero, and this operation is reached before any earlier undefined behavior.\",\"confidence\":1},{\"site_id\":\"div-cd339a5a7ce5\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"For example, x = 0 avoids signed overflow in the preceding arithmetic and reaches division by the constant zero denominator.\",\"confidence\":1},{\"site_id\":\"div-677e2e31c8b3\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"This site is unreachable before undefined behavior because the preceding statement always encounters its division by zero or earlier signed overflow.\",\"confidence\":0.99},{\"site_id\":\"div-ba73aad2a796\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero constant 2; moreover, the preceding statement prevents this operation from being reached before undefined behavior.\",\"confidence\":1}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17920,
+          "cached_input_tokens": 16384,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 436,
+          "reasoning_output_tokens": 189
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:48:24.231700Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.233632Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.235213Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.237028Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.238660Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17920,
+      "cached_input_tokens": 16384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 436,
+      "reasoning_output_tokens": 189
+    },
+    "_client_elapsed_seconds": 14.873816208
+  },
+  "elapsed_seconds": 14.884765792000001
+}

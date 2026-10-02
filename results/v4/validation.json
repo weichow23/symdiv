@@ -1,0 +1,192 @@
+{
+  "recorded_at_utc": "2026-10-01T11:01:20.904483+00:00",
+  "tests_passed": 112,
+  "test_command": ".venv/bin/python -m pytest",
+  "test_output": "112 passed in 4.10s",
+  "primary_frozen_commit": "9028aaa",
+  "timing_clock_correction_commit": "d9e1ce0",
+  "smt_first_extension_freeze_commit": "02d1ea4",
+  "video_changes": "none; no video files targeted or staged",
+  "publication_status": "local artifact; public repository URL pending",
+  "original_v2_pdf_sha256": "7d6c6492c9a19defec47414789087419a042aad1d8f436d6f173cdcafd6e3e8a",
+  "original_v3_pdf_sha256": "01da4fbfd242dbb84075a760105fdafc1e10f4eef527e45b44d6c0f866b67982",
+  "primary_witnesses": {
+    "unique_witnesses": 101,
+    "confirmed": 101,
+    "occurrences": 809
+  },
+  "external_positive_labels_confirmed": 19,
+  "corrected_timing_trials": 75,
+  "smt_first_extension_trials": 15,
+  "new_model_calls": 74,
+  "known_tokens": 1368439,
+  "incomplete_usage_calls": 1,
+  "site_location_repair_commit": "bedf028",
+  "site_location_repair": {
+    "catalogs_checked": 55,
+    "affected_cases": [
+      "c008"
+    ],
+    "current_main_cap_checks": 110,
+    "warning_status_differences": 0,
+    "compiled_operator_column_confirmed": 16
+  },
+  "historical_catalogs_identical": 56,
+  "clean_clone": {
+    "full_resource_replay_commit": "3649ce2",
+    "fresh_environment": true,
+    "setup": "make setup",
+    "test_output_before_site_repair": "108 passed in 4.42s",
+    "reproduction": {
+      "regenerated_sources_identical": 37,
+      "resource_predictions_and_statuses_identical": true,
+      "differences": [],
+      "new_model_calls": 0,
+      "fresh_timing_replayed": false,
+      "confirmed_witnesses": 88,
+      "elapsed_seconds": 783.434738958
+    },
+    "scope": "Full original frozen study at its recorded implementation; current location repair is separately validated after updating this clean checkout.",
+    "current_code_commit": "0af74e2",
+    "current_test_output": "112 passed in 3.78s",
+    "current_tests_passed": 112,
+    "current_location_audit": {
+      "catalogs_checked": 55,
+      "affected_cases": [
+        "c008"
+      ],
+      "comparison_checks": 110,
+      "differences": [],
+      "operator_witness_confirmed": true,
+      "new_model_calls": 0,
+      "ledger_sha256_unchanged": true,
+      "extension_hash_check_passed": true
+    }
+  },
+  "report": {
+    "path": "output/pdf/symdiv-report-v4.pdf",
+    "compiled": true,
+    "body_pages": 8,
+    "reference_pages": 1,
+    "format": "ACM sigconf",
+    "sha256": "7dba88bfff72e36b93eb93aed8a5df3e76846c24336b63e680360846a93a27eb",
+    "layout_review": "All nine final rendered pages reviewed, including the GPT-Image teaser, native workflow, three Python data figures and both tables. No clipped or overlapping text, labels or graphics.",
+    "overfull_hboxes": 0,
+    "internal_bibliography_balance_warning_points": 1.54099,
+    "warning_review": "TeX reports a 1.54pt internal vertical box warning at the final bibliography output. The rendered reference page has ample space and no clipped content.",
+    "header_term": "SymDiv, Fall 2026, Singapore",
+    "header_term_occurrences": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "previous_text_heavy_pdf_sha256": "f16d7e98b08be16e6fe27f88d2326332578eaede1e778e26a5e58ef4e3cc99e8",
+    "visual_revision": {
+      "date": "2026-10-01",
+      "python_data_figures": 3,
+      "workflow_figures": 1,
+      "workflow_icon_types": 11,
+      "main_timing_observations": 75,
+      "exploratory_timing_observations": 15,
+      "figure_data": "report/figures/v4/figure-data.json",
+      "plot_input_and_output_hash_check": "pass",
+      "workflow_pptx": "output/figures/symdiv-workflow-v4.pptx",
+      "workflow_pptx_sha256": "d8e4cc755937e4bd7e448b9b5375450231a053acf5061d8dc26009be2eb94188",
+      "workflow_image_sha256": "5cd93f7214c0ab46b38bee9bf0fff2361d16d82d4b9450a92ea0e6f23e115141",
+      "workflow_builder_sha256": "748fd38ba92dfd3291614858a754c6d6d5d83a194293a7a0950cc4e0c4170508",
+      "workflow_editable_shapes": 88,
+      "workflow_embedded_raster_images": 0,
+      "workflow_package_and_layout_validation": "pass",
+      "workflow_rendered_from_final_pptx": true,
+      "native_powerpoint_verified": false,
+      "tests_passed": 112,
+      "test_seconds": 4.05,
+      "new_model_calls": 0,
+      "experimental_records_changed": false,
+      "known_tex_warning": "Existing 1.54099pt internal bibliography vbox warning; the reference page is visually unclipped.",
+      "teaser_figures": 1,
+      "conceptual_image_generation_calls": 1,
+      "tests_scope": "Existing 112-test record retained; no analyzer or regression-suite code changed in this editorial revision."
+    },
+    "previous_visual_only_pdf_sha256": "1d72cdac7358bf41bd0cf8c4af1d53b4a61aa9e65a638ff27026fca47dc59e00",
+    "visual_revision_history": [
+      {
+        "date": "2026-10-01",
+        "python_data_figures": 3,
+        "workflow_figures": 1,
+        "workflow_icon_types": 11,
+        "main_timing_observations": 75,
+        "exploratory_timing_observations": 15,
+        "figure_data": "report/figures/v4/figure-data.json",
+        "plot_input_and_output_hash_check": "pass",
+        "workflow_pptx": "output/figures/symdiv-workflow-v4.pptx",
+        "workflow_pptx_sha256": "1ea47fe9c3967ad8ff620b6700e5fc28647940c7a4175ffc0770729ed22aa950",
+        "workflow_image_sha256": "ba86d14d721d7a1f10565ce18f1133b4a173aa90f3a2e735c7ca076394583a06",
+        "workflow_builder_sha256": "856f8988209bfecf55b8316b4237f72eb1be72389c6669eb25000f7d0023e4de",
+        "workflow_editable_shapes": 88,
+        "workflow_embedded_raster_images": 0,
+        "workflow_package_and_layout_validation": "pass",
+        "workflow_rendered_from_final_pptx": true,
+        "native_powerpoint_verified": false,
+        "tests_passed": 112,
+        "test_seconds": 4.05,
+        "new_model_calls": 0,
+        "experimental_records_changed": false,
+        "known_tex_warning": "Existing 1.54099pt internal bibliography vbox warning; the reference page is visually unclipped."
+      }
+    ],
+    "editorial_revision": {
+      "recorded_at_utc": "2026-10-01T13:51:25.003221+00:00",
+      "basis_commit": "8e5654c7d6309614b4b5e247c27355144f042a17",
+      "research_questions": 4,
+      "canonical_terms": 11,
+      "terminology_source": "report/terminology.json",
+      "terminology_reference_and_provenance_check": "pass",
+      "consulted_primary_sources": [
+        "AutoBug (OOPSLA 2025)",
+        "KLEECopilot (July 2026 preprint)",
+        "SAILOR (April 2026 preprint)"
+      ],
+      "editorial_notes": "docs/v4-editorial-notes.md",
+      "teaser": {
+        "tool": "built-in GPT-Image",
+        "mode": "generate",
+        "conceptual_illustration": true,
+        "experimental_data": false,
+        "image": "report/figures/v4/teaser.png",
+        "prompt": "report/figures/v4/teaser-prompt.txt",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "sha256": "a73412f2b2e100e13402ee27aa96dd4d32ef06e17cdece33461aa3a4af8df746",
+        "prompt_sha256": "37b3c0639ca0ebd242c564db70f6b6e614fd44c2f7ec7e0193daa46dd38e706d",
+        "image_edits": [],
+        "research_model_ledger_changed": false
+      },
+      "teaser_disclosure": "Figure 1 caption and AI Usage Statement",
+      "raw_experiments_and_summary_unchanged": true,
+      "new_research_model_requests": 0,
+      "workflow_package_and_layout_validation": "pass",
+      "workflow_rendered_from_final_pptx": true,
+      "rendered_pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "previous_version_reports_unchanged": true
+    }
+  }
+}

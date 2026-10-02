@@ -1,0 +1,31 @@
+{
+  "full_resource_replay_commit": "3649ce2",
+  "fresh_environment": true,
+  "setup": "make setup",
+  "test_output_before_site_repair": "108 passed in 4.42s",
+  "reproduction": {
+    "regenerated_sources_identical": 37,
+    "resource_predictions_and_statuses_identical": true,
+    "differences": [],
+    "new_model_calls": 0,
+    "fresh_timing_replayed": false,
+    "confirmed_witnesses": 88,
+    "elapsed_seconds": 783.434738958
+  },
+  "scope": "Full original frozen study at its recorded implementation; current location repair is separately validated after updating this clean checkout.",
+  "current_code_commit": "0af74e2",
+  "current_test_output": "112 passed in 3.78s",
+  "current_tests_passed": 112,
+  "current_location_audit": {
+    "catalogs_checked": 55,
+    "affected_cases": [
+      "c008"
+    ],
+    "comparison_checks": 110,
+    "differences": [],
+    "operator_witness_confirmed": true,
+    "new_model_calls": 0,
+    "ledger_sha256_unchanged": true,
+    "extension_hash_check_passed": true
+  }
+}

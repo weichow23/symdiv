@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "analyzer": "symdiv-neuro-symbolic",
+  "provider": "codex_exec",
+  "model": "gpt-5.6-sol",
+  "prompt": "prompts/path_analysis.md",
+  "prompt_sha256": "9b892afca1f5cfdb687398b9d2b6f13fc3953b8c790a2adf6bb743b58e1ad05d",
+  "configuration": {
+    "provider": "codex_exec",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "codex_command": "codex",
+    "output_schema": "schemas/symdiv-response.schema.json",
+    "prompt": "prompts/path_analysis.md",
+    "timeout_seconds": 300,
+    "max_retries": 0,
+    "max_calls": 1,
+    "max_total_tokens": 100000,
+    "z3_timeout_ms": 5000
+  },
+  "elapsed_seconds": 11.217413083,
+  "total_tokens": 16892,
+  "stop_reason": null,
+  "cases": [
+    {
+      "id": "c01-constant-zero",
+      "file": "sources/c01_constant_zero.c",
+      "prediction": true,
+      "completed": true,
+      "attempts": 1,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-67cada239c85",
+            "file": "[local workspace]/benchmarks/pilot/sources/c01_constant_zero.c",
+            "function": "case01",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "denominator",
+            "function_source": "int case01(void) {\n    int denominator = 0;\n    return 42 / denominator;\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-67cada239c85",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "denominator",
+            "rationale": "The denominator is initialized to 0 and is not modified before the reachable division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "feasible zero denominator",
+            "model": {
+              "denominator": "0"
+            }
+          }
+        }
+      ],
+      "request_id": "01a0bf12-f4d1-7ac2-8307-a513135ab327",
+      "input_tokens": 16825,
+      "output_tokens": 67,
+      "client_elapsed_seconds": 11.176392583,
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.153.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-67cada239c85",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "denominator",
+              "rationale": "The denominator is initialized to 0 and is not modified before the reachable division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0bf12-f4d1-7ac2-8307-a513135ab327"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-67cada239c85\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"denominator\",\"rationale\":\"The denominator is initialized to 0 and is not modified before the reachable division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 16825,
+              "cached_input_tokens": 16640,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 67,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-20T13:48:05.719105Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:05.720543Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-20T13:48:05.721329Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 16825,
+          "cached_input_tokens": 16640,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 67,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 11.176392583
+      }
+    }
+  ]
+}

@@ -1,0 +1,3938 @@
+{
+  "freeze_sha256": "8418fa26da9af728b937bb07946560472344da4c855b8d7072a5ad1b293c876a",
+  "trials": [
+    {
+      "status": "refuted_complete",
+      "prediction": false,
+      "policy": "coverage",
+      "states": 36,
+      "solver_calls": 27,
+      "seed_batches": 6,
+      "remaining_tasks": 0,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.032065291999999995,
+      "findings": [],
+      "feedback": [
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 3,
+              "take": true,
+              "line": 3
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 3,
+          "take": false,
+          "line": 3
+        }
+      ],
+      "id": "c010",
+      "repetition": 0,
+      "key": "timing-smtfirst-c010-0",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "no_sat_advice",
+        "summary_states": 13,
+        "summary_queries": 6,
+        "seconds": 0.006330790999999988,
+        "choices": 0
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.11078787500000001,
+      "finished_at_utc": "2026-10-01T10:33:31.111465+00:00"
+    },
+    {
+      "status": "refuted_complete",
+      "prediction": false,
+      "policy": "coverage",
+      "states": 36,
+      "solver_calls": 27,
+      "seed_batches": 6,
+      "remaining_tasks": 0,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.031773041,
+      "findings": [],
+      "feedback": [
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 3,
+              "take": true,
+              "line": 3
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 3,
+          "take": false,
+          "line": 3
+        }
+      ],
+      "id": "c010",
+      "repetition": 1,
+      "key": "timing-smtfirst-c010-1",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "no_sat_advice",
+        "summary_states": 13,
+        "summary_queries": 6,
+        "seconds": 0.00622774999999999,
+        "choices": 0
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.11206987499999999,
+      "finished_at_utc": "2026-10-01T10:33:31.224552+00:00"
+    },
+    {
+      "status": "refuted_complete",
+      "prediction": false,
+      "policy": "coverage",
+      "states": 36,
+      "solver_calls": 27,
+      "seed_batches": 6,
+      "remaining_tasks": 0,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.03246808300000001,
+      "findings": [],
+      "feedback": [
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": false,
+              "line": 3
+            }
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 1,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 2,
+              "take": true,
+              "line": 3
+            },
+            {
+              "branch_id": "br-8e1954d4b663",
+              "visit": 3,
+              "take": true,
+              "line": 3
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 1,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 2,
+          "take": true,
+          "line": 3
+        },
+        {
+          "branch_id": "br-8e1954d4b663",
+          "visit": 3,
+          "take": false,
+          "line": 3
+        }
+      ],
+      "id": "c010",
+      "repetition": 2,
+      "key": "timing-smtfirst-c010-2",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "no_sat_advice",
+        "summary_states": 13,
+        "summary_queries": 6,
+        "seconds": 0.006486499999999992,
+        "choices": 0
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.11049195899999997,
+      "finished_at_utc": "2026-10-01T10:33:31.335986+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 9,
+      "solver_calls": 3,
+      "seed_batches": 1,
+      "remaining_tasks": 1,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.006557833000000013,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-62d41d3b5956",
+            "file": "benchmarks/v4-cppcheck/sources/c013.c",
+            "function": "f",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "(x-y)",
+            "function_source": "int f(int x, int y) {\n    if (x == y) {}\n    return 1 / (x-y);\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "f:x:1": "0",
+              "f:y:2": "0",
+              "at_site:x": "0",
+              "at_site:y": "0"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-f2ac5bd51e72",
+              "visit": 1,
+              "take": true,
+              "line": 2
+            }
+          ],
+          "found_seconds": 0.0065247920000000015,
+          "found_states": 9,
+          "found_solver_calls": 3
+        }
+      ],
+      "feedback": [],
+      "last_trace": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true,
+          "line": 2
+        }
+      ],
+      "id": "c013",
+      "repetition": 0,
+      "key": "timing-smtfirst-c013-0",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 4,
+        "summary_queries": 1,
+        "seconds": 0.0023502080000000064,
+        "choices": 1
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.085075083,
+      "finished_at_utc": "2026-10-01T10:33:31.422131+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 9,
+      "solver_calls": 3,
+      "seed_batches": 1,
+      "remaining_tasks": 1,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.006686542000000004,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-62d41d3b5956",
+            "file": "benchmarks/v4-cppcheck/sources/c013.c",
+            "function": "f",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "(x-y)",
+            "function_source": "int f(int x, int y) {\n    if (x == y) {}\n    return 1 / (x-y);\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "f:x:1": "0",
+              "f:y:2": "0",
+              "at_site:x": "0",
+              "at_site:y": "0"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-f2ac5bd51e72",
+              "visit": 1,
+              "take": true,
+              "line": 2
+            }
+          ],
+          "found_seconds": 0.006657375000000007,
+          "found_states": 9,
+          "found_solver_calls": 3
+        }
+      ],
+      "feedback": [],
+      "last_trace": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true,
+          "line": 2
+        }
+      ],
+      "id": "c013",
+      "repetition": 1,
+      "key": "timing-smtfirst-c013-1",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 4,
+        "summary_queries": 1,
+        "seconds": 0.002443875000000012,
+        "choices": 1
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.08545704199999998,
+      "finished_at_utc": "2026-10-01T10:33:31.508573+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 9,
+      "solver_calls": 3,
+      "seed_batches": 1,
+      "remaining_tasks": 1,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.006836165999999991,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-62d41d3b5956",
+            "file": "benchmarks/v4-cppcheck/sources/c013.c",
+            "function": "f",
+            "line": 3,
+            "column": 12,
+            "operator": "/",
+            "denominator": "(x-y)",
+            "function_source": "int f(int x, int y) {\n    if (x == y) {}\n    return 1 / (x-y);\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "f:x:1": "0",
+              "f:y:2": "0",
+              "at_site:x": "0",
+              "at_site:y": "0"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-f2ac5bd51e72",
+              "visit": 1,
+              "take": true,
+              "line": 2
+            }
+          ],
+          "found_seconds": 0.006802665999999999,
+          "found_states": 9,
+          "found_solver_calls": 3
+        }
+      ],
+      "feedback": [],
+      "last_trace": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true,
+          "line": 2
+        }
+      ],
+      "id": "c013",
+      "repetition": 2,
+      "key": "timing-smtfirst-c013-2",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 4,
+        "summary_queries": 1,
+        "seconds": 0.002392124999999995,
+        "choices": 1
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.08597812500000002,
+      "finished_at_utc": "2026-10-01T10:33:31.595628+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 61,
+      "solver_calls": 48,
+      "seed_batches": 12,
+      "remaining_tasks": 11,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.18455483299999997,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-5e2102170f4b",
+            "file": "benchmarks/v4-stress/sources/s003.c",
+            "function": "subject",
+            "line": 14,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(-81))",
+            "function_source": "int subject(int x0,int x1,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10) {\n  int d=0;\n  if(x0%3==1) d+=8; else d-=8;\n  if(x1%3==1) d+=20; else d-=20;\n  if(x2%3==1) d+=10; else d-=10;\n  if(x3%3==1) d+=10; else d-=10;\n  if(x4%3==1) d+=28; else d-=28;\n  if(x5%3==1) d+=14; else d-=14;\n  if(x6%3==1) d+=27; else d-=27;\n  if(x7%3==1) d+=26; else d-=26;\n  if(x8%3==1) d+=8; else d-=8;\n  if(x9%3==1) d+=12; else d-=12;\n  if(x10%3==1) d+=2; else d-=2;\n  return 100/(d-(-81));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:x0:1": "-3",
+              "subject:x1:2": "2",
+              "subject:x2:3": "86813",
+              "subject:x3:4": "3",
+              "subject:x4:5": "3",
+              "subject:x5:6": "1",
+              "subject:x6:7": "-1",
+              "subject:x7:8": "1",
+              "subject:x8:9": "3",
+              "subject:x9:10": "3",
+              "subject:x10:11": "1",
+              "at_site:x0": "-3",
+              "at_site:x1": "2",
+              "at_site:x2": "86813",
+              "at_site:x3": "3",
+              "at_site:x4": "3",
+              "at_site:x5": "1",
+              "at_site:x6": "-1",
+              "at_site:x7": "1",
+              "at_site:x8": "3",
+              "at_site:x9": "3",
+              "at_site:x10": "1",
+              "at_site:d": "-81"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            },
+            {
+              "branch_id": "br-10d19e23a876",
+              "visit": 1,
+              "take": true,
+              "line": 13
+            }
+          ],
+          "found_seconds": 0.18444391599999999,
+          "found_states": 61,
+          "found_solver_calls": 48
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-65978803a7e3",
+          "line": 11,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-1505613013f5",
+          "line": 12,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-b36750f926a1",
+          "line": 13,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-33ddcdd98671",
+          "visit": 1,
+          "take": false,
+          "line": 3
+        },
+        {
+          "branch_id": "br-080d3a510458",
+          "visit": 1,
+          "take": false,
+          "line": 4
+        },
+        {
+          "branch_id": "br-4323fc000b84",
+          "visit": 1,
+          "take": false,
+          "line": 5
+        },
+        {
+          "branch_id": "br-e603104606a2",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-8e46ae96adda",
+          "visit": 1,
+          "take": false,
+          "line": 7
+        },
+        {
+          "branch_id": "br-8ae15e80dc65",
+          "visit": 1,
+          "take": true,
+          "line": 8
+        },
+        {
+          "branch_id": "br-831b5ac0876c",
+          "visit": 1,
+          "take": false,
+          "line": 9
+        },
+        {
+          "branch_id": "br-9183e704485a",
+          "visit": 1,
+          "take": true,
+          "line": 10
+        },
+        {
+          "branch_id": "br-05eb7458a582",
+          "visit": 1,
+          "take": false,
+          "line": 11
+        },
+        {
+          "branch_id": "br-3c0878e44b13",
+          "visit": 1,
+          "take": false,
+          "line": 12
+        },
+        {
+          "branch_id": "br-10d19e23a876",
+          "visit": 1,
+          "take": true,
+          "line": 13
+        }
+      ],
+      "id": "s003",
+      "repetition": 0,
+      "key": "timing-smtfirst-s003-0",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 36,
+        "summary_queries": 12,
+        "seconds": 0.041927666,
+        "choices": 11
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.264501875,
+      "finished_at_utc": "2026-10-01T10:33:31.861263+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 61,
+      "solver_calls": 48,
+      "seed_batches": 12,
+      "remaining_tasks": 11,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.18876941600000002,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-5e2102170f4b",
+            "file": "benchmarks/v4-stress/sources/s003.c",
+            "function": "subject",
+            "line": 14,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(-81))",
+            "function_source": "int subject(int x0,int x1,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10) {\n  int d=0;\n  if(x0%3==1) d+=8; else d-=8;\n  if(x1%3==1) d+=20; else d-=20;\n  if(x2%3==1) d+=10; else d-=10;\n  if(x3%3==1) d+=10; else d-=10;\n  if(x4%3==1) d+=28; else d-=28;\n  if(x5%3==1) d+=14; else d-=14;\n  if(x6%3==1) d+=27; else d-=27;\n  if(x7%3==1) d+=26; else d-=26;\n  if(x8%3==1) d+=8; else d-=8;\n  if(x9%3==1) d+=12; else d-=12;\n  if(x10%3==1) d+=2; else d-=2;\n  return 100/(d-(-81));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:x0:1": "-3",
+              "subject:x1:2": "2",
+              "subject:x2:3": "86813",
+              "subject:x3:4": "3",
+              "subject:x4:5": "3",
+              "subject:x5:6": "1",
+              "subject:x6:7": "-1",
+              "subject:x7:8": "1",
+              "subject:x8:9": "3",
+              "subject:x9:10": "3",
+              "subject:x10:11": "1",
+              "at_site:x0": "-3",
+              "at_site:x1": "2",
+              "at_site:x2": "86813",
+              "at_site:x3": "3",
+              "at_site:x4": "3",
+              "at_site:x5": "1",
+              "at_site:x6": "-1",
+              "at_site:x7": "1",
+              "at_site:x8": "3",
+              "at_site:x9": "3",
+              "at_site:x10": "1",
+              "at_site:d": "-81"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            },
+            {
+              "branch_id": "br-10d19e23a876",
+              "visit": 1,
+              "take": true,
+              "line": 13
+            }
+          ],
+          "found_seconds": 0.18862179100000004,
+          "found_states": 61,
+          "found_solver_calls": 48
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-65978803a7e3",
+          "line": 11,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-1505613013f5",
+          "line": 12,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-b36750f926a1",
+          "line": 13,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-33ddcdd98671",
+          "visit": 1,
+          "take": false,
+          "line": 3
+        },
+        {
+          "branch_id": "br-080d3a510458",
+          "visit": 1,
+          "take": false,
+          "line": 4
+        },
+        {
+          "branch_id": "br-4323fc000b84",
+          "visit": 1,
+          "take": false,
+          "line": 5
+        },
+        {
+          "branch_id": "br-e603104606a2",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-8e46ae96adda",
+          "visit": 1,
+          "take": false,
+          "line": 7
+        },
+        {
+          "branch_id": "br-8ae15e80dc65",
+          "visit": 1,
+          "take": true,
+          "line": 8
+        },
+        {
+          "branch_id": "br-831b5ac0876c",
+          "visit": 1,
+          "take": false,
+          "line": 9
+        },
+        {
+          "branch_id": "br-9183e704485a",
+          "visit": 1,
+          "take": true,
+          "line": 10
+        },
+        {
+          "branch_id": "br-05eb7458a582",
+          "visit": 1,
+          "take": false,
+          "line": 11
+        },
+        {
+          "branch_id": "br-3c0878e44b13",
+          "visit": 1,
+          "take": false,
+          "line": 12
+        },
+        {
+          "branch_id": "br-10d19e23a876",
+          "visit": 1,
+          "take": true,
+          "line": 13
+        }
+      ],
+      "id": "s003",
+      "repetition": 1,
+      "key": "timing-smtfirst-s003-1",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 36,
+        "summary_queries": 12,
+        "seconds": 0.04267974999999999,
+        "choices": 11
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.2691805410000001,
+      "finished_at_utc": "2026-10-01T10:33:32.132021+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 61,
+      "solver_calls": 48,
+      "seed_batches": 12,
+      "remaining_tasks": 11,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.18558033300000001,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-5e2102170f4b",
+            "file": "benchmarks/v4-stress/sources/s003.c",
+            "function": "subject",
+            "line": 14,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(-81))",
+            "function_source": "int subject(int x0,int x1,int x2,int x3,int x4,int x5,int x6,int x7,int x8,int x9,int x10) {\n  int d=0;\n  if(x0%3==1) d+=8; else d-=8;\n  if(x1%3==1) d+=20; else d-=20;\n  if(x2%3==1) d+=10; else d-=10;\n  if(x3%3==1) d+=10; else d-=10;\n  if(x4%3==1) d+=28; else d-=28;\n  if(x5%3==1) d+=14; else d-=14;\n  if(x6%3==1) d+=27; else d-=27;\n  if(x7%3==1) d+=26; else d-=26;\n  if(x8%3==1) d+=8; else d-=8;\n  if(x9%3==1) d+=12; else d-=12;\n  if(x10%3==1) d+=2; else d-=2;\n  return 100/(d-(-81));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:x0:1": "-3",
+              "subject:x1:2": "2",
+              "subject:x2:3": "86813",
+              "subject:x3:4": "3",
+              "subject:x4:5": "3",
+              "subject:x5:6": "1",
+              "subject:x6:7": "-1",
+              "subject:x7:8": "1",
+              "subject:x8:9": "3",
+              "subject:x9:10": "3",
+              "subject:x10:11": "1",
+              "at_site:x0": "-3",
+              "at_site:x1": "2",
+              "at_site:x2": "86813",
+              "at_site:x3": "3",
+              "at_site:x4": "3",
+              "at_site:x5": "1",
+              "at_site:x6": "-1",
+              "at_site:x7": "1",
+              "at_site:x8": "3",
+              "at_site:x9": "3",
+              "at_site:x10": "1",
+              "at_site:d": "-81"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            },
+            {
+              "branch_id": "br-10d19e23a876",
+              "visit": 1,
+              "take": true,
+              "line": 13
+            }
+          ],
+          "found_seconds": 0.18546441700000002,
+          "found_states": 61,
+          "found_solver_calls": 48
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-65978803a7e3",
+          "line": 11,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-1505613013f5",
+          "line": 12,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-b36750f926a1",
+          "line": 13,
+          "trace": [
+            {
+              "branch_id": "br-33ddcdd98671",
+              "visit": 1,
+              "take": false,
+              "line": 3
+            },
+            {
+              "branch_id": "br-080d3a510458",
+              "visit": 1,
+              "take": false,
+              "line": 4
+            },
+            {
+              "branch_id": "br-4323fc000b84",
+              "visit": 1,
+              "take": false,
+              "line": 5
+            },
+            {
+              "branch_id": "br-e603104606a2",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-8e46ae96adda",
+              "visit": 1,
+              "take": false,
+              "line": 7
+            },
+            {
+              "branch_id": "br-8ae15e80dc65",
+              "visit": 1,
+              "take": true,
+              "line": 8
+            },
+            {
+              "branch_id": "br-831b5ac0876c",
+              "visit": 1,
+              "take": false,
+              "line": 9
+            },
+            {
+              "branch_id": "br-9183e704485a",
+              "visit": 1,
+              "take": true,
+              "line": 10
+            },
+            {
+              "branch_id": "br-05eb7458a582",
+              "visit": 1,
+              "take": false,
+              "line": 11
+            },
+            {
+              "branch_id": "br-3c0878e44b13",
+              "visit": 1,
+              "take": false,
+              "line": 12
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-33ddcdd98671",
+          "visit": 1,
+          "take": false,
+          "line": 3
+        },
+        {
+          "branch_id": "br-080d3a510458",
+          "visit": 1,
+          "take": false,
+          "line": 4
+        },
+        {
+          "branch_id": "br-4323fc000b84",
+          "visit": 1,
+          "take": false,
+          "line": 5
+        },
+        {
+          "branch_id": "br-e603104606a2",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-8e46ae96adda",
+          "visit": 1,
+          "take": false,
+          "line": 7
+        },
+        {
+          "branch_id": "br-8ae15e80dc65",
+          "visit": 1,
+          "take": true,
+          "line": 8
+        },
+        {
+          "branch_id": "br-831b5ac0876c",
+          "visit": 1,
+          "take": false,
+          "line": 9
+        },
+        {
+          "branch_id": "br-9183e704485a",
+          "visit": 1,
+          "take": true,
+          "line": 10
+        },
+        {
+          "branch_id": "br-05eb7458a582",
+          "visit": 1,
+          "take": false,
+          "line": 11
+        },
+        {
+          "branch_id": "br-3c0878e44b13",
+          "visit": 1,
+          "take": false,
+          "line": 12
+        },
+        {
+          "branch_id": "br-10d19e23a876",
+          "visit": 1,
+          "take": true,
+          "line": 13
+        }
+      ],
+      "id": "s003",
+      "repetition": 2,
+      "key": "timing-smtfirst-s003-2",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 36,
+        "summary_queries": 12,
+        "seconds": 0.042102958999999995,
+        "choices": 11
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.2659970840000001,
+      "finished_at_utc": "2026-10-01T10:33:32.399779+00:00"
+    },
+    {
+      "id": "s008",
+      "repetition": 0,
+      "key": "timing-smtfirst-s008-0",
+      "system": "smt_first",
+      "prediction": false,
+      "status": "unknown",
+      "findings": [],
+      "initial_model_used": true,
+      "first": {
+        "key": "timing-smtfirst-s008-0",
+        "source_sha256": "9aae2383a188ac09b28ae9403a57f81dbcaa6b83251112c1504a955388696c6c",
+        "feedback": null,
+        "raw": {
+          "provider": "codex_exec",
+          "codex_version": "codex-cli 0.159.0",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "output": {
+            "findings": [
+              {
+                "site_id": "div-8a82cf71ccc5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "128",
+                "rationale": "The denominator is the nonzero integer constant 128.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9756462d0b6f",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "16",
+                "rationale": "The denominator is the nonzero integer constant 16.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-96a093d5087e",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2",
+                "rationale": "The denominator is the nonzero integer constant 2.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f90cb20445a5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "4",
+                "rationale": "The denominator is the nonzero integer constant 4.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1f8f62712f3c",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "1024",
+                "rationale": "The denominator is the nonzero integer constant 1024.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-a9da91076dfc",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "32",
+                "rationale": "The denominator is the nonzero integer constant 32.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9d88604a5bd6",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "8",
+                "rationale": "The denominator is the nonzero integer constant 8.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-225bd4bb842a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2048",
+                "rationale": "The denominator is the nonzero integer constant 2048.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f4a9e5b8997a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "64",
+                "rationale": "The denominator is the nonzero integer constant 64.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-66620714ff56",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "512",
+                "rationale": "The denominator is the nonzero integer constant 512.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-8cc9e685b8e4",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "256",
+                "rationale": "The denominator is the nonzero integer constant 256.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1087d9a221d1",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "(2*d-(11))",
+                "rationale": "For every integer d, 2*d is even, so subtracting 11 produces an odd value and therefore cannot produce zero; the bounded updates to d cannot overflow.",
+                "confidence": 1
+              }
+            ],
+            "choices": []
+          },
+          "events": [
+            {
+              "type": "thread.started",
+              "thread_id": "01a0f706-d204-7310-8b4d-ca01d7e6d575"
+            },
+            {
+              "type": "turn.started"
+            },
+            {
+              "type": "item.completed",
+              "item": {
+                "id": "item_0",
+                "type": "agent_message",
+                "text": "{\"findings\":[{\"site_id\":\"div-8a82cf71ccc5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"128\",\"rationale\":\"The denominator is the nonzero integer constant 128.\",\"confidence\":1},{\"site_id\":\"div-9756462d0b6f\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"16\",\"rationale\":\"The denominator is the nonzero integer constant 16.\",\"confidence\":1},{\"site_id\":\"div-96a093d5087e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero integer constant 2.\",\"confidence\":1},{\"site_id\":\"div-f90cb20445a5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"4\",\"rationale\":\"The denominator is the nonzero integer constant 4.\",\"confidence\":1},{\"site_id\":\"div-1f8f62712f3c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"1024\",\"rationale\":\"The denominator is the nonzero integer constant 1024.\",\"confidence\":1},{\"site_id\":\"div-a9da91076dfc\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"32\",\"rationale\":\"The denominator is the nonzero integer constant 32.\",\"confidence\":1},{\"site_id\":\"div-9d88604a5bd6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"8\",\"rationale\":\"The denominator is the nonzero integer constant 8.\",\"confidence\":1},{\"site_id\":\"div-225bd4bb842a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2048\",\"rationale\":\"The denominator is the nonzero integer constant 2048.\",\"confidence\":1},{\"site_id\":\"div-f4a9e5b8997a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"64\",\"rationale\":\"The denominator is the nonzero integer constant 64.\",\"confidence\":1},{\"site_id\":\"div-66620714ff56\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"512\",\"rationale\":\"The denominator is the nonzero integer constant 512.\",\"confidence\":1},{\"site_id\":\"div-8cc9e685b8e4\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"256\",\"rationale\":\"The denominator is the nonzero integer constant 256.\",\"confidence\":1},{\"site_id\":\"div-1087d9a221d1\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"(2*d-(11))\",\"rationale\":\"For every integer d, 2*d is even, so subtracting 11 produces an odd value and therefore cannot produce zero; the bounded updates to d cannot overflow.\",\"confidence\":1}],\"choices\":[]}"
+              }
+            },
+            {
+              "type": "turn.completed",
+              "usage": {
+                "input_tokens": 19225,
+                "cached_input_tokens": 16384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 658,
+                "reasoning_output_tokens": 61
+              }
+            }
+          ],
+          "stderr": "2026-10-01T10:33:34.474089Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:33:34.475793Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:33:34.477338Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:33:34.478633Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:33:34.479732Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+          "usage": {
+            "input_tokens": 19225,
+            "cached_input_tokens": 16384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 658,
+            "reasoning_output_tokens": 61
+          },
+          "_client_elapsed_seconds": 19.879815833
+        },
+        "elapsed_seconds": 19.901912208
+      },
+      "provider_error": null,
+      "stop_reason": "wall_time",
+      "worker_stderr": "",
+      "elapsed_end_to_end_seconds": 30.003841791,
+      "finished_at_utc": "2026-10-01T10:34:02.405940+00:00"
+    },
+    {
+      "id": "s008",
+      "repetition": 1,
+      "key": "timing-smtfirst-s008-1",
+      "system": "smt_first",
+      "prediction": false,
+      "status": "unknown",
+      "findings": [],
+      "initial_model_used": true,
+      "first": {
+        "key": "timing-smtfirst-s008-1",
+        "source_sha256": "9aae2383a188ac09b28ae9403a57f81dbcaa6b83251112c1504a955388696c6c",
+        "feedback": null,
+        "raw": {
+          "provider": "codex_exec",
+          "codex_version": "codex-cli 0.159.0",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "output": {
+            "findings": [
+              {
+                "site_id": "div-8a82cf71ccc5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "128",
+                "rationale": "The denominator is the nonzero integer constant 128.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9756462d0b6f",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "16",
+                "rationale": "The denominator is the nonzero integer constant 16.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-96a093d5087e",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2",
+                "rationale": "The denominator is the nonzero integer constant 2.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f90cb20445a5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "4",
+                "rationale": "The denominator is the nonzero integer constant 4.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1f8f62712f3c",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "1024",
+                "rationale": "The denominator is the nonzero integer constant 1024.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-a9da91076dfc",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "32",
+                "rationale": "The denominator is the nonzero integer constant 32.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9d88604a5bd6",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "8",
+                "rationale": "The denominator is the nonzero integer constant 8.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-225bd4bb842a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2048",
+                "rationale": "The denominator is the nonzero integer constant 2048.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f4a9e5b8997a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "64",
+                "rationale": "The denominator is the nonzero integer constant 64.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-66620714ff56",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "512",
+                "rationale": "The denominator is the nonzero integer constant 512.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-8cc9e685b8e4",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "256",
+                "rationale": "The denominator is the nonzero integer constant 256.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1087d9a221d1",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "(2*d-(11))",
+                "rationale": "For every integer d, 2*d is even, so subtracting 11 yields an odd integer and therefore cannot yield zero; the bounded updates also cannot overflow int.",
+                "confidence": 1
+              }
+            ],
+            "choices": []
+          },
+          "events": [
+            {
+              "type": "thread.started",
+              "thread_id": "01a0f707-4768-71a1-af84-422b4834fed7"
+            },
+            {
+              "type": "turn.started"
+            },
+            {
+              "type": "item.completed",
+              "item": {
+                "id": "item_0",
+                "type": "agent_message",
+                "text": "{\"findings\":[{\"site_id\":\"div-8a82cf71ccc5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"128\",\"rationale\":\"The denominator is the nonzero integer constant 128.\",\"confidence\":1},{\"site_id\":\"div-9756462d0b6f\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"16\",\"rationale\":\"The denominator is the nonzero integer constant 16.\",\"confidence\":1},{\"site_id\":\"div-96a093d5087e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero integer constant 2.\",\"confidence\":1},{\"site_id\":\"div-f90cb20445a5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"4\",\"rationale\":\"The denominator is the nonzero integer constant 4.\",\"confidence\":1},{\"site_id\":\"div-1f8f62712f3c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"1024\",\"rationale\":\"The denominator is the nonzero integer constant 1024.\",\"confidence\":1},{\"site_id\":\"div-a9da91076dfc\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"32\",\"rationale\":\"The denominator is the nonzero integer constant 32.\",\"confidence\":1},{\"site_id\":\"div-9d88604a5bd6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"8\",\"rationale\":\"The denominator is the nonzero integer constant 8.\",\"confidence\":1},{\"site_id\":\"div-225bd4bb842a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2048\",\"rationale\":\"The denominator is the nonzero integer constant 2048.\",\"confidence\":1},{\"site_id\":\"div-f4a9e5b8997a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"64\",\"rationale\":\"The denominator is the nonzero integer constant 64.\",\"confidence\":1},{\"site_id\":\"div-66620714ff56\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"512\",\"rationale\":\"The denominator is the nonzero integer constant 512.\",\"confidence\":1},{\"site_id\":\"div-8cc9e685b8e4\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"256\",\"rationale\":\"The denominator is the nonzero integer constant 256.\",\"confidence\":1},{\"site_id\":\"div-1087d9a221d1\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"(2*d-(11))\",\"rationale\":\"For every integer d, 2*d is even, so subtracting 11 yields an odd integer and therefore cannot yield zero; the bounded updates also cannot overflow int.\",\"confidence\":1}],\"choices\":[]}"
+              }
+            },
+            {
+              "type": "turn.completed",
+              "usage": {
+                "input_tokens": 19227,
+                "cached_input_tokens": 16384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 668,
+                "reasoning_output_tokens": 71
+              }
+            }
+          ],
+          "stderr": "2026-10-01T10:34:04.526624Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:04.529034Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:04.530179Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:04.531197Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:04.532156Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+          "usage": {
+            "input_tokens": 19227,
+            "cached_input_tokens": 16384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 668,
+            "reasoning_output_tokens": 71
+          },
+          "_client_elapsed_seconds": 18.743809584
+        },
+        "elapsed_seconds": 18.765822583000002
+      },
+      "provider_error": null,
+      "stop_reason": "wall_time",
+      "worker_stderr": "",
+      "elapsed_end_to_end_seconds": 30.003439625000002,
+      "finished_at_utc": "2026-10-01T10:34:32.411722+00:00"
+    },
+    {
+      "id": "s008",
+      "repetition": 2,
+      "key": "timing-smtfirst-s008-2",
+      "system": "smt_first",
+      "prediction": false,
+      "status": "unknown",
+      "findings": [],
+      "initial_model_used": true,
+      "first": {
+        "key": "timing-smtfirst-s008-2",
+        "source_sha256": "9aae2383a188ac09b28ae9403a57f81dbcaa6b83251112c1504a955388696c6c",
+        "feedback": null,
+        "raw": {
+          "provider": "codex_exec",
+          "codex_version": "codex-cli 0.159.0",
+          "model": "gpt-5.6-sol",
+          "reasoning_effort": "medium",
+          "output": {
+            "findings": [
+              {
+                "site_id": "div-8a82cf71ccc5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "128",
+                "rationale": "The denominator is the nonzero integer constant 128.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9756462d0b6f",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "16",
+                "rationale": "The denominator is the nonzero integer constant 16.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-96a093d5087e",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2",
+                "rationale": "The denominator is the nonzero integer constant 2.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f90cb20445a5",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "4",
+                "rationale": "The denominator is the nonzero integer constant 4.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1f8f62712f3c",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "1024",
+                "rationale": "The denominator is the nonzero integer constant 1024.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-a9da91076dfc",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "32",
+                "rationale": "The denominator is the nonzero integer constant 32.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-9d88604a5bd6",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "8",
+                "rationale": "The denominator is the nonzero integer constant 8.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-225bd4bb842a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "2048",
+                "rationale": "The denominator is the nonzero integer constant 2048.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-f4a9e5b8997a",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "64",
+                "rationale": "The denominator is the nonzero integer constant 64.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-66620714ff56",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "512",
+                "rationale": "The denominator is the nonzero integer constant 512.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-8cc9e685b8e4",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "256",
+                "rationale": "The denominator is the nonzero integer constant 256.",
+                "confidence": 1
+              },
+              {
+                "site_id": "div-1087d9a221d1",
+                "verdict": "safe",
+                "path_conditions": [],
+                "denominator": "(2*d-(11))",
+                "rationale": "For every integer d, 2*d is even, so subtracting 11 produces an odd value and cannot produce zero; d is also bounded here, so the expression cannot overflow.",
+                "confidence": 1
+              }
+            ],
+            "choices": []
+          },
+          "events": [
+            {
+              "type": "thread.started",
+              "thread_id": "01a0f707-bca1-7f23-aad1-053ba272096f"
+            },
+            {
+              "type": "turn.started"
+            },
+            {
+              "type": "item.completed",
+              "item": {
+                "id": "item_0",
+                "type": "agent_message",
+                "text": "{\"findings\":[{\"site_id\":\"div-8a82cf71ccc5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"128\",\"rationale\":\"The denominator is the nonzero integer constant 128.\",\"confidence\":1},{\"site_id\":\"div-9756462d0b6f\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"16\",\"rationale\":\"The denominator is the nonzero integer constant 16.\",\"confidence\":1},{\"site_id\":\"div-96a093d5087e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero integer constant 2.\",\"confidence\":1},{\"site_id\":\"div-f90cb20445a5\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"4\",\"rationale\":\"The denominator is the nonzero integer constant 4.\",\"confidence\":1},{\"site_id\":\"div-1f8f62712f3c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"1024\",\"rationale\":\"The denominator is the nonzero integer constant 1024.\",\"confidence\":1},{\"site_id\":\"div-a9da91076dfc\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"32\",\"rationale\":\"The denominator is the nonzero integer constant 32.\",\"confidence\":1},{\"site_id\":\"div-9d88604a5bd6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"8\",\"rationale\":\"The denominator is the nonzero integer constant 8.\",\"confidence\":1},{\"site_id\":\"div-225bd4bb842a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2048\",\"rationale\":\"The denominator is the nonzero integer constant 2048.\",\"confidence\":1},{\"site_id\":\"div-f4a9e5b8997a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"64\",\"rationale\":\"The denominator is the nonzero integer constant 64.\",\"confidence\":1},{\"site_id\":\"div-66620714ff56\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"512\",\"rationale\":\"The denominator is the nonzero integer constant 512.\",\"confidence\":1},{\"site_id\":\"div-8cc9e685b8e4\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"256\",\"rationale\":\"The denominator is the nonzero integer constant 256.\",\"confidence\":1},{\"site_id\":\"div-1087d9a221d1\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"(2*d-(11))\",\"rationale\":\"For every integer d, 2*d is even, so subtracting 11 produces an odd value and cannot produce zero; d is also bounded here, so the expression cannot overflow.\",\"confidence\":1}],\"choices\":[]}"
+              }
+            },
+            {
+              "type": "turn.completed",
+              "usage": {
+                "input_tokens": 19223,
+                "cached_input_tokens": 16384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 715,
+                "reasoning_output_tokens": 115
+              }
+            }
+          ],
+          "stderr": "2026-10-01T10:34:34.534939Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:34.536845Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:34.538660Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:34.539671Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:34:34.540763Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+          "usage": {
+            "input_tokens": 19223,
+            "cached_input_tokens": 16384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 715,
+            "reasoning_output_tokens": 115
+          },
+          "_client_elapsed_seconds": 19.387587875
+        },
+        "elapsed_seconds": 19.410459291
+      },
+      "provider_error": null,
+      "stop_reason": "wall_time",
+      "worker_stderr": "",
+      "elapsed_end_to_end_seconds": 30.003858582999996,
+      "finished_at_utc": "2026-10-01T10:35:02.418583+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 139,
+      "solver_calls": 71,
+      "seed_batches": 9,
+      "remaining_tasks": 16,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.14552970799999998,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-45c80357d5d1",
+            "file": "benchmarks/v4-stress/sources/s011.c",
+            "function": "subject",
+            "line": 9,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(36))",
+            "function_source": "int subject(void) {\n  int d=0, w=2;\n  for(int i=0;i<8;i++) {\n    int x=rand();\n    if(x%3==1) d+=w; else d-=w;\n    w+=3;\n  }\n  return 100/(d-(36));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:rand:1": "3",
+              "subject:rand:2": "3",
+              "subject:rand:3": "1",
+              "subject:rand:4": "3",
+              "subject:rand:5": "2",
+              "subject:rand:6": "80785",
+              "subject:rand:7": "1",
+              "subject:rand:8": "3307",
+              "at_site:d": "36",
+              "at_site:w": "26"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": false,
+              "line": 4
+            }
+          ],
+          "found_seconds": 0.14542604199999998,
+          "found_states": 139,
+          "found_solver_calls": 71
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": true,
+              "line": 4
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false,
+          "line": 4
+        }
+      ],
+      "id": "s011",
+      "repetition": 0,
+      "key": "timing-smtfirst-s011-0",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 61,
+        "summary_queries": 9,
+        "seconds": 0.026878750000000007,
+        "choices": 17
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.3661090840000014,
+      "finished_at_utc": "2026-10-01T10:35:02.786939+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 139,
+      "solver_calls": 71,
+      "seed_batches": 9,
+      "remaining_tasks": 16,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.144007375,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-45c80357d5d1",
+            "file": "benchmarks/v4-stress/sources/s011.c",
+            "function": "subject",
+            "line": 9,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(36))",
+            "function_source": "int subject(void) {\n  int d=0, w=2;\n  for(int i=0;i<8;i++) {\n    int x=rand();\n    if(x%3==1) d+=w; else d-=w;\n    w+=3;\n  }\n  return 100/(d-(36));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:rand:1": "3",
+              "subject:rand:2": "3",
+              "subject:rand:3": "1",
+              "subject:rand:4": "3",
+              "subject:rand:5": "2",
+              "subject:rand:6": "80785",
+              "subject:rand:7": "1",
+              "subject:rand:8": "3307",
+              "at_site:d": "36",
+              "at_site:w": "26"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": false,
+              "line": 4
+            }
+          ],
+          "found_seconds": 0.143907292,
+          "found_states": 139,
+          "found_solver_calls": 71
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": true,
+              "line": 4
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false,
+          "line": 4
+        }
+      ],
+      "id": "s011",
+      "repetition": 1,
+      "key": "timing-smtfirst-s011-1",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 61,
+        "summary_queries": 9,
+        "seconds": 0.026248333,
+        "choices": 17
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.22501579200000776,
+      "finished_at_utc": "2026-10-01T10:35:03.014579+00:00"
+    },
+    {
+      "status": "verified_sat",
+      "prediction": true,
+      "policy": "guided",
+      "states": 139,
+      "solver_calls": 71,
+      "seed_batches": 9,
+      "remaining_tasks": 16,
+      "stop_reason": null,
+      "incomplete": [],
+      "elapsed_seconds": 0.144470708,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-45c80357d5d1",
+            "file": "benchmarks/v4-stress/sources/s011.c",
+            "function": "subject",
+            "line": 9,
+            "column": 10,
+            "operator": "/",
+            "denominator": "(d-(36))",
+            "function_source": "int subject(void) {\n  int d=0, w=2;\n  for(int i=0;i<8;i++) {\n    int x=rand();\n    if(x%3==1) d+=w; else d-=w;\n    w+=3;\n  }\n  return 100/(d-(36));\n}"
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "source-derived path and zero denominator; no neural constraints",
+            "model": {
+              "subject:rand:1": "3",
+              "subject:rand:2": "3",
+              "subject:rand:3": "1",
+              "subject:rand:4": "3",
+              "subject:rand:5": "2",
+              "subject:rand:6": "80785",
+              "subject:rand:7": "1",
+              "subject:rand:8": "3307",
+              "at_site:d": "36",
+              "at_site:w": "26"
+            }
+          },
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": false,
+              "line": 4
+            }
+          ],
+          "found_seconds": 0.144371333,
+          "found_states": 139,
+          "found_solver_calls": 71
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-5e67b57b61f6",
+          "line": 6,
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "3 == 0"
+          ]
+        },
+        {
+          "kind": "unreachable_branch",
+          "trace": [
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 2,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 3,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 5,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 6,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 6,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 7,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 7,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 8,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-114230874211",
+              "visit": 8,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-b31e225b2be2",
+              "visit": 9,
+              "take": true,
+              "line": 4
+            }
+          ]
+        }
+      ],
+      "last_trace": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": false,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true,
+          "line": 4
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true,
+          "line": 6
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false,
+          "line": 4
+        }
+      ],
+      "id": "s011",
+      "repetition": 2,
+      "key": "timing-smtfirst-s011-2",
+      "system": "smt_first",
+      "lookahead": {
+        "status": "sat_advice",
+        "summary_states": 61,
+        "summary_queries": 9,
+        "seconds": 0.026650624999999997,
+        "choices": 17
+      },
+      "first": null,
+      "initial_model_used": false,
+      "provider_error": null,
+      "elapsed_end_to_end_seconds": 0.2247914590000022,
+      "finished_at_utc": "2026-10-01T10:35:03.242172+00:00"
+    }
+  ]
+}

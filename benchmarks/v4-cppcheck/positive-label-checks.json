@@ -1,0 +1,177 @@
+{
+  "method": "Direct C execution of explicit all-zero entry arguments; independent of SymDiv and model. All positives, no supported-subset selection.",
+  "cases": [
+    {
+      "id": "c001",
+      "function": "foo",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c001.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c001.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c002",
+      "function": "foo",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c002.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c002.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c003",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c003.c:3:15: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c003.c:3:15 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c004",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c004.c:3:15: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c004.c:3:15 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c005",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c005.c:3:15: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c005.c:3:15 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c006",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c006.c:3:15: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c006.c:3:15 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c007",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c007.c:3:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c007.c:3:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c008",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c008.c:2:16: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c008.c:2:16 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c009",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c009.c:4:25: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c009.c:4:25 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c013",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c013.c:3:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c013.c:3:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c014",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c014.c:2:20: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c014.c:2:20 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c015",
+      "function": "main",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c015.c:2:36: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c015.c:2:36 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c016",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c016.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c016.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c017",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c017.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c017.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c018",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c018.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c018.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c019",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c019.c:2:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c019.c:2:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c020",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c020.c:4:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c020.c:4:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c021",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c021.c:3:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c021.c:3:14 \n",
+      "returncode": -6
+    },
+    {
+      "id": "c022",
+      "function": "f",
+      "all_entry_arguments": 0,
+      "global_environment": "C static zero initialization",
+      "confirmed": true,
+      "stderr": "benchmarks/v4-cppcheck/sources/c022.c:3:14: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior benchmarks/v4-cppcheck/sources/c022.c:3:14 \n",
+      "returncode": -6
+    }
+  ],
+  "confirmed": 19
+}

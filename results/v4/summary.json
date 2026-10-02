@@ -1,0 +1,2491 @@
+{
+  "resource": {
+    "historical": {
+      "states64": {
+        "bfs": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1014,
+          "solver_calls": 1037
+        },
+        "coverage": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1010,
+          "solver_calls": 1023
+        },
+        "dfs": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1012,
+          "solver_calls": 1110
+        },
+        "discrepancy": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1008,
+          "solver_calls": 1070
+        },
+        "distance": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1011,
+          "solver_calls": 1113
+        },
+        "guided": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 8,
+          "proved_safe": 2,
+          "states": 741,
+          "solver_calls": 758
+        },
+        "heuristic": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1008,
+          "solver_calls": 1080
+        },
+        "lookahead": {
+          "tp": 7,
+          "fp": 0,
+          "tn": 9,
+          "fn": 2,
+          "unknown": 9,
+          "proved_safe": 2,
+          "states": 920,
+          "solver_calls": 576
+        },
+        "portfolio": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1010,
+          "solver_calls": 1073
+        },
+        "random11": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1024,
+          "solver_calls": 1089
+        },
+        "random29": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1014,
+          "solver_calls": 1074
+        },
+        "random47": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 1015,
+          "solver_calls": 1077
+        },
+        "reverse": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 9,
+          "fn": 7,
+          "unknown": 14,
+          "proved_safe": 2,
+          "states": 991,
+          "solver_calls": 1055
+        }
+      },
+      "states128": {
+        "bfs": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1859,
+          "solver_calls": 1937
+        },
+        "clang": {
+          "tp": 7,
+          "fp": 0,
+          "tn": 9,
+          "fn": 2,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "coverage": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1833,
+          "solver_calls": 1911
+        },
+        "dfs": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1819,
+          "solver_calls": 2006
+        },
+        "discrepancy": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 9,
+          "fn": 5,
+          "unknown": 11,
+          "proved_safe": 3,
+          "states": 1871,
+          "solver_calls": 2011
+        },
+        "distance": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1789,
+          "solver_calls": 1984
+        },
+        "feedback": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 3,
+          "states": 1193,
+          "solver_calls": 1256
+        },
+        "guided": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 3,
+          "states": 1193,
+          "solver_calls": 1256
+        },
+        "heuristic": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1842,
+          "solver_calls": 2010
+        },
+        "llm": {
+          "tp": 9,
+          "fp": 1,
+          "tn": 8,
+          "fn": 0,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "lookahead": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 7,
+          "proved_safe": 2,
+          "states": 1454,
+          "solver_calls": 1097
+        },
+        "portfolio": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 9,
+          "fn": 5,
+          "unknown": 11,
+          "proved_safe": 3,
+          "states": 1869,
+          "solver_calls": 2009
+        },
+        "random11": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1867,
+          "solver_calls": 2027
+        },
+        "random29": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1850,
+          "solver_calls": 2017
+        },
+        "random47": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 9,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 3,
+          "states": 1757,
+          "solver_calls": 1899
+        },
+        "reverse": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 9,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 3,
+          "states": 1703,
+          "solver_calls": 1818
+        },
+        "selective": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 3,
+          "states": 1562,
+          "solver_calls": 1671
+        }
+      },
+      "states512": {
+        "bfs": {
+          "tp": 7,
+          "fp": 0,
+          "tn": 9,
+          "fn": 2,
+          "unknown": 5,
+          "proved_safe": 6,
+          "states": 4754,
+          "solver_calls": 4826
+        },
+        "coverage": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4799,
+          "solver_calls": 5134
+        },
+        "dfs": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4522,
+          "solver_calls": 4874
+        },
+        "discrepancy": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4894,
+          "solver_calls": 5217
+        },
+        "distance": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4284,
+          "solver_calls": 4685
+        },
+        "guided": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 3,
+          "proved_safe": 6,
+          "states": 2734,
+          "solver_calls": 2904
+        },
+        "heuristic": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4865,
+          "solver_calls": 5254
+        },
+        "lookahead": {
+          "tp": 9,
+          "fp": 0,
+          "tn": 9,
+          "fn": 0,
+          "unknown": 4,
+          "proved_safe": 5,
+          "states": 3059,
+          "solver_calls": 2836
+        },
+        "portfolio": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4752,
+          "solver_calls": 5057
+        },
+        "random11": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4691,
+          "solver_calls": 5111
+        },
+        "random29": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4497,
+          "solver_calls": 4854
+        },
+        "random47": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 4210,
+          "solver_calls": 4357
+        },
+        "reverse": {
+          "tp": 8,
+          "fp": 0,
+          "tn": 9,
+          "fn": 1,
+          "unknown": 4,
+          "proved_safe": 6,
+          "states": 3889,
+          "solver_calls": 3939
+        }
+      }
+    },
+    "external": {
+      "states64": {
+        "bfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "coverage": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "dfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "discrepancy": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "distance": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "guided": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "heuristic": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "lookahead": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 201,
+          "solver_calls": 107
+        },
+        "portfolio": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "random11": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random29": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random47": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "reverse": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        }
+      },
+      "states128": {
+        "bfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "clang": {
+          "tp": 12,
+          "fp": 0,
+          "tn": 6,
+          "fn": 7,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "coverage": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "dfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "discrepancy": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "distance": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "feedback": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "guided": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "heuristic": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "llm": {
+          "tp": 16,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "lookahead": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 201,
+          "solver_calls": 107
+        },
+        "portfolio": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "random11": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random29": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random47": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "reverse": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "selective": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        }
+      },
+      "states512": {
+        "bfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "coverage": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "dfs": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "discrepancy": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "distance": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "guided": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "heuristic": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "lookahead": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 201,
+          "solver_calls": 107
+        },
+        "portfolio": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 109,
+          "solver_calls": 81
+        },
+        "random11": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random29": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "random47": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        },
+        "reverse": {
+          "tp": 11,
+          "fp": 0,
+          "tn": 6,
+          "fn": 8,
+          "unknown": 9,
+          "proved_safe": 5,
+          "states": 110,
+          "solver_calls": 83
+        }
+      }
+    },
+    "stress": {
+      "states64": {
+        "bfs": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 936
+        },
+        "coverage": {
+          "tp": 1,
+          "fp": 0,
+          "tn": 6,
+          "fn": 5,
+          "unknown": 11,
+          "proved_safe": 0,
+          "states": 758,
+          "solver_calls": 851
+        },
+        "dfs": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 948
+        },
+        "discrepancy": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 948
+        },
+        "distance": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 948
+        },
+        "guided": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 6,
+          "fn": 2,
+          "unknown": 8,
+          "proved_safe": 0,
+          "states": 606,
+          "solver_calls": 708
+        },
+        "heuristic": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 948
+        },
+        "lookahead": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 6,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 0,
+          "states": 745,
+          "solver_calls": 473
+        },
+        "portfolio": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 926
+        },
+        "random11": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 908
+        },
+        "random29": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 914
+        },
+        "random47": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 916
+        },
+        "reverse": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 768,
+          "solver_calls": 952
+        }
+      },
+      "states128": {
+        "bfs": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1908
+        },
+        "clang": {
+          "tp": 4,
+          "fp": 0,
+          "tn": 6,
+          "fn": 2,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "coverage": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 6,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 0,
+          "states": 1446,
+          "solver_calls": 1689
+        },
+        "dfs": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1932
+        },
+        "discrepancy": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1920
+        },
+        "distance": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1916
+        },
+        "feedback": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 0,
+          "states": 1009,
+          "solver_calls": 1203
+        },
+        "guided": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 0,
+          "states": 1009,
+          "solver_calls": 1203
+        },
+        "heuristic": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1934
+        },
+        "llm": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 0,
+          "proved_safe": 0,
+          "states": 0,
+          "solver_calls": 0
+        },
+        "lookahead": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 6,
+          "fn": 1,
+          "unknown": 7,
+          "proved_safe": 0,
+          "states": 1249,
+          "solver_calls": 1024
+        },
+        "portfolio": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1886
+        },
+        "random11": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1864
+        },
+        "random29": {
+          "tp": 1,
+          "fp": 0,
+          "tn": 6,
+          "fn": 5,
+          "unknown": 11,
+          "proved_safe": 0,
+          "states": 1503,
+          "solver_calls": 1825
+        },
+        "random47": {
+          "tp": 1,
+          "fp": 0,
+          "tn": 6,
+          "fn": 5,
+          "unknown": 11,
+          "proved_safe": 0,
+          "states": 1498,
+          "solver_calls": 1805
+        },
+        "reverse": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 1536,
+          "solver_calls": 1914
+        },
+        "selective": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 0,
+          "states": 1324,
+          "solver_calls": 1604
+        }
+      },
+      "states512": {
+        "bfs": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 6144,
+          "solver_calls": 7668
+        },
+        "coverage": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 6,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 0,
+          "states": 5286,
+          "solver_calls": 6307
+        },
+        "dfs": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 0,
+          "states": 5415,
+          "solver_calls": 6774
+        },
+        "discrepancy": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 6,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 0,
+          "states": 5948,
+          "solver_calls": 7443
+        },
+        "distance": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 0,
+          "states": 5413,
+          "solver_calls": 6760
+        },
+        "guided": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 0,
+          "states": 3313,
+          "solver_calls": 4120
+        },
+        "heuristic": {
+          "tp": 2,
+          "fp": 0,
+          "tn": 6,
+          "fn": 4,
+          "unknown": 10,
+          "proved_safe": 0,
+          "states": 5948,
+          "solver_calls": 7521
+        },
+        "lookahead": {
+          "tp": 6,
+          "fp": 0,
+          "tn": 6,
+          "fn": 0,
+          "unknown": 6,
+          "proved_safe": 0,
+          "states": 3564,
+          "solver_calls": 4003
+        },
+        "portfolio": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 0,
+          "states": 5628,
+          "solver_calls": 6962
+        },
+        "random11": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 0,
+          "states": 5472,
+          "solver_calls": 6686
+        },
+        "random29": {
+          "tp": 3,
+          "fp": 0,
+          "tn": 6,
+          "fn": 3,
+          "unknown": 9,
+          "proved_safe": 0,
+          "states": 5643,
+          "solver_calls": 6971
+        },
+        "random47": {
+          "tp": 5,
+          "fp": 0,
+          "tn": 6,
+          "fn": 1,
+          "unknown": 7,
+          "proved_safe": 0,
+          "states": 4853,
+          "solver_calls": 5885
+        },
+        "reverse": {
+          "tp": 0,
+          "fp": 0,
+          "tn": 6,
+          "fn": 6,
+          "unknown": 12,
+          "proved_safe": 0,
+          "states": 6144,
+          "solver_calls": 7710
+        }
+      }
+    }
+  },
+  "timing": {
+    "dfs": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "unknown": 3,
+      "proved_safe": 3,
+      "states": 16989,
+      "solver_calls": 18537,
+      "n": 15,
+      "model_calls": 0,
+      "median_seconds": 21.076844457999982,
+      "min_seconds": 0.08718295900007433,
+      "max_seconds": 30.00396925000007,
+      "total_seconds": 223.70414275200014,
+      "elapsed_lower_bound_trials": 0,
+      "total_seconds_is_lower_bound": false,
+      "provider_failures": 0,
+      "trials": [
+        {
+          "id": "c013",
+          "repetition": 0,
+          "seconds": 0.12205658399999919,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 1,
+          "seconds": 0.09641441599998757,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 0,
+          "seconds": 0.10752508400000238,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 1,
+          "seconds": 23.17377208299999,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 1,
+          "seconds": 21.076844457999982,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 2,
+          "seconds": 23.03802166600002,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 2,
+          "seconds": 0.08718295900007433,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 0,
+          "seconds": 30.003484666999952,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 2,
+          "seconds": 20.959829291999995,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 1,
+          "seconds": 0.16261729200004993,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 2,
+          "seconds": 0.13306295899997167,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 2,
+          "seconds": 30.002553208999984,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 0,
+          "seconds": 23.272976250000056,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 0,
+          "seconds": 21.463832583,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 1,
+          "seconds": 30.00396925000007,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        }
+      ]
+    },
+    "portfolio": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "unknown": 3,
+      "proved_safe": 3,
+      "states": 11763,
+      "solver_calls": 10896,
+      "n": 15,
+      "model_calls": 0,
+      "median_seconds": 5.320098166999969,
+      "min_seconds": 0.0871915839999815,
+      "max_seconds": 30.002868250000006,
+      "total_seconds": 157.52842962499983,
+      "elapsed_lower_bound_trials": 0,
+      "total_seconds_is_lower_bound": false,
+      "provider_failures": 0,
+      "trials": [
+        {
+          "id": "s008",
+          "repetition": 0,
+          "seconds": 30.001757875,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 1,
+          "seconds": 30.00227758300001,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 2,
+          "seconds": 0.10930491599998504,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 1,
+          "seconds": 0.10792016600001375,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 0,
+          "seconds": 17.206957499999987,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 2,
+          "seconds": 0.0871915839999815,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 2,
+          "seconds": 16.772694709000007,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 0,
+          "seconds": 5.320098166999969,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 1,
+          "seconds": 0.12317370899995694,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 2,
+          "seconds": 5.284432207999998,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 1,
+          "seconds": 5.335264499999994,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 2,
+          "seconds": 30.002868250000006,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 1,
+          "seconds": 16.96430683299991,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 0,
+          "seconds": 0.09031325000000834,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 0,
+          "seconds": 0.11986837500001002,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        }
+      ]
+    },
+    "lookahead": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "unknown": 3,
+      "proved_safe": 3,
+      "states": 735,
+      "solver_calls": 447,
+      "n": 15,
+      "model_calls": 0,
+      "median_seconds": 0.24463099999999827,
+      "min_seconds": 0.09076604199998428,
+      "max_seconds": 30.004226292,
+      "total_seconds": 92.46747579199999,
+      "elapsed_lower_bound_trials": 0,
+      "total_seconds_is_lower_bound": false,
+      "provider_failures": 0,
+      "trials": [
+        {
+          "id": "s008",
+          "repetition": 2,
+          "seconds": 30.003446666000002,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 0,
+          "seconds": 0.269885166999984,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 1,
+          "seconds": 0.2789622079999958,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 0,
+          "seconds": 0.24463099999999827,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 0,
+          "seconds": 30.004226292,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 1,
+          "seconds": 0.23081395799999882,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 2,
+          "seconds": 0.13691024999997126,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 1,
+          "seconds": 0.11514745900001344,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 1,
+          "seconds": 0.09076604199998428,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 2,
+          "seconds": 0.27548191699997915,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 0,
+          "seconds": 0.1336065830000166,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 1,
+          "seconds": 30.00336620799999,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 0,
+          "seconds": 0.23522095800001352,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 2,
+          "seconds": 0.2795554169999832,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "c010",
+          "repetition": 2,
+          "seconds": 0.1654556670000602,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        }
+      ]
+    },
+    "always": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "unknown": 3,
+      "proved_safe": 3,
+      "states": 393,
+      "solver_calls": 363,
+      "n": 15,
+      "model_calls": 15,
+      "median_seconds": 19.4459425,
+      "min_seconds": 7.969232415999983,
+      "max_seconds": 30.003910832999964,
+      "total_seconds": 282.30008054099994,
+      "elapsed_lower_bound_trials": 0,
+      "total_seconds_is_lower_bound": false,
+      "provider_failures": 0,
+      "trials": [
+        {
+          "id": "s008",
+          "repetition": 1,
+          "seconds": 30.002703166000003,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "s011",
+          "repetition": 2,
+          "seconds": 20.290483917000003,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c013",
+          "repetition": 2,
+          "seconds": 7.969232415999983,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s003",
+          "repetition": 0,
+          "seconds": 15.701673290999992,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s003",
+          "repetition": 1,
+          "seconds": 25.191315874999987,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c013",
+          "repetition": 0,
+          "seconds": 9.519322999999986,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s003",
+          "repetition": 2,
+          "seconds": 27.64465095899999,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 2,
+          "seconds": 10.45939525,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 0,
+          "seconds": 11.779435707999937,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": true
+        },
+        {
+          "id": "c013",
+          "repetition": 1,
+          "seconds": 9.336190292000083,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s008",
+          "repetition": 2,
+          "seconds": 30.003910832999964,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "s011",
+          "repetition": 0,
+          "seconds": 19.4459425,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s008",
+          "repetition": 0,
+          "seconds": 30.002670041999977,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 1,
+          "seconds": 14.334074375,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": true
+        },
+        {
+          "id": "s011",
+          "repetition": 1,
+          "seconds": 20.619078917000024,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        }
+      ]
+    },
+    "selective": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "unknown": 3,
+      "proved_safe": 3,
+      "states": 2701,
+      "solver_calls": 2518,
+      "n": 15,
+      "model_calls": 9,
+      "median_seconds": 20.810374792000005,
+      "min_seconds": 0.0960267919999751,
+      "max_seconds": 30.00375383300002,
+      "total_seconds": 229.258956625,
+      "elapsed_lower_bound_trials": 0,
+      "total_seconds_is_lower_bound": false,
+      "provider_failures": 0,
+      "trials": [
+        {
+          "id": "s003",
+          "repetition": 0,
+          "seconds": 25.760349708999968,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s011",
+          "repetition": 0,
+          "seconds": 20.810374792000005,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c013",
+          "repetition": 2,
+          "seconds": 0.21765716599998086,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 2,
+          "seconds": 30.002468082999997,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "s008",
+          "repetition": 1,
+          "seconds": 30.00341824999998,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 0,
+          "seconds": 0.15789024999997991,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 0,
+          "seconds": 0.22864975000004506,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s003",
+          "repetition": 2,
+          "seconds": 26.410226291999948,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "s011",
+          "repetition": 2,
+          "seconds": 22.36564308300001,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 2,
+          "seconds": 0.1284794169999941,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "s008",
+          "repetition": 0,
+          "seconds": 30.00375383300002,
+          "elapsed_time_is_lower_bound": false,
+          "status": "unknown",
+          "model": true
+        },
+        {
+          "id": "s003",
+          "repetition": 1,
+          "seconds": 24.02181525000003,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        },
+        {
+          "id": "c010",
+          "repetition": 1,
+          "seconds": 0.11108024999998634,
+          "elapsed_time_is_lower_bound": false,
+          "status": "refuted_complete",
+          "model": false
+        },
+        {
+          "id": "c013",
+          "repetition": 1,
+          "seconds": 0.0960267919999751,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": false
+        },
+        {
+          "id": "s011",
+          "repetition": 1,
+          "seconds": 18.941123708000077,
+          "elapsed_time_is_lower_bound": false,
+          "status": "verified_sat",
+          "model": true
+        }
+      ]
+    }
+  },
+  "feedback": [
+    {
+      "id": "d005",
+      "cohort": "historical",
+      "trigger": {
+        "spent_states": 51,
+        "spent_solver_calls": 35,
+        "remaining_tasks": 11,
+        "failure": {
+          "kind": "zero_denominator_unsat",
+          "site_id": "div-3e8d0934ebda",
+          "line": 9,
+          "trace": [
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 1,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-c705d62b1250",
+              "visit": 1,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 2,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-c705d62b1250",
+              "visit": 2,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 3,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-c705d62b1250",
+              "visit": 3,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 4,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-c705d62b1250",
+              "visit": 4,
+              "take": false,
+              "line": 6
+            },
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 5,
+              "take": true,
+              "line": 4
+            },
+            {
+              "branch_id": "br-c705d62b1250",
+              "visit": 5,
+              "take": true,
+              "line": 6
+            },
+            {
+              "branch_id": "br-26956deef472",
+              "visit": 6,
+              "take": false,
+              "line": 4
+            }
+          ],
+          "unsat_core": [
+            "2*(0 - 1 + 1*2 - 1*2*2 - 1*2*2*2 + 1*2*2*2*2) - 11 == 0"
+          ]
+        }
+      },
+      "first_verdicts": [
+        "bug"
+      ],
+      "repair_verdicts": [
+        "safe"
+      ],
+      "repair_seconds": 11.054950166000026,
+      "valid_correction": true,
+      "without": {
+        "prediction": false,
+        "states": 128
+      },
+      "with": {
+        "prediction": false,
+        "states": 128,
+        "status": "unknown"
+      }
+    }
+  ],
+  "repeated_response_resource_results": [
+    {
+      "id": "c010",
+      "cohort": "external",
+      "expected_bug": false,
+      "trials": [
+        {
+          "repetition": 0,
+          "prediction": false,
+          "status": "refuted_complete",
+          "states": 23,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        },
+        {
+          "repetition": 1,
+          "prediction": false,
+          "status": "refuted_complete",
+          "states": 23,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        },
+        {
+          "repetition": 2,
+          "prediction": false,
+          "status": "refuted_complete",
+          "states": 23,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        }
+      ]
+    },
+    {
+      "id": "c013",
+      "cohort": "external",
+      "expected_bug": true,
+      "trials": [
+        {
+          "repetition": 0,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 5,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 1,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 5,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 2,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 5,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        }
+      ]
+    },
+    {
+      "id": "s003",
+      "cohort": "stress",
+      "expected_bug": true,
+      "trials": [
+        {
+          "repetition": 0,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 25,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 1,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 25,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 2,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 25,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        }
+      ]
+    },
+    {
+      "id": "s008",
+      "cohort": "stress",
+      "expected_bug": false,
+      "trials": [
+        {
+          "repetition": 0,
+          "prediction": false,
+          "status": "unknown",
+          "states": 128,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        },
+        {
+          "repetition": 1,
+          "prediction": false,
+          "status": "unknown",
+          "states": 128,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        },
+        {
+          "repetition": 2,
+          "prediction": false,
+          "status": "unknown",
+          "states": 128,
+          "guidance_error": null,
+          "model_bug": false,
+          "provider_error": null
+        }
+      ]
+    },
+    {
+      "id": "s011",
+      "cohort": "stress",
+      "expected_bug": true,
+      "trials": [
+        {
+          "repetition": 0,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 78,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 1,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 78,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        },
+        {
+          "repetition": 2,
+          "prediction": true,
+          "status": "verified_sat",
+          "states": 78,
+          "guidance_error": null,
+          "model_bug": true,
+          "provider_error": null
+        }
+      ]
+    }
+  ],
+  "smt_first_extension": {
+    "tp": 9,
+    "fp": 0,
+    "tn": 6,
+    "fn": 0,
+    "unknown": 3,
+    "proved_safe": 3,
+    "states": 735,
+    "solver_calls": 447,
+    "n": 15,
+    "model_calls": 3,
+    "median_seconds": 0.22501579200000776,
+    "total_seconds": 92.21659579300001,
+    "trials": [
+      {
+        "id": "c010",
+        "repetition": 0,
+        "prediction": false,
+        "status": "refuted_complete",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.11078787500000001
+      },
+      {
+        "id": "c010",
+        "repetition": 1,
+        "prediction": false,
+        "status": "refuted_complete",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.11206987499999999
+      },
+      {
+        "id": "c010",
+        "repetition": 2,
+        "prediction": false,
+        "status": "refuted_complete",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.11049195899999997
+      },
+      {
+        "id": "c013",
+        "repetition": 0,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.085075083
+      },
+      {
+        "id": "c013",
+        "repetition": 1,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.08545704199999998
+      },
+      {
+        "id": "c013",
+        "repetition": 2,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.08597812500000002
+      },
+      {
+        "id": "s003",
+        "repetition": 0,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.264501875
+      },
+      {
+        "id": "s003",
+        "repetition": 1,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.2691805410000001
+      },
+      {
+        "id": "s003",
+        "repetition": 2,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.2659970840000001
+      },
+      {
+        "id": "s008",
+        "repetition": 0,
+        "prediction": false,
+        "status": "unknown",
+        "initial_model_used": true,
+        "elapsed_end_to_end_seconds": 30.003841791
+      },
+      {
+        "id": "s008",
+        "repetition": 1,
+        "prediction": false,
+        "status": "unknown",
+        "initial_model_used": true,
+        "elapsed_end_to_end_seconds": 30.003439625000002
+      },
+      {
+        "id": "s008",
+        "repetition": 2,
+        "prediction": false,
+        "status": "unknown",
+        "initial_model_used": true,
+        "elapsed_end_to_end_seconds": 30.003858582999996
+      },
+      {
+        "id": "s011",
+        "repetition": 0,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.3661090840000014
+      },
+      {
+        "id": "s011",
+        "repetition": 1,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.22501579200000776
+      },
+      {
+        "id": "s011",
+        "repetition": 2,
+        "prediction": true,
+        "status": "verified_sat",
+        "initial_model_used": false,
+        "elapsed_end_to_end_seconds": 0.2247914590000022
+      }
+    ]
+  },
+  "new_calls": 74,
+  "known_tokens": 1368439,
+  "usage_incomplete_calls": 1,
+  "provider_seconds": 1110.3518992860002,
+  "invalid_clock_trials_retained": 38,
+  "calls_by_phase": {
+    "resource": 38,
+    "invalid_clock_timing": 8,
+    "corrected_timing": 24,
+    "smt_first_extension": 3,
+    "site_location_repair": 1
+  },
+  "per_case_timing": {
+    "c010": {
+      "dfs": 0.13306295899997167,
+      "portfolio": 0.10930491599998504,
+      "lookahead": 0.1654556670000602,
+      "always": 11.779435707999937,
+      "selective": 0.1284794169999941,
+      "smt_first": 0.11078787500000001
+    },
+    "c013": {
+      "dfs": 0.09641441599998757,
+      "portfolio": 0.09031325000000834,
+      "lookahead": 0.1336065830000166,
+      "always": 9.336190292000083,
+      "selective": 0.21765716599998086,
+      "smt_first": 0.08545704199999998
+    },
+    "s003": {
+      "dfs": 23.17377208299999,
+      "portfolio": 5.320098166999969,
+      "lookahead": 0.2789622079999958,
+      "always": 25.191315874999987,
+      "selective": 25.760349708999968,
+      "smt_first": 0.2659970840000001
+    },
+    "s008": {
+      "dfs": 30.003484666999952,
+      "portfolio": 30.00227758300001,
+      "lookahead": 30.003446666000002,
+      "always": 30.002703166000003,
+      "selective": 30.00341824999998,
+      "smt_first": 30.003841791
+    },
+    "s011": {
+      "dfs": 21.076844457999982,
+      "portfolio": 16.96430683299991,
+      "lookahead": 0.23522095800001352,
+      "always": 20.290483917000003,
+      "selective": 20.810374792000005,
+      "smt_first": 0.22501579200000776
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "key": "timing-c013-2-always",
+  "source_sha256": "78d9a5dc15b4849f9ac46ad530a0a18d056ead8a3e22cf7d5386d4ce68cca021",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-62d41d3b5956",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(x-y)",
+          "rationale": "Choose equal 32-bit integers for x and y. The if body is empty, execution continues, and (x-y) is exactly zero without earlier undefined behavior.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6f0-f308-72a0-bb49-3aa25cf31c91"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-62d41d3b5956\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(x-y)\",\"rationale\":\"Choose equal 32-bit integers for x and y. The if body is empty, execution continues, and (x-y) is exactly zero without earlier undefined behavior.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-f2ac5bd51e72\",\"visit\":1,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17670,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 152,
+          "reasoning_output_tokens": 36
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:09:41.157564Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.159227Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.160222Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.161195Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.162103Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.163123Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:09:41.164261Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17670,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 152,
+      "reasoning_output_tokens": 36
+    },
+    "_client_elapsed_seconds": 9.965658125000001
+  },
+  "elapsed_seconds": 9.989173584
+}

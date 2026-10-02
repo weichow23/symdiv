@@ -1,0 +1,67 @@
+{
+  "key": "timing-corrected-c013-1-always",
+  "source_sha256": "78d9a5dc15b4849f9ac46ad530a0a18d056ead8a3e22cf7d5386d4ce68cca021",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-62d41d3b5956",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(x-y)",
+          "rationale": "Choose x == y (for example, x = y = 0); then x-y is zero without earlier undefined behavior, and the return divides by zero.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6ff-7bbb-79e1-8f85-da6413b86595"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-62d41d3b5956\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(x-y)\",\"rationale\":\"Choose x == y (for example, x = y = 0); then x-y is zero without earlier undefined behavior, and the return divides by zero.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-f2ac5bd51e72\",\"visit\":1,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17831,
+          "cached_input_tokens": 11392,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 182,
+          "reasoning_output_tokens": 67
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:25:33.633205Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:33.635910Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:33.637542Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:33.638643Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:25:33.639547Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17831,
+      "cached_input_tokens": 11392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 182,
+      "reasoning_output_tokens": 67
+    },
+    "_client_elapsed_seconds": 9.219739291
+  },
+  "elapsed_seconds": 9.240641375000001
+}

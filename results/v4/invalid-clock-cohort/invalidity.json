@@ -1,0 +1,13 @@
+{
+  "reason": "Python 3.9 on macOS uses a different monotonic clock origin per process. Passing the parent clock to a child invalidated warmup/deadline checks. Entire partial timing cohort is excluded, retained without selection, and will be rerun once under a corrected clock protocol. Parent-measured elapsed durations remain archival observations. Resource experiments are same-process and unaffected.",
+  "aborted_calls": [
+    "timing-c010-2-always"
+  ],
+  "parents_stopped": [
+    98979
+  ],
+  "workers_stopped": [
+    99636
+  ],
+  "recorded_at_utc": "2026-10-01T10:14:44.966942+00:00"
+}

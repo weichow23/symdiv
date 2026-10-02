@@ -1,0 +1,179 @@
+{
+  "key": "s001-initial",
+  "source_sha256": "36e184603039b8e0db72376616fd1b89706dea6dfde0a4ffcfbde69d64574333",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-e645acba5a6e",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-e32edd8e7d12",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-c0e535e61241",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-4e97ca4fe362",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-f69b05227e82",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-08c7a13f7b17",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-6a5a0f6d266d",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-68379d3c613c",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-ae2d693b2af6",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero integer constant 3.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-abcc9c8341d5",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d-(16))",
+          "rationale": "Choose the positive branches for weights 28, 24, 22, and 14 and the negative branches for all other weights. Then d=(28+24+22+14)-(9+12+13+18+20)=88-72=16, so the denominator is zero without earlier undefined behavior.",
+          "confidence": 1
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-38d9c35870e2",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-bfd0e5ec5fe9",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-28c9953c4a6a",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-9c693d6dd886",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-63df5bb7a966",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-181e3c664600",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-940403b8d29b",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-bd89595475d5",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-a880914aec22",
+          "visit": 1,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6d8-d7bf-7aa2-b1bf-285047045ee6"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-e645acba5a6e\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-e32edd8e7d12\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-c0e535e61241\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-4e97ca4fe362\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-f69b05227e82\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-08c7a13f7b17\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-6a5a0f6d266d\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-68379d3c613c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-ae2d693b2af6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero integer constant 3.\",\"confidence\":1},{\"site_id\":\"div-abcc9c8341d5\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d-(16))\",\"rationale\":\"Choose the positive branches for weights 28, 24, 22, and 14 and the negative branches for all other weights. Then d=(28+24+22+14)-(9+12+13+18+20)=88-72=16, so the denominator is zero without earlier undefined behavior.\",\"confidence\":1}],\"choices\":[{\"branch_id\":\"br-38d9c35870e2\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-bfd0e5ec5fe9\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-28c9953c4a6a\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-9c693d6dd886\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-63df5bb7a966\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-181e3c664600\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-940403b8d29b\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-bd89595475d5\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-a880914aec22\",\"visit\":1,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 18772,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 873,
+          "reasoning_output_tokens": 152
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:43:21.284786Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:43:21.286662Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:43:21.287719Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:43:21.288831Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:43:21.289801Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:43:21.291035Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 18772,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 873,
+      "reasoning_output_tokens": 152
+    },
+    "_client_elapsed_seconds": 21.872925125000023
+  },
+  "elapsed_seconds": 21.89688537500001
+}

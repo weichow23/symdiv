@@ -1,0 +1,210 @@
+{
+  "key": "s007-initial",
+  "source_sha256": "800a96a8e24aae8e37dc389fe325603181f9e5db2a95252bd377cf3239f67d44",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-4faf2c8932be",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "128",
+          "rationale": "The denominator is the nonzero integer constant 128.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-f79d12007a1b",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "16",
+          "rationale": "The denominator is the nonzero integer constant 16.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-b3904102b929",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2",
+          "rationale": "The denominator is the nonzero integer constant 2.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-acee48036b01",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "4",
+          "rationale": "The denominator is the nonzero integer constant 4.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-7228dc41701a",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "1024",
+          "rationale": "The denominator is the nonzero integer constant 1024.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-3b0af405037c",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "32",
+          "rationale": "The denominator is the nonzero integer constant 32.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-20edbe174bd2",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "8",
+          "rationale": "The denominator is the nonzero integer constant 8.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-a89a9fe3a7dc",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2048",
+          "rationale": "The denominator is the nonzero integer constant 2048.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-69ba4d766784",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "64",
+          "rationale": "The denominator is the nonzero integer constant 64.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-a77ef554b215",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "512",
+          "rationale": "The denominator is the nonzero integer constant 512.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-5bf338ff723d",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "256",
+          "rationale": "The denominator is the nonzero integer constant 256.",
+          "confidence": 1
+        },
+        {
+          "site_id": "div-53b0d2c5460d",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d-(5))",
+          "rationale": "Input x=596 passes the range guard and selects contributions +8,-8,-8,-3,+20,+12,+26,-8,-16,-5,-13, yielding d=5 and hence a zero denominator.",
+          "confidence": 1
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-351e0c2c312e",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-1350ef68ddab",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-b509d25512e8",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-795214584532",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-b79fe9e11ced",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-28ec3b53ea54",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-b46c3b9b87a2",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-cb87b9f1d7be",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-a15e00057b70",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-e550ee098926",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-d32591268969",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-f14e08e66005",
+          "visit": 1,
+          "take": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6e3-2960-75b0-a8c3-d369395e3072"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-4faf2c8932be\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"128\",\"rationale\":\"The denominator is the nonzero integer constant 128.\",\"confidence\":1},{\"site_id\":\"div-f79d12007a1b\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"16\",\"rationale\":\"The denominator is the nonzero integer constant 16.\",\"confidence\":1},{\"site_id\":\"div-b3904102b929\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero integer constant 2.\",\"confidence\":1},{\"site_id\":\"div-acee48036b01\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"4\",\"rationale\":\"The denominator is the nonzero integer constant 4.\",\"confidence\":1},{\"site_id\":\"div-7228dc41701a\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"1024\",\"rationale\":\"The denominator is the nonzero integer constant 1024.\",\"confidence\":1},{\"site_id\":\"div-3b0af405037c\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"32\",\"rationale\":\"The denominator is the nonzero integer constant 32.\",\"confidence\":1},{\"site_id\":\"div-20edbe174bd2\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"8\",\"rationale\":\"The denominator is the nonzero integer constant 8.\",\"confidence\":1},{\"site_id\":\"div-a89a9fe3a7dc\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2048\",\"rationale\":\"The denominator is the nonzero integer constant 2048.\",\"confidence\":1},{\"site_id\":\"div-69ba4d766784\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"64\",\"rationale\":\"The denominator is the nonzero integer constant 64.\",\"confidence\":1},{\"site_id\":\"div-a77ef554b215\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"512\",\"rationale\":\"The denominator is the nonzero integer constant 512.\",\"confidence\":1},{\"site_id\":\"div-5bf338ff723d\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"256\",\"rationale\":\"The denominator is the nonzero integer constant 256.\",\"confidence\":1},{\"site_id\":\"div-53b0d2c5460d\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d-(5))\",\"rationale\":\"Input x=596 passes the range guard and selects contributions +8,-8,-8,-3,+20,+12,+26,-8,-16,-5,-13, yielding d=5 and hence a zero denominator.\",\"confidence\":1}],\"choices\":[{\"branch_id\":\"br-351e0c2c312e\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-1350ef68ddab\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-b509d25512e8\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-795214584532\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-b79fe9e11ced\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-28ec3b53ea54\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-b46c3b9b87a2\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-cb87b9f1d7be\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-a15e00057b70\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-e550ee098926\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-d32591268969\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-f14e08e66005\",\"visit\":1,\"take\":false}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 19041,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1118,
+          "reasoning_output_tokens": 278
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:54:37.542639Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:54:37.545099Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:54:37.546360Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:54:37.547250Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:54:37.548538Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:54:37.549689Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 19041,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1118,
+      "reasoning_output_tokens": 278
+    },
+    "_client_elapsed_seconds": 25.643785209000043
+  },
+  "elapsed_seconds": 25.666334291
+}

@@ -1,0 +1,138 @@
+{
+  "status": "verified_sat",
+  "prediction": true,
+  "policy": "guided",
+  "states": 5,
+  "solver_calls": 2,
+  "seed_batches": 1,
+  "remaining_tasks": 1,
+  "stop_reason": null,
+  "incomplete": [],
+  "elapsed_seconds": 9.380222167,
+  "findings": [
+    {
+      "site": {
+        "site_id": "div-62d41d3b5956",
+        "file": "benchmarks/v4-cppcheck/sources/c013.c",
+        "function": "f",
+        "line": 3,
+        "column": 12,
+        "operator": "/",
+        "denominator": "(x-y)",
+        "function_source": "int f(int x, int y) {\n    if (x == y) {}\n    return 1 / (x-y);\n}"
+      },
+      "verification": {
+        "status": "verified_sat",
+        "accepted": true,
+        "reason": "source-derived path and zero denominator; no neural constraints",
+        "model": {
+          "f:x:1": "0",
+          "f:y:2": "0",
+          "at_site:x": "0",
+          "at_site:y": "0"
+        }
+      },
+      "trace": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true,
+          "line": 2
+        }
+      ],
+      "found_seconds": 9.380174584,
+      "found_states": 5,
+      "found_solver_calls": 2
+    }
+  ],
+  "feedback": [],
+  "last_trace": [
+    {
+      "branch_id": "br-f2ac5bd51e72",
+      "visit": 1,
+      "take": true,
+      "line": 2
+    }
+  ],
+  "guidance_error": null,
+  "repair_error": null,
+  "feedback_trigger": null,
+  "feedback_attempted": false,
+  "feedback_used": false,
+  "repair_wait_seconds": 0.0,
+  "initial_states": 0,
+  "id": "c013",
+  "system": "always",
+  "elapsed_end_to_end_seconds": 9.518811499999998,
+  "initial_model_used": true,
+  "provider_error": null,
+  "first": {
+    "key": "timing-c013-0-always",
+    "source_sha256": "78d9a5dc15b4849f9ac46ad530a0a18d056ead8a3e22cf7d5386d4ce68cca021",
+    "feedback": null,
+    "raw": {
+      "provider": "codex_exec",
+      "codex_version": "codex-cli 0.159.0",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "output": {
+        "findings": [
+          {
+            "site_id": "div-62d41d3b5956",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "(x-y)",
+            "rationale": "Choose x equal to y. The if body is entered but does nothing, then the denominator evaluates to zero with no earlier undefined behavior.",
+            "confidence": 1.0
+          }
+        ],
+        "choices": [
+          {
+            "branch_id": "br-f2ac5bd51e72",
+            "visit": 1,
+            "take": true
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a0f6f2-66e9-71d3-bb5e-5c7b54c2eca1"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_0",
+            "type": "agent_message",
+            "text": "{\"findings\":[{\"site_id\":\"div-62d41d3b5956\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(x-y)\",\"rationale\":\"Choose x equal to y. The if body is entered but does nothing, then the denominator evaluates to zero with no earlier undefined behavior.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-f2ac5bd51e72\",\"visit\":1,\"take\":true}]}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 17670,
+            "cached_input_tokens": 16128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 149,
+            "reasoning_output_tokens": 39
+          }
+        }
+      ],
+      "stderr": "2026-10-01T10:11:16.361839Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.363009Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.363891Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.364735Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.365557Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.366478Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:11:16.367312Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+      "usage": {
+        "input_tokens": 17670,
+        "cached_input_tokens": 16128,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 149,
+        "reasoning_output_tokens": 39
+      },
+      "_client_elapsed_seconds": 9.335246208000001
+    },
+    "elapsed_seconds": 9.363533167
+  },
+  "clock": "fresh actual wall clock including preparation, provider process, parsing and search",
+  "finished_at_utc": "2026-10-01T10:11:25.674538+00:00"
+}

@@ -1,0 +1,894 @@
+{
+  "recorded_at_utc": "2026-09-30T00:39:10.610769+00:00",
+  "method": "Configure upstream build, syntax-check one fixed translation unit with its compilation-database flags, inspect actual AST for required unsupported features. No source slicing, semantic replacement, vulnerability labels, or whole-project performance claims.",
+  "cmake": "cmake version 3.31.6",
+  "projects": [
+    {
+      "project": "libpng",
+      "version": "1.6.44",
+      "commit": "f5e92d76973a7a53f517579bc95d61483bf108c0",
+      "repository": "https://github.com/pnggroup/libpng",
+      "file": "pngrutil.c",
+      "url": "https://codeload.github.com/pnggroup/libpng/tar.gz/f5e92d76973a7a53f517579bc95d61483bf108c0",
+      "options": [
+        "-DPNG_SHARED=OFF",
+        "-DPNG_TESTS=OFF"
+      ],
+      "archive_sha256": "3689d30176661b821ce02c92baf801050bc3849d3428ff99c8afeb1ef4390c8c",
+      "configure": {
+        "command": [
+          "[local workspace]/project/.venv/bin/cmake",
+          "-S",
+          "[local workspace]/project/tmp/realworld/libpng-source/libpng-f5e92d76973a7a53f517579bc95d61483bf108c0",
+          "-B",
+          "[local workspace]/project/tmp/realworld/libpng-build",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DPNG_SHARED=OFF",
+          "-DPNG_TESTS=OFF"
+        ],
+        "directory": "[local workspace]/project",
+        "returncode": 0,
+        "stdout": "-- The C compiler identification is AppleClang 17.0.0.17000404\n-- The ASM compiler identification is AppleClang\n-- Found assembler: /Library/Developer/CommandLineTools/usr/bin/cc\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Building for target architecture: arm64\n-- Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/libz.tbd (found version \"1.2.12\")\n-- Found AWK program: /usr/bin/awk\n-- Configuring done (0.5s)\n-- Generating done (0.1s)\n-- Build files have been written to: [local workspace]/project/tmp/realworld/libpng-build\n",
+        "stderr": "CMake Deprecation Warning at CMakeLists.txt:18 (cmake_minimum_required):\n  Compatibility with CMake < 3.10 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n  to tell CMake that the project requires at least <min> but has been updated\n  to work with policies introduced by <max> or earlier.\n\n\n"
+      },
+      "source_sha256": "a606ae5b03b2c58a48096f6baba0816d54ac293fe65fdb146a43cb856a17ba3f",
+      "syntax": {
+        "command": [
+          "/Library/Developer/CommandLineTools/usr/bin/cc",
+          "-DPNG_ARM_NEON_OPT=2",
+          "-I[local workspace]/project/tmp/realworld/libpng-source/libpng-f5e92d76973a7a53f517579bc95d61483bf108c0",
+          "-I[local workspace]/project/tmp/realworld/libpng-build",
+          "-arch",
+          "arm64",
+          "-isysroot",
+          "/Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk",
+          "-fsyntax-only",
+          "-Xclang",
+          "-ast-dump=json",
+          "[local workspace]/project/tmp/realworld/libpng-source/libpng-f5e92d76973a7a53f517579bc95d61483bf108c0/pngrutil.c"
+        ],
+        "directory": "[local workspace]/project/tmp/realworld/libpng-build",
+        "returncode": 1,
+        "stderr": "In file included from [local workspace]/project/tmp/realworld/libpng-source/libpng-f5e92d76973a7a53f517579bc95d61483bf108c0/pngrutil.c:17:\n[local workspace]/project/tmp/realworld/libpng-source/libpng-f5e92d76973a7a53f517579bc95d61483bf108c0/pngpriv.h:72:12: fatal error: 'pnglibconf.h' file not found\n   72 | #  include \"pnglibconf.h\"\n      |            ^~~~~~~~~~~~~~\n1 error generated.\n"
+      },
+      "completed": false,
+      "error": "RuntimeError: syntax/AST compilation failed"
+    },
+    {
+      "project": "libsndfile",
+      "version": "1.2.2",
+      "commit": "72f6af15e8f85157bd622ed45b979025828b7001",
+      "repository": "https://github.com/libsndfile/libsndfile",
+      "file": "src/pcm.c",
+      "url": "https://codeload.github.com/libsndfile/libsndfile/tar.gz/72f6af15e8f85157bd622ed45b979025828b7001",
+      "options": [
+        "-DBUILD_PROGRAMS=OFF",
+        "-DBUILD_EXAMPLES=OFF",
+        "-DBUILD_TESTING=OFF",
+        "-DENABLE_EXTERNAL_LIBS=OFF",
+        "-DENABLE_MPEG=OFF"
+      ],
+      "archive_sha256": "188839b1bedccdf213034fcc74cc2773b170cfa3b2d7a462ac04fb982fcef7b3",
+      "configure": {
+        "command": [
+          "[local workspace]/project/.venv/bin/cmake",
+          "-S",
+          "[local workspace]/project/tmp/realworld/libsndfile-source/libsndfile-72f6af15e8f85157bd622ed45b979025828b7001",
+          "-B",
+          "[local workspace]/project/tmp/realworld/libsndfile-build",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DBUILD_PROGRAMS=OFF",
+          "-DBUILD_EXAMPLES=OFF",
+          "-DBUILD_TESTING=OFF",
+          "-DENABLE_EXTERNAL_LIBS=OFF",
+          "-DENABLE_MPEG=OFF"
+        ],
+        "directory": "[local workspace]/project",
+        "returncode": 0,
+        "stdout": "-- The C compiler identification is AppleClang 17.0.0.17000404\n-- The CXX compiler identification is AppleClang 17.0.0.17000404\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- \n-- \n-- Checking large files support...\n-- \n-- Looking for sys/types.h\n-- Looking for sys/types.h - found\n-- Looking for stdint.h\n-- Looking for stdint.h - found\n-- Looking for stddef.h\n-- Looking for stddef.h - found\n-- \n-- Checking size of off_t without any definitions:\n-- Check size of off_t\n-- Check size of off_t - done\n-- Checking of off_t without any definitions: 8\n-- \n-- Result of checking large files support: supported\n-- Could NOT find ALSA (missing: ALSA_LIBRARY ALSA_INCLUDE_DIR) \n-- Could NOT find Ogg (missing: OGG_LIBRARY OGG_INCLUDE_DIR) (Required is at least version \"1.3\")\n-- Could NOT find Vorbis (missing: Vorbis_Vorbis_LIBRARY Vorbis_Vorbis_INCLUDE_DIR Ogg_FOUND Enc) \n-- Could NOT find FLAC (missing: FLAC_LIBRARY FLAC_INCLUDE_DIR Ogg_FOUND) \n-- Could NOT find Opus (missing: OPUS_LIBRARY OPUS_INCLUDE_DIR OGG_FOUND) \n-- Could NOT find mp3lame (missing: MP3LAME_LIBRARY MP3LAME_INCLUDE_DIR) \n-- Could NOT find mpg123 (missing: mpg123_LIBRARY mpg123_INCLUDE_DIR) (Required is at least version \"1.25.10\")\n-- Could NOT find Speex (missing: SPEEX_LIBRARY SPEEX_INCLUDE_DIR) \n-- Found SQLite3: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/include (found version \"3.51.0\")\n-- Looking for byteswap.h\n-- Looking for byteswap.h - not found\n-- Looking for dlfcn.h\n-- Looking for dlfcn.h - found\n-- Looking for direct.h\n-- Looking for direct.h - not found\n-- Looking for endian.h\n-- Looking for endian.h - not found\n-- Looking for inttypes.h\n-- Looking for inttypes.h - found\n-- Looking for io.h\n-- Looking for io.h - not found\n-- Looking for sys/time.h\n-- Looking for sys/time.h - found\n-- Looking for unistd.h\n-- Looking for unistd.h - found\n-- Looking for immintrin.h\n-- Looking for immintrin.h - not found\n-- Looking for stdbool.h\n-- Looking for stdbool.h - found\n-- Check CPU architecture is x86\n-- Check CPU architecture is x86 - no\n-- Check CPU architecture is x64\n-- Check CPU architecture is x64 - no\n-- Check size of int64_t\n-- Check size of int64_t - done\n-- Check size of long\n-- Check size of long - done\n-- Check size of long long\n-- Check size of long long - done\n-- Check size of ssize_t\n-- Check size of ssize_t - done\n-- Check size of wchar_t\n-- Check size of wchar_t - done\n-- Looking for floor in m\n-- Looking for floor in m - found\n-- Looking for sqlite3_close in sqlite3\n-- Looking for sqlite3_close in sqlite3 - found\n-- Looking for fstat\n-- Looking for fstat - found\n-- Looking for fstat64\n-- Looking for fstat64 - found\n-- Looking for gettimeofday\n-- Looking for gettimeofday - found\n-- Looking for gmtime\n-- Looking for gmtime - found\n-- Looking for gmtime_r\n-- Looking for gmtime_r - found\n-- Looking for localtime\n-- Looking for localtime - found\n-- Looking for localtime_r\n-- Looking for localtime_r - found\n-- Looking for lseek\n-- Looking for lseek - found\n-- Looking for open\n-- Looking for open - found\n-- Looking for read\n-- Looking for read - found\n-- Looking for write\n-- Looking for write - found\n-- Looking for lrint\n-- Looking for lrint - found\n-- Looking for lrintf\n-- Looking for lrintf - found\n-- Looking for ftruncate\n-- Looking for ftruncate - found\n-- Looking for fsync\n-- Looking for fsync - found\n-- Looking for S_IRGRP\n-- Looking for S_IRGRP - found\n-- Checking for inline...\n-- Checking for inline... supported\n-- Checking processor clipping capabilities...\n-- Checking processor clipping capabilities... none\n-- The following features have been enabled:\n\n * ENABLE_CPACK, enable CPack support\n * ENABLE_PACKAGE_CONFIG, generate and install package config file\n * INSTALL_PKGCONFIG_MODULE, generate and install pkg-config module\n\n-- The following OPTIONAL packages have been found:\n\n * SQLite3, light weight SQL database engine., <www.sqlite.org/>\n   Enables regtest\n\n-- The following features have been disabled:\n\n * BUILD_SHARED_LIBS, build shared libraries\n * ENABLE_EXTERNAL_LIBS, enable FLAC, Vorbis, and Opus codecs\n * ENABLE_MPEG, enable MPEG audio (including mp3) codecs\n * ENABLE_EXPERIMENTAL, enable experimental code\n * BUILD_TESTING, build tests\n * BUILD_REGTEST, build regtest\n * ENABLE_CPU_CLIP, Enable tricky cpu specific clipper\n * ENABLE_BOW_DOCS, enable black-on-white html docs\n * INSTALL_MANPAGES, install man pages for programs\n\n-- The following OPTIONAL packages have not been found:\n\n * ALSA\n * Speex, an audio codec tuned for speech, <www.speex.org/>\n   Enables experemental Speex support\n\n-- The following RECOMMENDED packages have not been found:\n\n * Vorbis, open source lossy audio codec, <www.vorbis.com/>\n   Enables Vorbis support\n * FLAC, Free Lossless Audio Codec Library, <www.xiph.org/flac/>\n   Enables FLAC support\n * Opus, Standardized open source low-latency fullband codec, <www.opus-codec.org/>\n   Enables experimental Opus support\n * mp3lame, High quality MPEG Audio Layer III (MP3) encoder, <https://lame.sourceforge.io/>\n   Enables MPEG layer III (MP3) writing support\n * mpg123 (required version >= 1.25.10), MPEG Audio Layer I/II/III decoder, <https://www.mpg123.de/>\n   Enables MPEG Audio reading support\n\n-- Configuring done (5.0s)\n-- Generating done (0.0s)\n-- Build files have been written to: [local workspace]/project/tmp/realworld/libsndfile-build\n",
+        "stderr": "CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n  Compatibility with CMake < 3.10 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n  to tell CMake that the project requires at least <min> but has been updated\n  to work with policies introduced by <max> or earlier.\n\n\nCMake Deprecation Warning at CMakeLists.txt:14 (cmake_policy):\n  The OLD behavior for policy CMP0091 will be removed from a future version\n  of CMake.\n\n  The cmake-policies(7) manual explains that the OLD behaviors of all\n  policies are deprecated and that a policy should be set to OLD only under\n  specific short-term circumstances.  Projects should be ported to the NEW\n  behavior and not rely on setting a policy to OLD.\n\n\n\n\n"
+      },
+      "source_sha256": "24d790d02523d1b9e78a6be120bd71ea1e89b1d3c1d2ec2ed8295582ff503c6f",
+      "syntax": {
+        "command": [
+          "/Library/Developer/CommandLineTools/usr/bin/cc",
+          "-I[local workspace]/project/tmp/realworld/libsndfile-source/libsndfile-72f6af15e8f85157bd622ed45b979025828b7001/include",
+          "-I[local workspace]/project/tmp/realworld/libsndfile-build/include",
+          "-I[local workspace]/project/tmp/realworld/libsndfile-source/libsndfile-72f6af15e8f85157bd622ed45b979025828b7001/src",
+          "-I[local workspace]/project/tmp/realworld/libsndfile-build/src",
+          "-std=gnu99",
+          "-arch",
+          "arm64",
+          "-isysroot",
+          "/Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk",
+          "-fsyntax-only",
+          "-Xclang",
+          "-ast-dump=json",
+          "[local workspace]/project/tmp/realworld/libsndfile-source/libsndfile-72f6af15e8f85157bd622ed45b979025828b7001/src/pcm.c"
+        ],
+        "directory": "[local workspace]/project/tmp/realworld/libsndfile-build",
+        "returncode": 0,
+        "stderr": ""
+      },
+      "functions_with_integer_division": [
+        {
+          "function": "pcm_init",
+          "line": 122,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type",
+            "unsupported-control-flow"
+          ]
+        },
+        {
+          "function": "pcm_read_sc2s",
+          "line": 662,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_uc2s",
+          "line": 684,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bet2s",
+          "line": 730,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_let2s",
+          "line": 752,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bei2s",
+          "line": 774,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_lei2s",
+          "line": 796,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_sc2i",
+          "line": 821,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_uc2i",
+          "line": 843,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bes2i",
+          "line": 865,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_les2i",
+          "line": 887,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bet2i",
+          "line": 909,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_let2i",
+          "line": 931,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_sc2f",
+          "line": 980,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_uc2f",
+          "line": 1005,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bes2f",
+          "line": 1030,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_les2f",
+          "line": 1055,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bet2f",
+          "line": 1080,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_let2f",
+          "line": 1106,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bei2f",
+          "line": 1132,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_lei2f",
+          "line": 1157,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_sc2d",
+          "line": 1185,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_uc2d",
+          "line": 1210,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bes2d",
+          "line": 1235,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_les2d",
+          "line": 1260,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bet2d",
+          "line": 1285,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_let2d",
+          "line": 1310,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_bei2d",
+          "line": 1336,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_read_lei2d",
+          "line": 1361,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2sc",
+          "line": 1391,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2uc",
+          "line": 1413,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2bes",
+          "line": 1435,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2bet",
+          "line": 1489,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2let",
+          "line": 1511,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2bei",
+          "line": 1533,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_s2lei",
+          "line": 1555,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2sc",
+          "line": 1580,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2uc",
+          "line": 1602,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2bes",
+          "line": 1624,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2les",
+          "line": 1646,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2bet",
+          "line": 1668,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2let",
+          "line": 1690,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_i2bei",
+          "line": 1712,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2sc",
+          "line": 1803,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2uc",
+          "line": 1862,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2bes",
+          "line": 1933,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2les",
+          "line": 2004,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2let",
+          "line": 2079,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2bet",
+          "line": 2154,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2bei",
+          "line": 2237,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_f2lei",
+          "line": 2320,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2sc",
+          "line": 2379,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2uc",
+          "line": 2438,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2bes",
+          "line": 2509,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2les",
+          "line": 2580,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2let",
+          "line": 2655,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2bet",
+          "line": 2730,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2bei",
+          "line": 2813,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "pcm_write_d2lei",
+          "line": 2896,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        }
+      ],
+      "selected_unit_sites": 59,
+      "without_structural_blockers": 0,
+      "direct_frontend": "rejected: preprocess source first: preprocessing directives are outside this input contract",
+      "completed": true
+    },
+    {
+      "project": "libtiff",
+      "version": "4.7.0",
+      "commit": "9dff73bebc5661f2dace6f16e14cf9e857172f4e",
+      "repository": "https://gitlab.com/libtiff/libtiff",
+      "file": "libtiff/tif_dirread.c",
+      "url": "https://gitlab.com/libtiff/libtiff/-/archive/9dff73bebc5661f2dace6f16e14cf9e857172f4e/libtiff-9dff73bebc5661f2dace6f16e14cf9e857172f4e.tar.gz",
+      "options": [
+        "-Dtiff-tools=OFF",
+        "-Dtiff-tests=OFF",
+        "-Dtiff-contrib=OFF",
+        "-Dtiff-docs=OFF",
+        "-Dzlib=OFF",
+        "-Djpeg=OFF",
+        "-Djbig=OFF",
+        "-Dlzma=OFF",
+        "-Dzstd=OFF",
+        "-Dwebp=OFF"
+      ],
+      "archive_sha256": "4fefe1d5adbeae1d0f54f573c1b795bd1dbe1229d85427d1fcd24998dcc11145",
+      "configure": {
+        "command": [
+          "[local workspace]/project/.venv/bin/cmake",
+          "-S",
+          "[local workspace]/project/tmp/realworld/libtiff-source/libtiff-9dff73bebc5661f2dace6f16e14cf9e857172f4e",
+          "-B",
+          "[local workspace]/project/tmp/realworld/libtiff-build",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-Dtiff-tools=OFF",
+          "-Dtiff-tests=OFF",
+          "-Dtiff-contrib=OFF",
+          "-Dtiff-docs=OFF",
+          "-Dzlib=OFF",
+          "-Djpeg=OFF",
+          "-Djbig=OFF",
+          "-Dlzma=OFF",
+          "-Dzstd=OFF",
+          "-Dwebp=OFF"
+        ],
+        "directory": "[local workspace]/project",
+        "returncode": 0,
+        "stdout": "-- Building tiff version 4.7.0\n-- The C compiler identification is AppleClang 17.0.0.17000404\n-- The CXX compiler identification is AppleClang 17.0.0.17000404\n-- Detecting C compiler ABI info\n-- Detecting C compiler ABI info - done\n-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped\n-- Detecting C compile features\n-- Detecting C compile features - done\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Performing Test C_FLAG_Wall\n-- Performing Test C_FLAG_Wall - Success\n-- Performing Test C_FLAG_Winline\n-- Performing Test C_FLAG_Winline - Success\n-- Performing Test C_FLAG_Wformat_security\n-- Performing Test C_FLAG_Wformat_security - Success\n-- Performing Test C_FLAG_Wpointer_arith\n-- Performing Test C_FLAG_Wpointer_arith - Success\n-- Performing Test C_FLAG_Wdisabled_optimization\n-- Performing Test C_FLAG_Wdisabled_optimization - Success\n-- Performing Test C_FLAG_Wno_unknown_pragmas\n-- Performing Test C_FLAG_Wno_unknown_pragmas - Success\n-- Performing Test C_FLAG_fstrict_aliasing\n-- Performing Test C_FLAG_fstrict_aliasing - Success\n-- Performing Test HAVE_LD_VERSION_SCRIPT\n-- Performing Test HAVE_LD_VERSION_SCRIPT - Failed\n-- Looking for assert.h\n-- Looking for assert.h - found\n-- Looking for fcntl.h\n-- Looking for fcntl.h - found\n-- Looking for io.h\n-- Looking for io.h - not found\n-- Looking for strings.h\n-- Looking for strings.h - found\n-- Looking for sys/time.h\n-- Looking for sys/time.h - found\n-- Looking for sys/types.h\n-- Looking for sys/types.h - found\n-- Looking for unistd.h\n-- Looking for unistd.h - found\n-- Looking for getopt\n-- Looking for getopt - found\n-- Looking for optarg\n-- Looking for optarg - found\n-- Looking for mmap\n-- Looking for mmap - found\n-- Looking for setmode\n-- Looking for setmode - found\n-- Looking for stdint.h\n-- Looking for stdint.h - found\n-- Looking for stddef.h\n-- Looking for stddef.h - found\n-- Check size of size_t\n-- Check size of size_t - done\n-- Found ZLIB: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/libz.tbd (found version \"1.2.12\")\n-- Could NOT find Deflate (missing: Deflate_LIBRARY Deflate_INCLUDE_DIR) \n-- Could NOT find JPEG (missing: JPEG_LIBRARY JPEG_INCLUDE_DIR) \n-- Could NOT find JBIG (missing: JBIG_LIBRARY JBIG_INCLUDE_DIR) \n-- Could NOT find LERC (missing: LERC_LIBRARY LERC_INCLUDE_DIR) \n-- Looking for lzma_auto_decoder in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd\n-- Looking for lzma_auto_decoder in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd - found\n-- Looking for lzma_easy_encoder in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd\n-- Looking for lzma_easy_encoder in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd - found\n-- Looking for lzma_lzma_preset in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd\n-- Looking for lzma_lzma_preset in /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd - found\n-- Found liblzma: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/usr/lib/liblzma.tbd (found version \"5.8.2\")\n-- Found ZSTD: /opt/homebrew/lib/libzstd.dylib (found version \"1.5.7\")\n-- Looking for ZSTD_decompressStream\n-- Looking for ZSTD_decompressStream - found\n-- Could NOT find WebP (missing: WebP_LIBRARY WebP_INCLUDE_DIR) \n-- Found OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/System/Library/Frameworks/OpenGL.framework  found components: OpenGL\n-- Found GLUT: /Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk/System/Library/Frameworks/GLUT.framework\n-- Looking for GL/gl.h\n-- Looking for GL/gl.h - not found\n-- Looking for GL/glu.h\n-- Looking for GL/glu.h - not found\n-- Looking for GL/glut.h\n-- Looking for GL/glut.h - not found\n-- Looking for GLUT/glut.h\n-- Looking for GLUT/glut.h - found\n-- Looking for OpenGL/gl.h\n-- Looking for OpenGL/gl.h - found\n-- Looking for OpenGL/glu.h\n-- Looking for OpenGL/glu.h - found\n-- Looking for pow\n-- Looking for pow - found\n-- Found CMath: TRUE\n-- \n-- Libtiff is now configured for Darwin-25.1.0\n-- \n--   Libtiff build version:       4.7.0\n--   Libtiff library version:     6.1.0\n--   Libtiff release date:        20240911\n-- \n--   Installation directory:             /usr/local\n--   Documentation directory:            share/doc/tiff\n--   C compiler:                         /Library/Developer/CommandLineTools/usr/bin/cc\n--   C++ compiler:                       /Library/Developer/CommandLineTools/usr/bin/c++\n--   Build shared libraries:             ON\n--   Build tools:                        OFF\n--   Build tests:                        OFF\n--   Build contrib:                      OFF\n--   Build docs:                         OFF\n--   Build deprecated features:          OFF\n--   Enable linker symbol versioning:    FALSE\n--   Support Microsoft Document Imaging: ON\n--   Use win32 IO:                       OFF\n-- \n--  Support for internal codecs:\n--   CCITT Group 3 & 4 algorithms:       ON\n--   Macintosh PackBits algorithm:       ON\n--   LZW algorithm:                      ON\n--   ThunderScan 4-bit RLE algorithm:    ON\n--   NeXT 2-bit RLE algorithm:           ON\n--   LogLuv high dynamic range encoding: ON\n-- \n--  Support for external codecs:\n--   ZLIB support:                       Requested:OFF Availability:TRUE Support:FALSE\n--   libdeflate support:                 Requested:OFF Availability:FALSE Support:FALSE (Depends on ZLIB Support)\n--   Pixar log-format algorithm:         Requested:OFF Availability:TRUE Support:FALSE (Depends on ZLIB Support)\n--   JPEG support:                       Requested:OFF Availability:FALSE Support:FALSE\n--   Old JPEG support:                   Requested:OFF Availability:FALSE Support:FALSE (Depends on JPEG Support)\n--   JPEG 8/12 bit dual mode:            Requested:OFF Availability:FALSE Support:FALSE\n--   ISO JBIG support:                   Requested:OFF Availability:FALSE Support:FALSE\n--   LERC support:                       Requested:OFF Availability:FALSE Support:FALSE (Depends on ZLIB Support)\n--   LZMA2 support:                      Requested:OFF Availability:TRUE Support:FALSE\n--   ZSTD support:                       Requested:OFF Availability:TRUE Support:FALSE\n--   WEBP support:                       Requested:OFF Availability:FALSE Support:FALSE\n-- \n--   C++ support:                        ON (requested) TRUE (availability)\n-- \n--   OpenGL support:                     Requested:ON Availability:TRUE Support:TRUE\n-- \n-- Configuring done (3.1s)\n-- Generating done (0.0s)\n-- Build files have been written to: [local workspace]/project/tmp/realworld/libtiff-build\n",
+        "stderr": "CMake Deprecation Warning at CMakeLists.txt:27 (cmake_minimum_required):\n  Compatibility with CMake < 3.10 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n  to tell CMake that the project requires at least <min> but has been updated\n  to work with policies introduced by <max> or earlier.\n\n\nCMake Deprecation Warning at CMakeLists.txt:30 (cmake_policy):\n  Compatibility with CMake < 3.10 will be removed from a future version of\n  CMake.\n\n  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n  to tell CMake that the project requires at least <min> but has been updated\n  to work with policies introduced by <max> or earlier.\n\n\n"
+      },
+      "source_sha256": "fc5b6c96d68cb7fb2a00dd415d07c06cd9671e73dc64762d9f4b162bb0a1d47e",
+      "syntax": {
+        "command": [
+          "/Library/Developer/CommandLineTools/usr/bin/cc",
+          "-DTIFF_DO_NOT_USE_NON_EXT_ALLOC_FUNCTIONS",
+          "-D_FILE_OFFSET_BITS=64",
+          "-Dtiff_EXPORTS",
+          "-I[local workspace]/project/tmp/realworld/libtiff-source/libtiff-9dff73bebc5661f2dace6f16e14cf9e857172f4e/libtiff",
+          "-I[local workspace]/project/tmp/realworld/libtiff-build/libtiff",
+          "-Wall",
+          "-Winline",
+          "-Wformat-security",
+          "-Wpointer-arith",
+          "-Wdisabled-optimization",
+          "-Wno-unknown-pragmas",
+          "-fstrict-aliasing",
+          "-std=gnu99",
+          "-arch",
+          "arm64",
+          "-isysroot",
+          "/Library/Developer/CommandLineTools/SDKs/MacOSX26.1.sdk",
+          "-fPIC",
+          "-fsyntax-only",
+          "-Xclang",
+          "-ast-dump=json",
+          "[local workspace]/project/tmp/realworld/libtiff-source/libtiff-9dff73bebc5661f2dace6f16e14cf9e857172f4e/libtiff/tif_dirread.c"
+        ],
+        "directory": "[local workspace]/project/tmp/realworld/libtiff-build/libtiff",
+        "returncode": 0,
+        "stderr": ""
+      },
+      "functions_with_integer_division": [
+        {
+          "function": "TIFFReadDirEntryArrayWithLimit",
+          "line": 1251,
+          "integer_division_sites": 2,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "ByteCountLooksBad",
+          "line": 4038,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "EvaluateIFDdatasizeReading",
+          "line": 4084,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "TIFFReadDirectory",
+          "line": 4233,
+          "integer_division_sites": 11,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type",
+            "unsupported-control-flow"
+          ]
+        },
+        {
+          "function": "TIFFReadDirectoryFindFieldInfo",
+          "line": 5237,
+          "integer_division_sites": 1,
+          "structural_blockers": [
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "EstimateStripByteCounts",
+          "line": 5463,
+          "integer_division_sites": 6,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "ChopUpSingleUncompressedStrip",
+          "line": 7855,
+          "integer_division_sites": 3,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "TryChopUpUncompressedBigTiff",
+          "line": 7925,
+          "integer_division_sites": 2,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "_TIFFPartialReadStripArray",
+          "line": 8030,
+          "integer_division_sites": 2,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        },
+        {
+          "function": "_TIFFFetchStrileValue",
+          "line": 8188,
+          "integer_division_sites": 2,
+          "structural_blockers": [
+            "calls-need-reviewed-summaries",
+            "memory-access",
+            "non-scalar-or-unsupported-type"
+          ]
+        }
+      ],
+      "selected_unit_sites": 31,
+      "without_structural_blockers": 0,
+      "direct_frontend": "rejected: preprocess source first: preprocessing directives are outside this input contract",
+      "completed": true
+    }
+  ]
+}

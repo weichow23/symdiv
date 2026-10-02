@@ -1,0 +1,67 @@
+{
+  "key": "timing-corrected-c013-0-always",
+  "source_sha256": "78d9a5dc15b4849f9ac46ad530a0a18d056ead8a3e22cf7d5386d4ce68cca021",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-62d41d3b5956",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(x-y)",
+          "rationale": "Choose x == y (for example, x = y = 0). The empty if body completes, then x-y is zero without overflow, so the division has a zero denominator.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-f2ac5bd51e72",
+          "visit": 1,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6fb-fe58-70e0-93e1-51335976d29c"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-62d41d3b5956\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(x-y)\",\"rationale\":\"Choose x == y (for example, x = y = 0). The empty if body completes, then x-y is zero without overflow, so the division has a zero denominator.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-f2ac5bd51e72\",\"visit\":1,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17831,
+          "cached_input_tokens": 11392,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 173,
+          "reasoning_output_tokens": 53
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:21:44.932424Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:44.934743Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:44.936449Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:44.938140Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:44.939110Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17831,
+      "cached_input_tokens": 11392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 173,
+      "reasoning_output_tokens": 53
+    },
+    "_client_elapsed_seconds": 9.3606555
+  },
+  "elapsed_seconds": 9.380736958
+}

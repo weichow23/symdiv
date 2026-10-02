@@ -1,0 +1,77 @@
+{
+  "key": "c008-initial",
+  "source_sha256": "1972a5e37401330534dc46f0159ecf74f50b6566163fbaef7298b2d7a7d59578",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-37b00d1a58a6",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2",
+          "rationale": "The denominator is the nonzero constant 2.",
+          "confidence": 1.0
+        },
+        {
+          "site_id": "div-677e2e31c8b3",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "0",
+          "rationale": "Although its denominator is zero, this site is unreachable because evaluation of the preceding initializer always encounters division by zero on line 2 first.",
+          "confidence": 1.0
+        },
+        {
+          "site_id": "div-ba73aad2a796",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "2",
+          "rationale": "The site is unreachable because line 2 always encounters division by zero first; independently, its denominator is the nonzero constant 2.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6e5-b3e7-7df2-9952-34cefc66f039"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-37b00d1a58a6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero constant 2.\",\"confidence\":1.0},{\"site_id\":\"div-677e2e31c8b3\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"Although its denominator is zero, this site is unreachable because evaluation of the preceding initializer always encounters division by zero on line 2 first.\",\"confidence\":1.0},{\"site_id\":\"div-ba73aad2a796\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The site is unreachable because line 2 always encounters division by zero first; independently, its denominator is the nonzero constant 2.\",\"confidence\":1.0}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17713,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 395,
+          "reasoning_output_tokens": 200
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:57:24.077052Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:57:24.079433Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:57:24.080865Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:57:24.081939Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:57:24.082844Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:57:24.083958Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17713,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 395,
+      "reasoning_output_tokens": 200
+    },
+    "_client_elapsed_seconds": 13.371673958000088
+  },
+  "elapsed_seconds": 13.393530457999987
+}

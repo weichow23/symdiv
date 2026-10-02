@@ -1,0 +1,138 @@
+{
+  "recorded_at_utc": "2026-09-30T00:48:59.693946+00:00",
+  "tests_passed": 82,
+  "test_command": ".venv/bin/python -m pytest",
+  "test_output": "82 passed in 3.01s",
+  "v3_reproduction": {
+    "passed": true,
+    "new_model_calls": 0,
+    "materialized_files_identical": 26,
+    "resource_and_sensitivity_predictions_and_statuses_identical": true,
+    "wall_differences": [
+      {
+        "id": "d015",
+        "system": "guided",
+        "primary": {
+          "prediction": false,
+          "status": "unknown",
+          "seconds": 20.000643666999963
+        },
+        "replay": {
+          "prediction": false,
+          "status": "refuted_complete",
+          "seconds": 19.75441370799996
+        }
+      },
+      {
+        "id": "d015",
+        "system": "feedback",
+        "primary": {
+          "prediction": false,
+          "status": "unknown",
+          "seconds": 20.00090775000001
+        },
+        "replay": {
+          "prediction": false,
+          "status": "refuted_complete",
+          "seconds": 19.76176587499998
+        }
+      }
+    ],
+    "wall_predictions_identical": true,
+    "elapsed_seconds": 10.975445,
+    "verified_existing_replay": true,
+    "witness_checks": 25
+  },
+  "v2_reproduction": {
+    "passed": true,
+    "new_model_calls": 0,
+    "materialized_files_identical": 24,
+    "checks": [
+      {
+        "stratum": "pilot",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      },
+      {
+        "stratum": "juliet",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      }
+    ],
+    "elapsed_seconds": 12.166428292,
+    "workspace": "[local workspace]/project"
+  },
+  "historical_search_regression": {
+    "cases": 48,
+    "predictions_match": 48
+  },
+  "primary_witnesses": {
+    "unique": 25,
+    "confirmed": 25,
+    "occurrences": 304
+  },
+  "injected_witnesses": {
+    "unique": 2,
+    "confirmed": 2
+  },
+  "original_v2_pdf_sha256": "7d6c6492c9a19defec47414789087419a042aad1d8f436d6f173cdcafd6e3e8a",
+  "primary_frozen_commit": "d88bcd7",
+  "publication_status": "local artifact; public destination not supplied",
+  "video_changes": "none; no video files were targeted or staged",
+  "report": {
+    "path": "output/pdf/symdiv-report-v3.pdf",
+    "compiled": true,
+    "body_pages": 7,
+    "reference_pages": 1,
+    "format": "ACM sigconf",
+    "layout_review": "all eight rendered pages visually inspected; changed figure and bibliography pages rechecked",
+    "sha256": "01da4fbfd242dbb84075a760105fdafc1e10f4eef527e45b44d6c0f866b67982",
+    "overfull_boxes": 0
+  },
+  "clean_clone": {
+    "commit": "9053befb165fa1967c3d1d707fcfcbaa7ab97eee",
+    "tests_passed": 82,
+    "test_output": "82 passed in 3.64s",
+    "setup": "make setup in a fresh clone and fresh virtual environment",
+    "reproduction": {
+      "passed": true,
+      "new_model_calls": 0,
+      "materialized_files_identical": 26,
+      "resource_and_sensitivity_predictions_and_statuses_identical": true,
+      "wall_differences": [
+        {
+          "id": "d015",
+          "system": "guided",
+          "primary": {
+            "prediction": false,
+            "status": "unknown",
+            "seconds": 20.000643666999963
+          },
+          "replay": {
+            "prediction": false,
+            "status": "refuted_complete",
+            "seconds": 19.80373450099995
+          }
+        },
+        {
+          "id": "d015",
+          "system": "feedback",
+          "primary": {
+            "prediction": false,
+            "status": "unknown",
+            "seconds": 20.00090775000001
+          },
+          "replay": {
+            "prediction": false,
+            "status": "refuted_complete",
+            "seconds": 19.77447691699993
+          }
+        }
+      ],
+      "wall_predictions_identical": true,
+      "elapsed_seconds": 230.865264959,
+      "verified_existing_replay": false,
+      "witness_checks": 25
+    }
+  }
+}

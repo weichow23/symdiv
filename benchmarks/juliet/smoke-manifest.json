@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "name": "symdiv-juliet-24",
+  "language": "C11",
+  "task": "integer division or remainder by zero",
+  "root": ".",
+  "label_policy": "Upstream bad branch is positive; entire good branch (all helpers) is negative. File-level any-site warning. rand() results are independent integers in [0,2147483647]; 32-bit int and unsigned int.",
+  "cases": [
+    {
+      "id": "j001",
+      "file": "sources/j001.c",
+      "expected_bug": false,
+      "category": "rand-31",
+      "site_count": 2,
+      "sha256": "f40e20e6ad2d371d6a7c2cf78ee32c3141dec1afdaf040f34e309515cd40cdc5"
+    }
+  ]
+}

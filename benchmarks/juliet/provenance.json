@@ -1,0 +1,499 @@
+{
+  "suite_url": "https://samate.nist.gov/SARD/test-suites/112",
+  "archive_url": "https://samate.nist.gov/SARD/downloads/test-suites/2017-10-01-juliet-test-suite-for-c-cplusplus-v1-3.zip",
+  "archive_sha256": "ada9d7e1c323d283446df3f55bdee0d00bda1fed786785fe98764d58688f38eb",
+  "source": "verified official NIST archive",
+  "license": "CC0-1.0 / public domain; see NOTICE.md",
+  "shuffle_seed": 6215,
+  "header_sha256": "8e3d40576e87c0a07ffb3278d09c25cb8eb4f95b1fa5829ec2ff758dbb5636f0",
+  "cases": [
+    {
+      "id": "j001",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_31.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_31.c",
+      "upstream_sha256": "5d607c7139c217d057976ce8966d305b8db8a3c70eaa4421f670172534308782",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "31",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_31_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j002",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_03.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_03.c",
+      "upstream_sha256": "8fa02814cb642d726e58970e96da055089af6ac43f18e73012e4657536ce0169",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "03",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_03_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j003",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_03.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_03.c",
+      "upstream_sha256": "86198078b5ef21f45625756765d660894ef18ccd378eb7b111e6666f0f7ea8a2",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "03",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_03_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j004",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_03.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_03.c",
+      "upstream_sha256": "86198078b5ef21f45625756765d660894ef18ccd378eb7b111e6666f0f7ea8a2",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "03",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_03_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j005",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_06.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_06.c",
+      "upstream_sha256": "a34fa81b1810ef1ac81bed9bb94bf4e866f9d026231f05e3eb47e03207b137de",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "06",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_06_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j006",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_17.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_17.c",
+      "upstream_sha256": "8368685fa27ebb7c84299d57c6da45a9aef3e4321a6b6e2c7e8029d38a7deac7",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "17",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_17_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j007",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_03.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_03.c",
+      "upstream_sha256": "8fa02814cb642d726e58970e96da055089af6ac43f18e73012e4657536ce0169",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "03",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_03_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j008",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_16.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_16.c",
+      "upstream_sha256": "15f875b4be2f26a4d2d32f1a669d6cd2e445be82d21ed817f48eda91f8e4b8e5",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "16",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_16_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j009",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_31.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_31.c",
+      "upstream_sha256": "016f0b4824049bb8fa9b6df88dd381919cc2fe7222e4d51d8031d5fc16c2e46a",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "31",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_31_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j010",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_01.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_01.c",
+      "upstream_sha256": "6cd22aad948faebb894523559eeb09bfca65a9c0b8a118866ce7346236da967c",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "01",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_01_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j011",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_16.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_16.c",
+      "upstream_sha256": "15f875b4be2f26a4d2d32f1a669d6cd2e445be82d21ed817f48eda91f8e4b8e5",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "16",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_16_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j012",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_modulo_31.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_modulo_31.c",
+      "upstream_sha256": "016f0b4824049bb8fa9b6df88dd381919cc2fe7222e4d51d8031d5fc16c2e46a",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "31",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_modulo_31_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j013",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_01.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_01.c",
+      "upstream_sha256": "89815e781195c6b6359cf580e6c79c7850c8d715754edc1de61e677a5b4c065d",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "01",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_01_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j014",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_17.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_17.c",
+      "upstream_sha256": "7f59b1d782e98aaeee2042c973eea0114377ca139577547a9100f8dbe431a5d1",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "17",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_17_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j015",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_17.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_17.c",
+      "upstream_sha256": "8368685fa27ebb7c84299d57c6da45a9aef3e4321a6b6e2c7e8029d38a7deac7",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "17",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_17_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j016",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_31.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_31.c",
+      "upstream_sha256": "5d607c7139c217d057976ce8966d305b8db8a3c70eaa4421f670172534308782",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "31",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_31_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j017",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_06.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_06.c",
+      "upstream_sha256": "a34fa81b1810ef1ac81bed9bb94bf4e866f9d026231f05e3eb47e03207b137de",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "06",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_06_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j018",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_16.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_16.c",
+      "upstream_sha256": "1ea7309a9ab2379e0e89adc314e441266cc86f17b6d96a6c8ef2bc409dd6b91d",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "16",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_16_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j019",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_01.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_01.c",
+      "upstream_sha256": "6cd22aad948faebb894523559eeb09bfca65a9c0b8a118866ce7346236da967c",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "01",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_01_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j020",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_modulo_16.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_modulo_16.c",
+      "upstream_sha256": "1ea7309a9ab2379e0e89adc314e441266cc86f17b6d96a6c8ef2bc409dd6b91d",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "16",
+      "sink": "modulo",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_modulo_16_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j021",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_01.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_01.c",
+      "upstream_sha256": "89815e781195c6b6359cf580e6c79c7850c8d715754edc1de61e677a5b4c065d",
+      "branch": "good",
+      "source_family": "zero",
+      "flow_variant": "01",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_01_good": "fn_001",
+        "goodB2G": "fn_002",
+        "goodG2B": "fn_003"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    },
+    {
+      "id": "j022",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_06.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_06.c",
+      "upstream_sha256": "b90761812041dfebbc8c741754b4b3b505ff73d2daa288e37ebaffa4f12d572f",
+      "branch": "bad",
+      "source_family": "rand",
+      "flow_variant": "06",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_06_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j023",
+      "upstream_file": "CWE369_Divide_by_Zero__int_zero_divide_17.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_zero_divide_17.c",
+      "upstream_sha256": "7f59b1d782e98aaeee2042c973eea0114377ca139577547a9100f8dbe431a5d1",
+      "branch": "bad",
+      "source_family": "zero",
+      "flow_variant": "17",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_zero_divide_17_bad": "fn_001"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITGOOD"
+      ]
+    },
+    {
+      "id": "j024",
+      "upstream_file": "CWE369_Divide_by_Zero__int_rand_divide_06.c",
+      "upstream_archive_path": "C/testcases/CWE369_Divide_by_Zero/s02/CWE369_Divide_by_Zero__int_rand_divide_06.c",
+      "upstream_sha256": "b90761812041dfebbc8c741754b4b3b505ff73d2daa288e37ebaffa4f12d572f",
+      "branch": "good",
+      "source_family": "rand",
+      "flow_variant": "06",
+      "sink": "divide",
+      "renames": {
+        "CWE369_Divide_by_Zero__int_rand_divide_06_good": "fn_001",
+        "goodB2G1": "fn_002",
+        "goodB2G2": "fn_003",
+        "goodG2B1": "fn_004",
+        "goodG2B2": "fn_005"
+      },
+      "preprocessor_flags": [
+        "-E",
+        "-P",
+        "-std=c11",
+        "-DOMITBAD"
+      ]
+    }
+  ]
+}

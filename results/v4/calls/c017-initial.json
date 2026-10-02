@@ -1,0 +1,61 @@
+{
+  "key": "c017-initial",
+  "source_sha256": "76accef88e3365b5dcdc148f9b6b954e8da1f99b64a58b36010de124faf12686",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-3eab395d6086",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "x",
+          "rationale": "At function entry, choosing x = 0 immediately reaches 17 / x before any branch or earlier undefined behavior.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6d7-0b59-7cd0-b669-891898832872"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-3eab395d6086\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"x\",\"rationale\":\"At function entry, choosing x = 0 immediately reaches 17 / x before any branch or earlier undefined behavior.\",\"confidence\":1.0}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17670,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 123,
+          "reasoning_output_tokens": 43
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:41:23.423797Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:23.425574Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:23.426580Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:23.427987Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:23.429378Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:23.430384Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17670,
+      "cached_input_tokens": 16128,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 123,
+      "reasoning_output_tokens": 43
+    },
+    "_client_elapsed_seconds": 9.343494708999998
+  },
+  "elapsed_seconds": 9.361109292000002
+}

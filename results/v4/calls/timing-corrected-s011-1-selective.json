@@ -1,0 +1,110 @@
+{
+  "key": "timing-corrected-s011-1-selective",
+  "source_sha256": "ddcda64bb837ca2a9802f4ed5a0295708d45ead813f7c1903c7a740bf4d8def5",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-5e67b57b61f6",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero constant 3.",
+          "confidence": 1.0
+        },
+        {
+          "site_id": "div-45c80357d5d1",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d-(36))",
+          "rationale": "Choose the positive updates with weights 8, 17, 20, and 23, whose sum is 68; all other weights are negative, so d = 68 - (100 - 68) = 36 and the denominator is zero.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f704-bd4e-7641-93a1-958a1ff41fcd"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-5e67b57b61f6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero constant 3.\",\"confidence\":1.0},{\"site_id\":\"div-45c80357d5d1\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d-(36))\",\"rationale\":\"Choose the positive updates with weights 8, 17, 20, and 23, whose sum is 68; all other weights are negative, so d = 68 - (100 - 68) = 36 and the denominator is zero.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-114230874211\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":2,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":3,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":4,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":5,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":6,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":7,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":8,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17985,
+          "cached_input_tokens": 11392,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 600,
+          "reasoning_output_tokens": 293
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:31:18.099396Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:31:18.100664Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:31:18.101693Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:31:18.102931Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:31:18.104001Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17985,
+      "cached_input_tokens": 11392,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 600,
+      "reasoning_output_tokens": 293
+    },
+    "_client_elapsed_seconds": 16.804441834000002
+  },
+  "elapsed_seconds": 16.826150333
+}

@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "analyzer": "clang-static-analyzer",
+  "checker": "core.DivideZero",
+  "tool_version": "Apple clang version 17.0.0 (clang-1700.4.4.1)",
+  "platform": "macOS-26.1-arm64-arm-64bit",
+  "elapsed_seconds": 0.477051875,
+  "cases": [
+    {
+      "file": "sources/j001.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.020516,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j001.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j001.c:18:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   18 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-kgwd7xad/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j001.c"
+      ],
+      "id": "j001",
+      "source_sha256": "f40e20e6ad2d371d6a7c2cf78ee32c3141dec1afdaf040f34e309515cd40cdc5"
+    },
+    {
+      "file": "sources/j002.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.01402175,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j002.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-qdtmyw1w/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j002.c"
+      ],
+      "id": "j002",
+      "source_sha256": "cd34a1a8fbfcfc22a140a8bdd7ca7b53f8ffce6a1c4f0dcd9d572bee76d4be0f"
+    },
+    {
+      "file": "sources/j003.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 14,
+          "column": 26
+        }
+      ],
+      "elapsed_seconds": 0.015488374999999999,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j003.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j003.c:14:26: warning: Division by zero [core.DivideZero]\n   14 |         printIntLine(100 % data);\n      |                      ~~~~^~~~~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-fg672ye0/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j003.c"
+      ],
+      "id": "j003",
+      "source_sha256": "7e2b70da04d81221264ba7899ce1e8f939b4c427c8ff93adc8598760294b3253"
+    },
+    {
+      "file": "sources/j004.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.016650749999999992,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j004.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j004.c:31:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   31 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j004.c:51:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   51 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j004.c:68:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   68 |     data = -1;\n      |     ^      ~~\n4 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-2z32_rpk/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j004.c"
+      ],
+      "id": "j004",
+      "source_sha256": "c49e5d4b481f5ccf81bcbea4ef2423eef2402d3cf4dc1039ab0cbbc158c48585"
+    },
+    {
+      "file": "sources/j005.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.019205250000000007,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j005.c:8:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    8 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j005.c:32:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   32 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j005.c:52:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   52 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j005.c:69:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   69 |     data = -1;\n      |     ^      ~~\n4 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-wvz502m5/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j005.c"
+      ],
+      "id": "j005",
+      "source_sha256": "2240d1315c60cad23a8331da18d6fb4ad08b8e7c5a15ec08ff591cad25b4f906"
+    },
+    {
+      "file": "sources/j006.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.04459416599999999,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-h16pcqkf/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j006.c"
+      ],
+      "id": "j006",
+      "source_sha256": "830a4514186e8367153487a2bf2f2aa11f3b2423105ca66f57563a52cab18091"
+    },
+    {
+      "file": "sources/j007.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.031531583,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j007.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j007.c:31:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   31 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j007.c:51:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   51 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j007.c:68:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   68 |     data = -1;\n      |     ^      ~~\n4 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-s6p_yix9/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j007.c"
+      ],
+      "id": "j007",
+      "source_sha256": "9ad5603bdf2be750c3aa25aff0ffbd164f24018b0acff8cee29ae8fc26ad154b"
+    },
+    {
+      "file": "sources/j008.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.03535691699999999,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j008.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j008.c:29:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   29 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-bnadvs9l/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j008.c"
+      ],
+      "id": "j008",
+      "source_sha256": "dab851931237ac229070c05386d2b5420c003d20b815ed24dddf14e8a17217a6"
+    },
+    {
+      "file": "sources/j009.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.017191208000000013,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j009.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j009.c:18:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   18 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-gjq6kwdy/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j009.c"
+      ],
+      "id": "j009",
+      "source_sha256": "a4ac111ba685894a34e2dfd721a0b2e71f49a4bfbbbab82e770d355b74d6d415"
+    },
+    {
+      "file": "sources/j010.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.016624958999999995,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j010.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j010.c:14:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   14 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-tqysbo26/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j010.c"
+      ],
+      "id": "j010",
+      "source_sha256": "1b0086d03d24d66513e5b4f0f462e90617165f0c2de41bd2b454915f0d2ffca2"
+    },
+    {
+      "file": "sources/j011.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 15,
+          "column": 26
+        }
+      ],
+      "elapsed_seconds": 0.014953292000000007,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j011.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j011.c:15:26: warning: Division by zero [core.DivideZero]\n   15 |         printIntLine(100 % data);\n      |                      ~~~~^~~~~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-hs31bckp/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j011.c"
+      ],
+      "id": "j011",
+      "source_sha256": "4affe79ac4a5c47db7c79fff76fc8ec4448bdda38553db2eae35cb101ec41e97"
+    },
+    {
+      "file": "sources/j012.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 12,
+          "column": 26
+        }
+      ],
+      "elapsed_seconds": 0.015352417000000007,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j012.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j012.c:12:26: warning: Division by zero [core.DivideZero]\n   12 |         printIntLine(100 % data);\n      |                      ~~~~^~~~~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-81425060/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j012.c"
+      ],
+      "id": "j012",
+      "source_sha256": "a52689e39c571de1c2637374c1f4e3de740e131592590dd7a21a7f7bdb9f00e1"
+    },
+    {
+      "file": "sources/j013.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 9,
+          "column": 22
+        }
+      ],
+      "elapsed_seconds": 0.015515958000000052,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j013.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j013.c:9:22: warning: Division by zero [core.DivideZero]\n    9 |     printIntLine(100 / data);\n      |                  ~~~~^~~~~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-v4kzyzo_/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j013.c"
+      ],
+      "id": "j013",
+      "source_sha256": "ecea5f6493925ba36818c232e9567614c261681a9a669112516fafe63cc5c6ee"
+    },
+    {
+      "file": "sources/j014.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015612709000000002,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-x45g5o1z/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j014.c"
+      ],
+      "id": "j014",
+      "source_sha256": "e5abad645a3d0aaa9cb54bcb343eaca539b2924b48d7648a9c238d1b71dd47bc"
+    },
+    {
+      "file": "sources/j015.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015232791999999995,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-s9j0sbwn/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j015.c"
+      ],
+      "id": "j015",
+      "source_sha256": "bce449be94f315fecd938dc98308b3b682f49f69844c213e68911880b7ba2617"
+    },
+    {
+      "file": "sources/j016.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.014363375000000012,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j016.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-j8i8lsgd/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j016.c"
+      ],
+      "id": "j016",
+      "source_sha256": "afaf4ab5c4702a21b7bd352461f7f8f737e7e60db7707d450e0cd1eb50c04386"
+    },
+    {
+      "file": "sources/j017.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 15,
+          "column": 26
+        }
+      ],
+      "elapsed_seconds": 0.014759874999999978,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j017.c:8:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    8 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j017.c:15:26: warning: Division by zero [core.DivideZero]\n   15 |         printIntLine(100 / data);\n      |                      ~~~~^~~~~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-rdds2liy/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j017.c"
+      ],
+      "id": "j017",
+      "source_sha256": "0f6bc947aa2cff2ed1533ff4e9f06f1281995d45186ecc25e3dbf72219f71922"
+    },
+    {
+      "file": "sources/j018.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.01542820899999997,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j018.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-w5yixkh7/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j018.c"
+      ],
+      "id": "j018",
+      "source_sha256": "e79b2a9781b444921c744d47f1ce69239b92c455b7164fd17fe6bde24cca8a49"
+    },
+    {
+      "file": "sources/j019.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.014774999999999983,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j019.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-hdjyucz0/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j019.c"
+      ],
+      "id": "j019",
+      "source_sha256": "4df03eda80845a5127c24749ada759311600b12f5265cc61beb1bccee9add25a"
+    },
+    {
+      "file": "sources/j020.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.016384750000000003,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j020.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j020.c:29:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   29 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-qazrrjyi/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j020.c"
+      ],
+      "id": "j020",
+      "source_sha256": "0a801c713b6461a2df447f8f04fb8ff20b5b13b0d157072ad2a8633a253346e4"
+    },
+    {
+      "file": "sources/j021.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.01466183400000004,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j021.c:7:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    7 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j021.c:14:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   14 |     data = -1;\n      |     ^      ~~\n2 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-f4lwf7k4/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j021.c"
+      ],
+      "id": "j021",
+      "source_sha256": "52aa4ddc026d34fadddde5f3224f8d314b6ac2d1bb557fe24e42781b4f49df6d"
+    },
+    {
+      "file": "sources/j022.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.015533292000000032,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j022.c:8:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    8 |     data = -1;\n      |     ^      ~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-7427_oxz/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j022.c"
+      ],
+      "id": "j022",
+      "source_sha256": "8933caf70360f59cba8aaa134cb331059f90506d9cccdf87389391ff7614463b"
+    },
+    {
+      "file": "sources/j023.c",
+      "prediction": true,
+      "findings": [
+        {
+          "rule_id": "core.DivideZero",
+          "message": "Division by zero",
+          "line": 15,
+          "column": 26
+        }
+      ],
+      "elapsed_seconds": 0.015598208000000058,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j023.c:15:26: warning: Division by zero [core.DivideZero]\n   15 |         printIntLine(100 / data);\n      |                      ~~~~^~~~~~\n1 warning generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-swzqqgdk/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j023.c"
+      ],
+      "id": "j023",
+      "source_sha256": "ea0e9bb18b1f1e66888b10112bb08815d69b8002a8c2c77dbc327e8e001457f5"
+    },
+    {
+      "file": "sources/j024.c",
+      "prediction": false,
+      "findings": [],
+      "elapsed_seconds": 0.017838624999999997,
+      "returncode": 0,
+      "completed": true,
+      "stderr": "[local workspace]/benchmarks/juliet/sources/j024.c:8:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n    8 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j024.c:32:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   32 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j024.c:52:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   52 |     data = -1;\n      |     ^      ~~\n[local workspace]/benchmarks/juliet/sources/j024.c:69:5: warning: Value stored to 'data' is never read [deadcode.DeadStores]\n   69 |     data = -1;\n      |     ^      ~~\n4 warnings generated.\n",
+      "command": [
+        "clang",
+        "--analyze",
+        "--analyzer-output",
+        "sarif",
+        "-Xanalyzer",
+        "-analyzer-checker=core.DivideZero",
+        "-std=c11",
+        "-o",
+        "/var/folders/26/md8y0x3x4zg6_th_lg7nblh00000gn/T/symdiv-clang-uafby8o9/report.sarif",
+        "[local workspace]/benchmarks/juliet/sources/j024.c"
+      ],
+      "id": "j024",
+      "source_sha256": "7e3c757963e3bf78a97b10e4d370fb1d8a2c105a10b8dcbc8cc9d5cd643b82d4"
+    }
+  ],
+  "failed_cases": [],
+  "manifest_sha256": "996f2bb1a3a8bd673e4a7d6137214370336f5720ab223a3f55d7236c2b3caeee",
+  "recorded_at_utc": "2026-09-29T15:51:47.092754+00:00"
+}

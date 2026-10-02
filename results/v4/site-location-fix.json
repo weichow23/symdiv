@@ -1,0 +1,2464 @@
+{
+  "role": "Post-study repair; original comparison retained unchanged",
+  "catalogs_checked": 55,
+  "affected_cases": [
+    "c008"
+  ],
+  "catalogs": {
+    "c008": {
+      "before": [
+        {
+          "site_id": "div-37b00d1a58a6",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 2,
+          "column": 11,
+          "operator": "/",
+          "denominator": "2",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        },
+        {
+          "site_id": "div-677e2e31c8b3",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 3,
+          "column": 11,
+          "operator": "%",
+          "denominator": "0",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        },
+        {
+          "site_id": "div-ba73aad2a796",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 3,
+          "column": 11,
+          "operator": "/",
+          "denominator": "2",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        }
+      ],
+      "after": [
+        {
+          "site_id": "div-840f0080b787",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 2,
+          "column": 12,
+          "operator": "/",
+          "denominator": "2",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        },
+        {
+          "site_id": "div-cd339a5a7ce5",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 2,
+          "column": 16,
+          "operator": "/",
+          "denominator": "0",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        },
+        {
+          "site_id": "div-677e2e31c8b3",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 3,
+          "column": 11,
+          "operator": "%",
+          "denominator": "0",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        },
+        {
+          "site_id": "div-ba73aad2a796",
+          "file": "benchmarks/v4-cppcheck/sources/c008.c",
+          "function": "f",
+          "line": 3,
+          "column": 11,
+          "operator": "/",
+          "denominator": "2",
+          "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+        }
+      ]
+    }
+  },
+  "first": {
+    "key": "sitefix-c008-initial",
+    "source_sha256": "1972a5e37401330534dc46f0159ecf74f50b6566163fbaef7298b2d7a7d59578",
+    "feedback": null,
+    "raw": {
+      "provider": "codex_exec",
+      "codex_version": "codex-cli 0.159.0",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "output": {
+        "findings": [
+          {
+            "site_id": "div-840f0080b787",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "2",
+            "rationale": "The constant denominator is nonzero, and this operation is reached before any earlier undefined behavior.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-cd339a5a7ce5",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "0",
+            "rationale": "For example, x = 0 avoids signed overflow in the preceding arithmetic and reaches division by the constant zero denominator.",
+            "confidence": 1
+          },
+          {
+            "site_id": "div-677e2e31c8b3",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "0",
+            "rationale": "This site is unreachable before undefined behavior because the preceding statement always encounters its division by zero or earlier signed overflow.",
+            "confidence": 0.99
+          },
+          {
+            "site_id": "div-ba73aad2a796",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "2",
+            "rationale": "The denominator is the nonzero constant 2; moreover, the preceding statement prevents this operation from being reached before undefined behavior.",
+            "confidence": 1
+          }
+        ],
+        "choices": []
+      },
+      "events": [
+        {
+          "type": "thread.started",
+          "thread_id": "01a0f714-65a2-72a3-a647-1fab5149aaa7"
+        },
+        {
+          "type": "turn.started"
+        },
+        {
+          "type": "item.completed",
+          "item": {
+            "id": "item_0",
+            "type": "agent_message",
+            "text": "{\"findings\":[{\"site_id\":\"div-840f0080b787\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The constant denominator is nonzero, and this operation is reached before any earlier undefined behavior.\",\"confidence\":1},{\"site_id\":\"div-cd339a5a7ce5\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"For example, x = 0 avoids signed overflow in the preceding arithmetic and reaches division by the constant zero denominator.\",\"confidence\":1},{\"site_id\":\"div-677e2e31c8b3\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"0\",\"rationale\":\"This site is unreachable before undefined behavior because the preceding statement always encounters its division by zero or earlier signed overflow.\",\"confidence\":0.99},{\"site_id\":\"div-ba73aad2a796\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"2\",\"rationale\":\"The denominator is the nonzero constant 2; moreover, the preceding statement prevents this operation from being reached before undefined behavior.\",\"confidence\":1}],\"choices\":[]}"
+          }
+        },
+        {
+          "type": "turn.completed",
+          "usage": {
+            "input_tokens": 17920,
+            "cached_input_tokens": 16384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 436,
+            "reasoning_output_tokens": 189
+          }
+        }
+      ],
+      "stderr": "2026-10-01T10:48:24.231700Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.233632Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.235213Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.237028Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:48:24.238660Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+      "usage": {
+        "input_tokens": 17920,
+        "cached_input_tokens": 16384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 436,
+        "reasoning_output_tokens": 189
+      },
+      "_client_elapsed_seconds": 14.873816208
+    },
+    "elapsed_seconds": 14.884765792000001
+  },
+  "corrected_case": {
+    "states64": {
+      "dfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.04677725000000166,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.046743124999999,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.06087091600000183
+      },
+      "heuristic": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "heuristic",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.01594508300000186,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.015912124999999833,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.03003874900000203
+      },
+      "bfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "bfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0033902079999990065,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003365082999998492,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017483873999999178
+      },
+      "reverse": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "reverse",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0032328750000019113,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003205209000000764,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017326541000002083
+      },
+      "discrepancy": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "discrepancy",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003257832999999266,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0032325419999992278,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017351498999999437
+      },
+      "coverage": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "coverage",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031302500000016664,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031065000000012333,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017223916000001838
+      },
+      "distance": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030630419999972958,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030392919999968626,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017156707999997467
+      },
+      "portfolio": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030469579999987673,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030157079999995062,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01714062399999894
+      },
+      "random11": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030394999999998618,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003015874999999113,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017133166000000033
+      },
+      "random29": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030418339999975785,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.00301870899999912,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01713549999999775
+      },
+      "random47": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030129169999995042,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0029902079999999387,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017106582999999675
+      },
+      "lookahead": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 5,
+        "solver_calls": 4,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.009309208000001234,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.009285083000001748,
+            "found_states": 5,
+            "found_solver_calls": 4
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "lookahead": {
+          "status": "sat_advice",
+          "summary_states": 3,
+          "summary_queries": 2,
+          "seconds": 0.0062255839999991736,
+          "choices": 0
+        },
+        "local_seconds": 0.023402874000001406
+      },
+      "guided": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "guided",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0032056249999996567,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031598329999980024,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "guidance_error": null,
+        "repair_error": null,
+        "feedback_trigger": null,
+        "feedback_attempted": false,
+        "feedback_used": false,
+        "repair_wait_seconds": 0.0,
+        "initial_states": 0,
+        "initial_model_used": true,
+        "local_seconds": 0.017299290999999828,
+        "initial_model_seconds": 14.873816208
+      }
+    },
+    "states128": {
+      "dfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0032460830000005103,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0032162079999977777,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01733974900000068
+      },
+      "heuristic": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "heuristic",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003134667000001201,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031100419999994244,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017228333000001372
+      },
+      "bfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "bfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030959999999993215,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003072792000001101,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017189665999999493
+      },
+      "reverse": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "reverse",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030603340000006085,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030367499999996994,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01715400000000078
+      },
+      "discrepancy": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "discrepancy",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031212089999996806,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003095500000000584,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017214874999999852
+      },
+      "coverage": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "coverage",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0032274169999979563,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003198084000000989,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017321082999998128
+      },
+      "distance": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031668329999980926,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031428329999982907,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017260498999998264
+      },
+      "portfolio": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0032839579999972557,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0032509999999987826,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017377623999997427
+      },
+      "random11": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031564999999993404,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031295829999997693,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01725016599999951
+      },
+      "random29": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003146041000000821,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003121665999998413,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017239707000000992
+      },
+      "random47": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003064625000000376,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003040792000000181,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017158291000000547
+      },
+      "lookahead": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 5,
+        "solver_calls": 4,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.006395249999997077,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.006369749999997509,
+            "found_states": 5,
+            "found_solver_calls": 4
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "lookahead": {
+          "status": "sat_advice",
+          "summary_states": 3,
+          "summary_queries": 2,
+          "seconds": 0.0032362080000005733,
+          "choices": 0
+        },
+        "local_seconds": 0.020488915999997248
+      },
+      "guided": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "guided",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003214083999999673,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031795419999980368,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "guidance_error": null,
+        "repair_error": null,
+        "feedback_trigger": null,
+        "feedback_attempted": false,
+        "feedback_used": false,
+        "repair_wait_seconds": 0.0,
+        "initial_states": 0,
+        "initial_model_used": true,
+        "local_seconds": 0.017307749999999844,
+        "initial_model_seconds": 14.873816208
+      },
+      "selective": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031439999999989254,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0031114999999992676,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "feedback_used": false,
+        "feedback_trigger": null,
+        "repair_wait_seconds": 0,
+        "initial_model_used": false,
+        "local_seconds": 0.017237665999999097,
+        "initial_model_seconds": 0
+      },
+      "feedback": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "guided",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003080166000000162,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030479999999997176,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "guidance_error": null,
+        "repair_error": null,
+        "feedback_trigger": null,
+        "feedback_attempted": false,
+        "feedback_used": false,
+        "repair_wait_seconds": 0.0,
+        "initial_states": 0,
+        "initial_model_used": true,
+        "local_seconds": 0.017173832000000333,
+        "initial_model_seconds": 14.873816208
+      }
+    },
+    "states512": {
+      "dfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030847080000029337,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030606669999997393,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017178374000003105
+      },
+      "heuristic": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "heuristic",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003108458999999897,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003084459000000095,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017202125000000068
+      },
+      "bfs": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "bfs",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003122250000000548,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.00309683299999719,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01721591600000072
+      },
+      "reverse": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "reverse",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0031209170000003894,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003096416999998297,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01721458300000056
+      },
+      "discrepancy": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "discrepancy",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003066167000000064,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003042167000000262,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017159833000000235
+      },
+      "coverage": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "coverage",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003086625000001675,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003060833999999346,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017180291000001846
+      },
+      "distance": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030969170000005874,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0030733749999996007,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01719058300000076
+      },
+      "portfolio": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "distance",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.003037542000001281,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.003006667000001073,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017131208000001452
+      },
+      "random11": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.00299479199999908,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.002971667000000622,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01708845799999925
+      },
+      "random29": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0030078750000015475,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.002984707999999614,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.01710154100000172
+      },
+      "random47": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "random",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0029727500000014118,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.00294983399999893,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "local_seconds": 0.017066416000001583
+      },
+      "lookahead": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "dfs",
+        "states": 5,
+        "solver_calls": 4,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.006234541999997845,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.006211416999999386,
+            "found_states": 5,
+            "found_solver_calls": 4
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "lookahead": {
+          "status": "sat_advice",
+          "summary_states": 3,
+          "summary_queries": 2,
+          "seconds": 0.003210249999998638,
+          "choices": 0
+        },
+        "local_seconds": 0.020328207999998016
+      },
+      "guided": {
+        "status": "verified_sat",
+        "prediction": true,
+        "policy": "guided",
+        "states": 2,
+        "solver_calls": 2,
+        "seed_batches": 2,
+        "remaining_tasks": 0,
+        "stop_reason": null,
+        "incomplete": [],
+        "elapsed_seconds": 0.0029965420000017673,
+        "findings": [
+          {
+            "site": {
+              "site_id": "div-cd339a5a7ce5",
+              "file": "benchmarks/v4-cppcheck/sources/c008.c",
+              "function": "f",
+              "line": 2,
+              "column": 16,
+              "operator": "/",
+              "denominator": "0",
+              "function_source": "void f(int x, int y) {\n  int a = x/2*3/0;\n  int b = y/2*3%0;\n}"
+            },
+            "verification": {
+              "status": "verified_sat",
+              "accepted": true,
+              "reason": "source-derived path and zero denominator; no neural constraints",
+              "model": {
+                "f:x:1": "0",
+                "f:y:2": "0",
+                "at_site:x": "0",
+                "at_site:y": "0"
+              }
+            },
+            "trace": [],
+            "found_seconds": 0.0029649169999999003,
+            "found_states": 2,
+            "found_solver_calls": 2
+          }
+        ],
+        "feedback": [
+          {
+            "kind": "zero_denominator_unsat",
+            "site_id": "div-840f0080b787",
+            "line": 2,
+            "trace": [],
+            "unsat_core": [
+              "2 == 0"
+            ]
+          }
+        ],
+        "last_trace": [],
+        "guidance_error": null,
+        "repair_error": null,
+        "feedback_trigger": null,
+        "feedback_attempted": false,
+        "feedback_used": false,
+        "repair_wait_seconds": 0.0,
+        "initial_states": 0,
+        "initial_model_used": true,
+        "local_seconds": 0.01709020800000194,
+        "initial_model_seconds": 14.873816208
+      }
+    }
+  },
+  "original_llm_prediction": false,
+  "corrected_llm_prediction": true,
+  "operator_witness": {
+    "confirmed": true,
+    "diagnostic": "benchmarks/v4-cppcheck/sources/c008.c:2:16: runtime error: division by zero",
+    "line": 2,
+    "column": 16
+  },
+  "current_main_cap_checks": 110,
+  "differences": []
+}

@@ -1,0 +1,103 @@
+{
+  "root": ".",
+  "name": "v4-authored-parameter-stress",
+  "selection": "All three predefined families and both depths, each paired; seed 20261001. No result-based selection.",
+  "cases": [
+    {
+      "id": "s001",
+      "file": "sources/s001.c",
+      "expected_bug": true,
+      "category": "weighted",
+      "depth": 9,
+      "sha256": "36e184603039b8e0db72376616fd1b89706dea6dfde0a4ffcfbde69d64574333"
+    },
+    {
+      "id": "s002",
+      "file": "sources/s002.c",
+      "expected_bug": false,
+      "category": "weighted",
+      "depth": 9,
+      "sha256": "f3afb3c63d89844cd5592895a0ea7f9c7e93564fb620de02e7ca29717f65f833"
+    },
+    {
+      "id": "s003",
+      "file": "sources/s003.c",
+      "expected_bug": true,
+      "category": "weighted",
+      "depth": 11,
+      "sha256": "a831be892d974d72babff814ae53eafaf8660ca58ea6ea768a8ae26961f42f6b"
+    },
+    {
+      "id": "s004",
+      "file": "sources/s004.c",
+      "expected_bug": false,
+      "category": "weighted",
+      "depth": 11,
+      "sha256": "6d78fbd8fbeb49cc9bf8a5bac5f0b61d9fc2fbd3e03315d740a24906c319e394"
+    },
+    {
+      "id": "s005",
+      "file": "sources/s005.c",
+      "expected_bug": true,
+      "category": "coupled",
+      "depth": 9,
+      "sha256": "4c94592d6d573b8ee1bea1f53e28d46b6e512a1dae90f6571d569017419650f0"
+    },
+    {
+      "id": "s006",
+      "file": "sources/s006.c",
+      "expected_bug": false,
+      "category": "coupled",
+      "depth": 9,
+      "sha256": "a54486ad0e4e0cbe1dc959e3150d360c7846cc89a603e9d206c41bce33a237aa"
+    },
+    {
+      "id": "s007",
+      "file": "sources/s007.c",
+      "expected_bug": true,
+      "category": "coupled",
+      "depth": 11,
+      "sha256": "800a96a8e24aae8e37dc389fe325603181f9e5db2a95252bd377cf3239f67d44"
+    },
+    {
+      "id": "s008",
+      "file": "sources/s008.c",
+      "expected_bug": false,
+      "category": "coupled",
+      "depth": 11,
+      "sha256": "9aae2383a188ac09b28ae9403a57f81dbcaa6b83251112c1504a955388696c6c"
+    },
+    {
+      "id": "s009",
+      "file": "sources/s009.c",
+      "expected_bug": true,
+      "category": "loop",
+      "depth": 7,
+      "sha256": "05abe62e7866fb7bf9cddd7e4ca8e2b972e07044cce58ad7e473d51bb2e0a969"
+    },
+    {
+      "id": "s010",
+      "file": "sources/s010.c",
+      "expected_bug": false,
+      "category": "loop",
+      "depth": 7,
+      "sha256": "a380f90a27d69e2cf446d0469d49d6f8359da62111deae5e961652a8457b0588"
+    },
+    {
+      "id": "s011",
+      "file": "sources/s011.c",
+      "expected_bug": true,
+      "category": "loop",
+      "depth": 8,
+      "sha256": "ddcda64bb837ca2a9802f4ed5a0295708d45ead813f7c1903c7a740bf4d8def5"
+    },
+    {
+      "id": "s012",
+      "file": "sources/s012.c",
+      "expected_bug": false,
+      "category": "loop",
+      "depth": 8,
+      "sha256": "356b2cd35bf2303aedf0f5df933067655f211afa27392c08c8efbca25a78b472"
+    }
+  ]
+}

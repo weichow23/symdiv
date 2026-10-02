@@ -1,0 +1,39 @@
+{
+  "method": "Clang -O0 -fsanitize=undefined -fno-sanitize-recover=all; rand values supplied by recorded input model",
+  "accepted_sites": 2,
+  "confirmed_sites": 2,
+  "cases": [
+    {
+      "id": "injected",
+      "site_id": "div-4d6fda11e95c",
+      "function": "f",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "benchmarks/v3-robustness/injected.c:9:15: runtime error: division by zero",
+      "initial_inputs": {
+        "f:x0:1": "0",
+        "f:x1:2": "1",
+        "f:x2:3": "0",
+        "f:x3:4": "0",
+        "f:x4:5": "0",
+        "f:x5:6": "0"
+      }
+    },
+    {
+      "id": "injected",
+      "site_id": "div-4d6fda11e95c",
+      "function": "f",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "benchmarks/v3-robustness/injected.c:9:15: runtime error: division by zero",
+      "initial_inputs": {
+        "f:x0:1": "0",
+        "f:x1:2": "1",
+        "f:x2:3": "0",
+        "f:x3:4": "0",
+        "f:x4:5": "0",
+        "f:x5:6": "0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "schema_version": 2,
+  "name": "symdiv-juliet-24",
+  "language": "C11",
+  "task": "integer division or remainder by zero",
+  "root": ".",
+  "label_policy": "Upstream bad branch is positive; entire good branch (all helpers) is negative. File-level any-site warning. rand() results are independent integers in [0,2147483647]; 32-bit int and unsigned int.",
+  "cases": [
+    {
+      "id": "j001",
+      "file": "sources/j001.c",
+      "expected_bug": false,
+      "category": "rand-31",
+      "site_count": 2,
+      "sha256": "f40e20e6ad2d371d6a7c2cf78ee32c3141dec1afdaf040f34e309515cd40cdc5"
+    },
+    {
+      "id": "j002",
+      "file": "sources/j002.c",
+      "expected_bug": true,
+      "category": "rand-03",
+      "site_count": 1,
+      "sha256": "cd34a1a8fbfcfc22a140a8bdd7ca7b53f8ffce6a1c4f0dcd9d572bee76d4be0f"
+    },
+    {
+      "id": "j003",
+      "file": "sources/j003.c",
+      "expected_bug": true,
+      "category": "zero-03",
+      "site_count": 1,
+      "sha256": "7e2b70da04d81221264ba7899ce1e8f939b4c427c8ff93adc8598760294b3253"
+    },
+    {
+      "id": "j004",
+      "file": "sources/j004.c",
+      "expected_bug": false,
+      "category": "zero-03",
+      "site_count": 4,
+      "sha256": "c49e5d4b481f5ccf81bcbea4ef2423eef2402d3cf4dc1039ab0cbbc158c48585"
+    },
+    {
+      "id": "j005",
+      "file": "sources/j005.c",
+      "expected_bug": false,
+      "category": "zero-06",
+      "site_count": 4,
+      "sha256": "2240d1315c60cad23a8331da18d6fb4ad08b8e7c5a15ec08ff591cad25b4f906"
+    },
+    {
+      "id": "j006",
+      "file": "sources/j006.c",
+      "expected_bug": true,
+      "category": "rand-17",
+      "site_count": 1,
+      "sha256": "830a4514186e8367153487a2bf2f2aa11f3b2423105ca66f57563a52cab18091"
+    },
+    {
+      "id": "j007",
+      "file": "sources/j007.c",
+      "expected_bug": false,
+      "category": "rand-03",
+      "site_count": 4,
+      "sha256": "9ad5603bdf2be750c3aa25aff0ffbd164f24018b0acff8cee29ae8fc26ad154b"
+    },
+    {
+      "id": "j008",
+      "file": "sources/j008.c",
+      "expected_bug": false,
+      "category": "zero-16",
+      "site_count": 2,
+      "sha256": "dab851931237ac229070c05386d2b5420c003d20b815ed24dddf14e8a17217a6"
+    },
+    {
+      "id": "j009",
+      "file": "sources/j009.c",
+      "expected_bug": false,
+      "category": "zero-31",
+      "site_count": 2,
+      "sha256": "a4ac111ba685894a34e2dfd721a0b2e71f49a4bfbbbab82e770d355b74d6d415"
+    },
+    {
+      "id": "j010",
+      "file": "sources/j010.c",
+      "expected_bug": false,
+      "category": "rand-01",
+      "site_count": 2,
+      "sha256": "1b0086d03d24d66513e5b4f0f462e90617165f0c2de41bd2b454915f0d2ffca2"
+    },
+    {
+      "id": "j011",
+      "file": "sources/j011.c",
+      "expected_bug": true,
+      "category": "zero-16",
+      "site_count": 1,
+      "sha256": "4affe79ac4a5c47db7c79fff76fc8ec4448bdda38553db2eae35cb101ec41e97"
+    },
+    {
+      "id": "j012",
+      "file": "sources/j012.c",
+      "expected_bug": true,
+      "category": "zero-31",
+      "site_count": 1,
+      "sha256": "a52689e39c571de1c2637374c1f4e3de740e131592590dd7a21a7f7bdb9f00e1"
+    },
+    {
+      "id": "j013",
+      "file": "sources/j013.c",
+      "expected_bug": true,
+      "category": "zero-01",
+      "site_count": 1,
+      "sha256": "ecea5f6493925ba36818c232e9567614c261681a9a669112516fafe63cc5c6ee"
+    },
+    {
+      "id": "j014",
+      "file": "sources/j014.c",
+      "expected_bug": false,
+      "category": "zero-17",
+      "site_count": 2,
+      "sha256": "e5abad645a3d0aaa9cb54bcb343eaca539b2924b48d7648a9c238d1b71dd47bc"
+    },
+    {
+      "id": "j015",
+      "file": "sources/j015.c",
+      "expected_bug": false,
+      "category": "rand-17",
+      "site_count": 2,
+      "sha256": "bce449be94f315fecd938dc98308b3b682f49f69844c213e68911880b7ba2617"
+    },
+    {
+      "id": "j016",
+      "file": "sources/j016.c",
+      "expected_bug": true,
+      "category": "rand-31",
+      "site_count": 1,
+      "sha256": "afaf4ab5c4702a21b7bd352461f7f8f737e7e60db7707d450e0cd1eb50c04386"
+    },
+    {
+      "id": "j017",
+      "file": "sources/j017.c",
+      "expected_bug": true,
+      "category": "zero-06",
+      "site_count": 1,
+      "sha256": "0f6bc947aa2cff2ed1533ff4e9f06f1281995d45186ecc25e3dbf72219f71922"
+    },
+    {
+      "id": "j018",
+      "file": "sources/j018.c",
+      "expected_bug": true,
+      "category": "rand-16",
+      "site_count": 1,
+      "sha256": "e79b2a9781b444921c744d47f1ce69239b92c455b7164fd17fe6bde24cca8a49"
+    },
+    {
+      "id": "j019",
+      "file": "sources/j019.c",
+      "expected_bug": true,
+      "category": "rand-01",
+      "site_count": 1,
+      "sha256": "4df03eda80845a5127c24749ada759311600b12f5265cc61beb1bccee9add25a"
+    },
+    {
+      "id": "j020",
+      "file": "sources/j020.c",
+      "expected_bug": false,
+      "category": "rand-16",
+      "site_count": 2,
+      "sha256": "0a801c713b6461a2df447f8f04fb8ff20b5b13b0d157072ad2a8633a253346e4"
+    },
+    {
+      "id": "j021",
+      "file": "sources/j021.c",
+      "expected_bug": false,
+      "category": "zero-01",
+      "site_count": 2,
+      "sha256": "52aa4ddc026d34fadddde5f3224f8d314b6ac2d1bb557fe24e42781b4f49df6d"
+    },
+    {
+      "id": "j022",
+      "file": "sources/j022.c",
+      "expected_bug": true,
+      "category": "rand-06",
+      "site_count": 1,
+      "sha256": "8933caf70360f59cba8aaa134cb331059f90506d9cccdf87389391ff7614463b"
+    },
+    {
+      "id": "j023",
+      "file": "sources/j023.c",
+      "expected_bug": true,
+      "category": "zero-17",
+      "site_count": 1,
+      "sha256": "ea0e9bb18b1f1e66888b10112bb08815d69b8002a8c2c77dbc327e8e001457f5"
+    },
+    {
+      "id": "j024",
+      "file": "sources/j024.c",
+      "expected_bug": false,
+      "category": "rand-06",
+      "site_count": 4,
+      "sha256": "7e3c757963e3bf78a97b10e4d370fb1d8a2c105a10b8dcbc8cc9d5cd643b82d4"
+    }
+  ]
+}

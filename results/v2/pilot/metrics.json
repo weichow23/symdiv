@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "systems": {
+    "baseline": {
+      "tp": 9,
+      "fp": 0,
+      "tn": 12,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571,
+      "accuracy": 0.875
+    },
+    "neuro": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    },
+    "llm_only": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    },
+    "symbolic_only": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    }
+  },
+  "rows": [
+    {
+      "system": "baseline",
+      "id": "c01-constant-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c02-constant-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c03-guarded-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c04-guarded-return",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c05-opposing-bounds",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c06-impossible-bounds",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c07-difference-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c08-difference-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c09-affine-boundary",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c10-affine-strict",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c11-nested-equalities",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c12-nested-contradiction",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c13-else-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c14-else-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c15-modulo-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c16-modulo-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c17-assignment-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c18-assignment-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c19-two-variable-equal",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c20-two-variable-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c21-unconstrained",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c22-bitwise-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "c23-loop-to-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "c24-loop-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c01-constant-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c02-constant-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c03-guarded-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c04-guarded-return",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c05-opposing-bounds",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c06-impossible-bounds",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c07-difference-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c08-difference-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c09-affine-boundary",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c10-affine-strict",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c11-nested-equalities",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c12-nested-contradiction",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c13-else-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c14-else-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c15-modulo-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c16-modulo-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c17-assignment-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c18-assignment-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c19-two-variable-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c20-two-variable-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c21-unconstrained",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c22-bitwise-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "c23-loop-to-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "c24-loop-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c01-constant-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c02-constant-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c03-guarded-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c04-guarded-return",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c05-opposing-bounds",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c06-impossible-bounds",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c07-difference-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c08-difference-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c09-affine-boundary",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c10-affine-strict",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c11-nested-equalities",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c12-nested-contradiction",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c13-else-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c14-else-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c15-modulo-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c16-modulo-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c17-assignment-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c18-assignment-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c19-two-variable-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c20-two-variable-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c21-unconstrained",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c22-bitwise-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "c23-loop-to-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "c24-loop-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c01-constant-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c02-constant-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c03-guarded-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c04-guarded-return",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c05-opposing-bounds",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c06-impossible-bounds",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c07-difference-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c08-difference-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c09-affine-boundary",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c10-affine-strict",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c11-nested-equalities",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c12-nested-contradiction",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c13-else-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c14-else-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c15-modulo-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c16-modulo-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c17-assignment-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c18-assignment-guarded",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c19-two-variable-equal",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c20-two-variable-unequal",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c21-unconstrained",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c22-bitwise-nonzero",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c23-loop-to-zero",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "c24-loop-guarded",
+      "expected": false,
+      "predicted": false
+    }
+  ]
+}

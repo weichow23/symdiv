@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-10-01T10:22:30.175919+00:00",
+  "timing_cases": [
+    "c010",
+    "c013",
+    "s003",
+    "s008",
+    "s011"
+  ],
+  "repetitions": 3,
+  "role": "Exploratory integration on already studied cases; not held-out evidence. All trials fresh; historical comparisons are descriptive, not a new interleaved significance test.",
+  "files": {
+    "src/symdiv/provider.py": "da845c7bb0dd53da3de2ef4a477d57d382e2dce62463f286f563d756bf72df23",
+    "src/symdiv/baseline.py": "a4ebdad4dcd838dc021921a0bd542707a25f445df50d269475b06bcf39c29992",
+    "src/symdiv/expressions.py": "921994f9e2607e1760e26e65e4ab47a09ef1a4d793b0c5e41b1d72ecf44ef581",
+    "src/symdiv/__init__.py": "adf3eb54afedbd5944e977b3dcae9c30fea0734f5d6a9b6d3d53ea4986196518",
+    "src/symdiv/model.py": "ecd0aa3957bcbbd0f78db2e75281e42c3b8c5a4ee6e19bf3dcee0444622fe774",
+    "src/symdiv/experiment_v4.py": "5a6f4172d03ffe1f9b8b172759f372df228ffc49c745853425df9f95232b27f7",
+    "src/symdiv/timing.py": "1c2e172550b4d1b532d4aefcb0ea23f6df4c9c6f6b736e0caf1e7a60514a15c6",
+    "src/symdiv/cli.py": "adf8b94caadeb69a02c51ced9e0aa47f52faa0bad3b103a42ef8761ec6a466f5",
+    "src/symdiv/search.py": "c37cdcb34376433005d9f29db433d927e71402cbd22ad4d215e8871c02d22b23",
+    "src/symdiv/budgets.py": "18da5be260af236fd277a24c83bdd857b35c10caa64f1b08e2df7eb7d8fa91e8",
+    "src/symdiv/evaluate.py": "46f8a3fbf669f83ab5e4bb40e24e80a5e8dabc14dcf5ef2db0c30c018364c93b",
+    "src/symdiv/verify.py": "5560177519588322da7fb95fb37e0bb14e9e72ace3c7a11b01cdb170f302b5aa",
+    "src/symdiv/lookahead.py": "17e0eaea727dc3a92491e0ed9bafc02acc8e6e830ec69d98e0e2ad86ca74c801",
+    "src/symdiv/ground.py": "37b438ad128ed84b1797c44c3ad1de3c5fe91104bd5a67bbe64a41cd9bf3c1e3",
+    "src/symdiv/guidance.py": "8ae0a1fd8c9715310341313e01146ae4ac628c2bcaa4710770dcd9f211070001",
+    "src/symdiv/search_v4.py": "96c36983055bcdf2700e098c1f76e63cbafbda14d14206d61894e2adf70fc62a",
+    "src/symdiv/extract.py": "1d4e80f7b5df4f3f8e85192b416ef3720cb98159ca3d3400426618764aa04b54",
+    "src/symdiv/__main__.py": "11cf323249f4ba4e79c9fb7660c0979fc91a3822bc5362286376b69808b41195",
+    "scripts/run_v4_smt_first.py": "8c91667d3140410f0d37e25739eb4b9af781e2175a49df04b9d7603f6cd7430a",
+    "scripts/run_v4.py": "d750642e7e7ed7d36b787f5fe25cbfe38bd7a64093d79b4525355435e52283ec",
+    "configs/v4.json": "5568e90c52ff20282b44a700af58e392ec65ba152eb18a770e486f9d6d93d0d1",
+    "docs/v4-smt-first-extension.md": "8aedce9b1ac2203ade0c5433a4722046f96ccf4fa77d4403dac7db59b5b8c058",
+    "benchmarks/v4/freeze.json": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+    "benchmarks/v4/timing-amendment.json": "f13c722a2fa2db7530b49ee66f32c18ccb655aec386c9462aac4ccbc6c105a2b"
+  }
+}

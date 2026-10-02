@@ -1,0 +1,69 @@
+{
+  "key": "c012-initial",
+  "source_sha256": "fb805e3b6a7f1d886afa8ed166468c04fb23d0fd13a7bb64a8d9dc65e0c75958",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-a5d8487929df",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "255",
+          "rationale": "The denominator is the nonzero integer constant 255.",
+          "confidence": 1.0
+        },
+        {
+          "site_id": "div-de4322ad7b10",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "sz",
+          "rationale": "The array size is 255 * sizeof(void *), so division by 255 yields sizeof(void *), which is strictly positive; therefore sz cannot be zero.",
+          "confidence": 0.99
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6d6-62c2-77b1-9af3-4a22f88ad655"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-a5d8487929df\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"255\",\"rationale\":\"The denominator is the nonzero integer constant 255.\",\"confidence\":1.0},{\"site_id\":\"div-de4322ad7b10\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"sz\",\"rationale\":\"The array size is 255 * sizeof(void *), so division by 255 yields sizeof(void *), which is strictly positive; therefore sz cannot be zero.\",\"confidence\":0.99}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17659,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 379,
+          "reasoning_output_tokens": 245
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:40:40.264831Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:40.266855Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:40.268626Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:40.270327Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:40.271286Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:40:40.272207Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17659,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 379,
+      "reasoning_output_tokens": 245
+    },
+    "_client_elapsed_seconds": 12.677744375
+  },
+  "elapsed_seconds": 12.698166874999998
+}

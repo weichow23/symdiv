@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-10-01T10:07:00.964168+00:00",
+  "reason": "Record and enforce existing actual wall deadline at process-group boundary; forbid cached responses in incomplete live timing. Resource policy/inputs unchanged. See docs/v4-timing-amendment.md.",
+  "original_freeze_sha256": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+  "files": {
+    "scripts/run_v4.py": {
+      "original_sha256": "0755f067f74291f833a9dfc85ab6b13f0eab9d4b2d9b04938a433d8643643a6e",
+      "corrected_sha256": "7a079d0d3ab8ab0b3126c637149fbef0d3d25c16318cf12a27e02b5aade960e0"
+    }
+  },
+  "dependencies": {
+    "src/symdiv/timing.py": "5006303f8cb04357ea1c6be0099f5711547f1ce13b330fa0c19b89ddfdf06ebc",
+    "docs/v4-timing-amendment.md": "12ca7de125349c8eb88497aa65bab9e1174c88bdfa60cc418e941a4c3560fad2"
+  }
+}

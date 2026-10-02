@@ -1,0 +1,8 @@
+{
+  "python": "3.9.6",
+  "platform": "macOS-26.1-arm64-arm-64bit",
+  "z3": "4.13.3",
+  "clang": "Apple clang version 17.0.0 (clang-1700.4.4.1)",
+  "freeze_sha256": "6ff21c331c11590a570625ca4798297511594e81ed2cc00d83ade77a2b727f8d",
+  "timing_amendment_sha256": "f13c722a2fa2db7530b49ee66f32c18ccb655aec386c9462aac4ccbc6c105a2b"
+}

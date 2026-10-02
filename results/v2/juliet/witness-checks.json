@@ -1,0 +1,163 @@
+{
+  "method": "Clang -O0 -fsanitize=undefined -fno-sanitize-recover=all; rand values supplied by recorded input model",
+  "accepted_sites": 12,
+  "confirmed_sites": 12,
+  "cases": [
+    {
+      "id": "j002",
+      "site_id": "div-5e57892d89c5",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j002.c:14:26: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j003",
+      "site_id": "div-b567ccfb611b",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j003.c:14:26: runtime error: division by zero",
+      "initial_inputs": {}
+    },
+    {
+      "id": "j006",
+      "site_id": "div-e5dcf664be73",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j006.c:15:26: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j011",
+      "site_id": "div-498a79dec716",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j011.c:15:26: runtime error: division by zero",
+      "initial_inputs": {}
+    },
+    {
+      "id": "j012",
+      "site_id": "div-b9ce16956b8c",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j012.c:12:26: runtime error: division by zero",
+      "initial_inputs": {}
+    },
+    {
+      "id": "j013",
+      "site_id": "div-e8b50fcacd19",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j013.c:9:22: runtime error: division by zero",
+      "initial_inputs": {}
+    },
+    {
+      "id": "j016",
+      "site_id": "div-4234675835be",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j016.c:12:26: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j017",
+      "site_id": "div-0d3402e6257d",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j017.c:15:26: runtime error: division by zero",
+      "initial_inputs": {}
+    },
+    {
+      "id": "j018",
+      "site_id": "div-63cdbfd95243",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j018.c:15:26: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j019",
+      "site_id": "div-b5417d28cb92",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j019.c:9:22: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j022",
+      "site_id": "div-c0d8d0641cf1",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j022.c:15:26: runtime error: division by zero",
+      "initial_inputs": {
+        "fn_001:rand:1": "1",
+        "fn_001:rand:2": "0",
+        "fn_001:rand:3": "0",
+        "fn_001:rand:4": "0",
+        "fn_001:rand:5": "0",
+        "fn_001:rand:6": "0",
+        "fn_001:rand:7": "0"
+      }
+    },
+    {
+      "id": "j023",
+      "site_id": "div-e4f376b36400",
+      "function": "fn_001",
+      "confirmed": true,
+      "returncode": -6,
+      "diagnostic": "sources/j023.c:15:26: runtime error: division by zero",
+      "initial_inputs": {}
+    }
+  ]
+}

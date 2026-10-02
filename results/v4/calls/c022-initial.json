@@ -1,0 +1,61 @@
+{
+  "key": "c022-initial",
+  "source_sha256": "1a82772d4c678dda7e35d0a34627384cce9e655c13f0b339de0cf59e04b6e69b",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-a4e77ad8e184",
+          "verdict": "unknown",
+          "path_conditions": [],
+          "denominator": "x",
+          "rationale": "The division is reached immediately, and zero would trigger the bug, but its value comes from the unsupported mutable global x, so the required entry-state reasoning cannot be established by this analyzer.",
+          "confidence": 0.98
+        }
+      ],
+      "choices": []
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6d6-b6f8-7732-9919-30c726fbb925"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-a4e77ad8e184\",\"verdict\":\"unknown\",\"path_conditions\":[],\"denominator\":\"x\",\"rationale\":\"The division is reached immediately, and zero would trigger the bug, but its value comes from the unsupported mutable global x, so the required entry-state reasoning cannot be established by this analyzer.\",\"confidence\":0.98}],\"choices\":[]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17674,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 321,
+          "reasoning_output_tokens": 227
+        }
+      }
+    ],
+    "stderr": "2026-10-01T09:41:01.823906Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:01.826598Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:01.827861Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:01.829090Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:01.830188Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T09:41:01.831264Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17674,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 321,
+      "reasoning_output_tokens": 227
+    },
+    "_client_elapsed_seconds": 13.008361582999996
+  },
+  "elapsed_seconds": 13.033727542000001
+}

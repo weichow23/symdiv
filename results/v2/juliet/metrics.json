@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "systems": {
+    "baseline": {
+      "tp": 6,
+      "fp": 0,
+      "tn": 12,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6666666666666666,
+      "accuracy": 0.75
+    },
+    "neuro": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    },
+    "llm_only": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    },
+    "symbolic_only": {
+      "tp": 12,
+      "fp": 0,
+      "tn": 12,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0
+    }
+  },
+  "rows": [
+    {
+      "system": "baseline",
+      "id": "j001",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j002",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j003",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j004",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j005",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j006",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j007",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j008",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j009",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j010",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j011",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j012",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j013",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j014",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j015",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j016",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j017",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j018",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j019",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j020",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j021",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j022",
+      "expected": true,
+      "predicted": false
+    },
+    {
+      "system": "baseline",
+      "id": "j023",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "baseline",
+      "id": "j024",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j001",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j002",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j003",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j004",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j005",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j006",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j007",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j008",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j009",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j010",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j011",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j012",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j013",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j014",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j015",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j016",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j017",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j018",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j019",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j020",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j021",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "neuro",
+      "id": "j022",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j023",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "neuro",
+      "id": "j024",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j001",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j002",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j003",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j004",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j005",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j006",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j007",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j008",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j009",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j010",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j011",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j012",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j013",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j014",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j015",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j016",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j017",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j018",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j019",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j020",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j021",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "llm_only",
+      "id": "j022",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j023",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "llm_only",
+      "id": "j024",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j001",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j002",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j003",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j004",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j005",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j006",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j007",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j008",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j009",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j010",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j011",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j012",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j013",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j014",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j015",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j016",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j017",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j018",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j019",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j020",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j021",
+      "expected": false,
+      "predicted": false
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j022",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j023",
+      "expected": true,
+      "predicted": true
+    },
+    {
+      "system": "symbolic_only",
+      "id": "j024",
+      "expected": false,
+      "predicted": false
+    }
+  ]
+}

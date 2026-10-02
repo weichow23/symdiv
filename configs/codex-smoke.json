@@ -1,0 +1,13 @@
+{
+  "provider": "codex_exec",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "codex_command": "codex",
+  "output_schema": "schemas/symdiv-response.schema.json",
+  "prompt": "prompts/path_analysis.md",
+  "timeout_seconds": 300,
+  "max_retries": 0,
+  "max_calls": 1,
+  "max_total_tokens": 100000,
+  "z3_timeout_ms": 5000
+}

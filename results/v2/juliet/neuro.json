@@ -1,0 +1,3644 @@
+{
+  "schema_version": 2,
+  "analyzer": "symdiv-source-grounded-v2",
+  "provider": "codex_exec",
+  "model": "gpt-5.6-sol",
+  "prompt": "prompts/path_analysis.md",
+  "prompt_sha256": "9b892afca1f5cfdb687398b9d2b6f13fc3953b8c790a2adf6bb743b58e1ad05d",
+  "manifest_sha256": "996f2bb1a3a8bd673e4a7d6137214370336f5720ab223a3f55d7236c2b3caeee",
+  "code_sha256": "dc6e8ae4c786431d65a145c535d0baa07ae469af3dc8daf9b12accaf92e5c875",
+  "configuration": {
+    "provider": "codex_exec",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "codex_command": "codex",
+    "output_schema": "schemas/symdiv-response.schema.json",
+    "prompt": "prompts/path_analysis.md",
+    "timeout_seconds": 300,
+    "max_calls": 24,
+    "max_total_tokens": 500000,
+    "max_retries": 0,
+    "loop_bound": 8,
+    "state_limit": 4096,
+    "z3_timeout_ms": 5000
+  },
+  "recorded_at_utc": "2026-09-29T15:51:18.625470+00:00",
+  "environment": {
+    "platform": "macOS-26.1-arm64-arm-64bit",
+    "python": "3.9.6",
+    "z3": "4.13.3",
+    "clang": "Apple clang version 17.0.0 (clang-1700.4.4.1)"
+  },
+  "cases": [
+    {
+      "id": "j001",
+      "file": "sources/j001.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-94b2ea568ed6",
+            "file": "sources/j001.c",
+            "function": "fn_003",
+            "line": 12,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    data = 7;\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-94b2ea568ed6",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The outer data is assigned 7, copied into dataCopy, then used to initialize the inner data. Thus the denominator is 7 at this site.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-e9f5c8f7634c",
+            "file": "sources/j001.c",
+            "function": "fn_002",
+            "line": 25,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e9f5c8f7634c",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder operation is reachable only through the guarding condition data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "f40e20e6ad2d371d6a7c2cf78ee32c3141dec1afdaf040f34e309515cd40cdc5",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-94b2ea568ed6",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The outer data is assigned 7, copied into dataCopy, then used to initialize the inner data. Thus the denominator is 7 at this site.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-e9f5c8f7634c",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder operation is reachable only through the guarding condition data != 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddc-ff92-7b73-a8cf-c1651ba54040"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-94b2ea568ed6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The outer data is assigned 7, copied into dataCopy, then used to initialize the inner data. Thus the denominator is 7 at this site.\",\"confidence\":1.0},{\"site_id\":\"div-e9f5c8f7634c\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder operation is reachable only through the guarding condition data != 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17768,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 141,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:51:18.681165Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:51:18.683448Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17768,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 141,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.465554000000001
+      },
+      "input_tokens": 17768,
+      "output_tokens": 141,
+      "client_elapsed_seconds": 9.465554000000001,
+      "symbolic_seconds": 0.31801512499999873,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 9.817499166
+    },
+    {
+      "id": "j002",
+      "file": "sources/j002.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-5e57892d89c5",
+            "file": "sources/j002.c",
+            "function": "fn_001",
+            "line": 14,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-5e57892d89c5",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "Both constant-true branches execute. The rand-based assignment can produce 0, so the remainder operation is reachable with data equal to zero.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "cd34a1a8fbfcfc22a140a8bdd7ca7b53f8ffce6a1c4f0dcd9d572bee76d4be0f",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-5e57892d89c5",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "Both constant-true branches execute. The rand-based assignment can produce 0, so the remainder operation is reachable with data equal to zero.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddd-25ee-7992-b19c-03142b2c7e2d"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-5e57892d89c5\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"Both constant-true branches execute. The rand-based assignment can produce 0, so the remainder operation is reachable with data equal to zero.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17630,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 250,
+              "reasoning_output_tokens": 162
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:51:28.501685Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:51:28.503550Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17630,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 250,
+          "reasoning_output_tokens": 162
+        },
+        "_client_elapsed_seconds": 11.105235208999998
+      },
+      "input_tokens": 17630,
+      "output_tokens": 250,
+      "client_elapsed_seconds": 11.105235208999998,
+      "symbolic_seconds": 0.1388883750000005,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 11.279303458000001
+    },
+    {
+      "id": "j003",
+      "file": "sources/j003.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b567ccfb611b",
+            "file": "sources/j003.c",
+            "function": "fn_001",
+            "line": 14,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = 0;\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b567ccfb611b",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "Both conditions are always true, so data is assigned 0 before the remainder operation is reached.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "7e2b70da04d81221264ba7899ce1e8f939b4c427c8ff93adc8598760294b3253",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-b567ccfb611b",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "Both conditions are always true, so data is assigned 0 before the remainder operation is reached.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddd-51fb-73d3-b45a-c83b99f3301a"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-b567ccfb611b\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"Both conditions are always true, so data is assigned 0 before the remainder operation is reached.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17577,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 69,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:51:39.778561Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:51:39.780844Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17577,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 69,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 6.9042383749999985
+      },
+      "input_tokens": 17577,
+      "output_tokens": 69,
+      "client_elapsed_seconds": 6.9042383749999985,
+      "symbolic_seconds": 0.02173587500000096,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 6.9502302920000005
+    },
+    {
+      "id": "j004",
+      "file": "sources/j004.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-ba69450d23f7",
+            "file": "sources/j004.c",
+            "function": "fn_002",
+            "line": 20,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = 0;\n    }\n    if(5!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-ba69450d23f7",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-3aae223a85af",
+            "file": "sources/j004.c",
+            "function": "fn_003",
+            "line": 40,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = 0;\n    }\n    if(5==5)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-3aae223a85af",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-8becc142713f",
+            "file": "sources/j004.c",
+            "function": "fn_004",
+            "line": 62,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_004()\n{\n    int data;\n    data = -1;\n    if(5!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        data = 7;\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-8becc142713f",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant-condition else branch assigns 7 to data before the site is reached.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-c7149b8b44be",
+            "file": "sources/j004.c",
+            "function": "fn_005",
+            "line": 75,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_005()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = 7;\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-c7149b8b44be",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The preceding constant-true branch assigns 7 to data before the site is reached.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "c49e5d4b481f5ccf81bcbea4ef2423eef2402d3cf4dc1039ab0cbbc158c48585",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-ba69450d23f7",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-3aae223a85af",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-8becc142713f",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant-condition else branch assigns 7 to data before the site is reached.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-c7149b8b44be",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The preceding constant-true branch assigns 7 to data before the site is reached.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddd-6d61-7750-a227-4672d4831c66"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-ba69450d23f7\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.\",\"confidence\":1.0},{\"site_id\":\"div-3aae223a85af\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder expression is guarded by data != 0; with the visible assignments, data is actually 0 and the site is unreachable.\",\"confidence\":1.0},{\"site_id\":\"div-8becc142713f\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant-condition else branch assigns 7 to data before the site is reached.\",\"confidence\":1.0},{\"site_id\":\"div-c7149b8b44be\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The preceding constant-true branch assigns 7 to data before the site is reached.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17992,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 371,
+              "reasoning_output_tokens": 105
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:51:46.808808Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:51:46.811357Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17992,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 371,
+          "reasoning_output_tokens": 105
+        },
+        "_client_elapsed_seconds": 12.306274542
+      },
+      "input_tokens": 17992,
+      "output_tokens": 371,
+      "client_elapsed_seconds": 12.306274542,
+      "symbolic_seconds": 0.03688233300000121,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 12.384967374999999
+    },
+    {
+      "id": "j005",
+      "file": "sources/j005.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-f1683052c1fd",
+            "file": "sources/j005.c",
+            "function": "fn_002",
+            "line": 21,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = 0;\n    }\n    if(STATIC_CONST_FIVE!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-f1683052c1fd",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is guarded by data != 0; in this file data is actually 0 at that guard, so the site is unreachable.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-713ab6ab0588",
+            "file": "sources/j005.c",
+            "function": "fn_003",
+            "line": 41,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = 0;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-713ab6ab0588",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is guarded by data != 0; data has been set to 0, so execution takes the else branch instead.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-a5f9f2694a59",
+            "file": "sources/j005.c",
+            "function": "fn_004",
+            "line": 63,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_004()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        data = 7;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-a5f9f2694a59",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant condition selects the branch assigning 7 to data before the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-3dad3e10bc4d",
+            "file": "sources/j005.c",
+            "function": "fn_005",
+            "line": 76,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_005()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = 7;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-3dad3e10bc4d",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant condition assigns 7 to data, and no subsequent assignment occurs before the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "2240d1315c60cad23a8331da18d6fb4ad08b8e7c5a15ec08ff591cad25b4f906",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-f1683052c1fd",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is guarded by data != 0; in this file data is actually 0 at that guard, so the site is unreachable.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-713ab6ab0588",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is guarded by data != 0; data has been set to 0, so execution takes the else branch instead.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-a5f9f2694a59",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant condition selects the branch assigning 7 to data before the division.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-3dad3e10bc4d",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant condition assigns 7 to data, and no subsequent assignment occurs before the division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddd-9d87-7e21-8423-b86b08608b20"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-f1683052c1fd\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is guarded by data != 0; in this file data is actually 0 at that guard, so the site is unreachable.\",\"confidence\":1.0},{\"site_id\":\"div-713ab6ab0588\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is guarded by data != 0; data has been set to 0, so execution takes the else branch instead.\",\"confidence\":1.0},{\"site_id\":\"div-a5f9f2694a59\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant condition selects the branch assigning 7 to data before the division.\",\"confidence\":1.0},{\"site_id\":\"div-3dad3e10bc4d\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant condition assigns 7 to data, and no subsequent assignment occurs before the division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 18036,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 373,
+              "reasoning_output_tokens": 104
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:51:59.117397Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:51:59.119871Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 18036,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 373,
+          "reasoning_output_tokens": 104
+        },
+        "_client_elapsed_seconds": 11.911149459
+      },
+      "input_tokens": 18036,
+      "output_tokens": 373,
+      "client_elapsed_seconds": 11.911149459,
+      "symbolic_seconds": 0.03960129100000387,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 11.989465582999998
+    },
+    {
+      "id": "j006",
+      "file": "sources/j006.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e5dcf664be73",
+            "file": "sources/j006.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int i,j;\n    int data;\n    data = -1;\n    for(i = 0; i < 1; i++)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    for(j = 0; j < 1; j++)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e5dcf664be73",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "The first rand() can select the positive branch, and the three subsequent rand() calls can all return 0, assigning 0 to data. The division is then reached.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0",
+              "at_site:i": "1",
+              "at_site:j": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0",
+              "at_site:i": "1",
+              "at_site:j": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "830a4514186e8367153487a2bf2f2aa11f3b2423105ca66f57563a52cab18091",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-e5dcf664be73",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "The first rand() can select the positive branch, and the three subsequent rand() calls can all return 0, assigning 0 to data. The division is then reached.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddd-cc5d-7af0-a80d-6e9d7d294574"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-e5dcf664be73\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"The first rand() can select the positive branch, and the three subsequent rand() calls can all return 0, assigning 0 to data. The division is then reached.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17650,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 312,
+              "reasoning_output_tokens": 219
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:52:11.107719Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:52:11.109870Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17650,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 312,
+          "reasoning_output_tokens": 219
+        },
+        "_client_elapsed_seconds": 15.617565957999993
+      },
+      "input_tokens": 17650,
+      "output_tokens": 312,
+      "client_elapsed_seconds": 15.617565957999993,
+      "symbolic_seconds": 0.3330400000000111,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 15.990413625000002
+    },
+    {
+      "id": "j007",
+      "file": "sources/j007.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e6c782370544",
+            "file": "sources/j007.c",
+            "function": "fn_002",
+            "line": 20,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(5!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e6c782370544",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder operation is reached only inside the data != 0 branch.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-7ef73d1bc1e6",
+            "file": "sources/j007.c",
+            "function": "fn_003",
+            "line": 40,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(5==5)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-7ef73d1bc1e6",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder operation is guarded by data != 0 on every reaching path.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-332d10eb97d1",
+            "file": "sources/j007.c",
+            "function": "fn_004",
+            "line": 62,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_004()\n{\n    int data;\n    data = -1;\n    if(5!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        data = 7;\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-332d10eb97d1",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant-true else branch assigns 7 to data before the operation.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-69b90f025dff",
+            "file": "sources/j007.c",
+            "function": "fn_005",
+            "line": 75,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_005()\n{\n    int data;\n    data = -1;\n    if(5==5)\n    {\n        data = 7;\n    }\n    if(5==5)\n    {\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-69b90f025dff",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "A constant-true branch assigns 7 to data before the operation.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "9ad5603bdf2be750c3aa25aff0ffbd164f24018b0acff8cee29ae8fc26ad154b",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-e6c782370544",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder operation is reached only inside the data != 0 branch.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-7ef73d1bc1e6",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder operation is guarded by data != 0 on every reaching path.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-332d10eb97d1",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant-true else branch assigns 7 to data before the operation.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-69b90f025dff",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "A constant-true branch assigns 7 to data before the operation.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-0ad7-7130-80a9-5f02c07e0ffa"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-e6c782370544\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder operation is reached only inside the data != 0 branch.\",\"confidence\":1.0},{\"site_id\":\"div-7ef73d1bc1e6\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder operation is guarded by data != 0 on every reaching path.\",\"confidence\":1.0},{\"site_id\":\"div-332d10eb97d1\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant-true else branch assigns 7 to data before the operation.\",\"confidence\":1.0},{\"site_id\":\"div-69b90f025dff\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"A constant-true branch assigns 7 to data before the operation.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 18093,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 238,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:52:27.102587Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:52:27.104768Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 18093,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 238,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.745217999999994
+      },
+      "input_tokens": 18093,
+      "output_tokens": 238,
+      "client_elapsed_seconds": 9.745217999999994,
+      "symbolic_seconds": 0.5282714170000133,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 10.311806875000002
+    },
+    {
+      "id": "j008",
+      "file": "sources/j008.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-cc5147927902",
+            "file": "sources/j008.c",
+            "function": "fn_002",
+            "line": 17,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = 0;\n        break;\n    }\n    while(1)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-cc5147927902",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder operation is reachable only inside the data != 0 branch.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-6e84f79817d1",
+            "file": "sources/j008.c",
+            "function": "fn_003",
+            "line": 37,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = 7;\n        break;\n    }\n    while(1)\n    {\n        printIntLine(100 % data);\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-6e84f79817d1",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The preceding loop assigns 7 to data and no later assignment occurs before the remainder operation.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "dab851931237ac229070c05386d2b5420c003d20b815ed24dddf14e8a17217a6",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-cc5147927902",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder operation is reachable only inside the data != 0 branch.",
+              "confidence": 1
+            },
+            {
+              "site_id": "div-6e84f79817d1",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The preceding loop assigns 7 to data and no later assignment occurs before the remainder operation.",
+              "confidence": 1
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-331c-70e1-b12a-3a51622200da"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-cc5147927902\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder operation is reachable only inside the data != 0 branch.\",\"confidence\":1},{\"site_id\":\"div-6e84f79817d1\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The preceding loop assigns 7 to data and no later assignment occurs before the remainder operation.\",\"confidence\":1}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17729,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 183,
+              "reasoning_output_tokens": 56
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:52:37.411395Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:52:37.414462Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17729,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 183,
+          "reasoning_output_tokens": 56
+        },
+        "_client_elapsed_seconds": 9.16642633299999
+      },
+      "input_tokens": 17729,
+      "output_tokens": 183,
+      "client_elapsed_seconds": 9.16642633299999,
+      "symbolic_seconds": 0.02798991699999931,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 9.230240959
+    },
+    {
+      "id": "j009",
+      "file": "sources/j009.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b76ef0833dac",
+            "file": "sources/j009.c",
+            "function": "fn_003",
+            "line": 12,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    data = 7;\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b76ef0833dac",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The outer data is assigned 7, copied into dataCopy, and used to initialize the inner data; therefore the denominator is 7 at this site.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-02f8e9c8dc3e",
+            "file": "sources/j009.c",
+            "function": "fn_002",
+            "line": 25,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    data = 0;\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-02f8e9c8dc3e",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder executes only in the branch guarded by data != 0. In this file data is actually initialized to 0, so that branch is unreachable.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "a4ac111ba685894a34e2dfd721a0b2e71f49a4bfbbbab82e770d355b74d6d415",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-b76ef0833dac",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The outer data is assigned 7, copied into dataCopy, and used to initialize the inner data; therefore the denominator is 7 at this site.",
+              "confidence": 1
+            },
+            {
+              "site_id": "div-02f8e9c8dc3e",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder executes only in the branch guarded by data != 0. In this file data is actually initialized to 0, so that branch is unreachable.",
+              "confidence": 1
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-572d-7a70-a227-bbeed6d25e03"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-b76ef0833dac\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The outer data is assigned 7, copied into dataCopy, and used to initialize the inner data; therefore the denominator is 7 at this site.\",\"confidence\":1},{\"site_id\":\"div-02f8e9c8dc3e\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder executes only in the branch guarded by data != 0. In this file data is actually initialized to 0, so that branch is unreachable.\",\"confidence\":1}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17721,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 152,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:52:46.643698Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:52:46.645855Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17721,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 152,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.095921125000004
+      },
+      "input_tokens": 17721,
+      "output_tokens": 152,
+      "client_elapsed_seconds": 8.095921125000004,
+      "symbolic_seconds": 0.030594082999996886,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 8.163174791000003
+    },
+    {
+      "id": "j010",
+      "file": "sources/j010.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-3a8ef1b5a1ea",
+            "file": "sources/j010.c",
+            "function": "fn_003",
+            "line": 9,
+            "column": 18,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    data = 7;\n    printIntLine(100 / data);\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-3a8ef1b5a1ea",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The last assignment before the division sets data to 7, so it cannot be zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-597c27ab11d6",
+            "file": "sources/j010.c",
+            "function": "fn_002",
+            "line": 18,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    if( data != 0 )\n    {\n        printIntLine(100 / data);\n    }\n    else\n    {\n        printLine(\"message\");\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-597c27ab11d6",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is reachable only inside the branch guarded by data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "1b0086d03d24d66513e5b4f0f462e90617165f0c2de41bd2b454915f0d2ffca2",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-3a8ef1b5a1ea",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The last assignment before the division sets data to 7, so it cannot be zero.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-597c27ab11d6",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is reachable only inside the branch guarded by data != 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-7712-7c01-bc77-27505d679df8"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-3a8ef1b5a1ea\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The last assignment before the division sets data to 7, so it cannot be zero.\",\"confidence\":1.0},{\"site_id\":\"div-597c27ab11d6\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is reachable only inside the branch guarded by data != 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17735,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 129,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:52:54.809637Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:52:54.812593Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17735,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 129,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.419264666000004
+      },
+      "input_tokens": 17735,
+      "output_tokens": 129,
+      "client_elapsed_seconds": 7.419264666000004,
+      "symbolic_seconds": 0.19023691600000348,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 7.640419792000003
+    },
+    {
+      "id": "j011",
+      "file": "sources/j011.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-498a79dec716",
+            "file": "sources/j011.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = 0;\n        break;\n    }\n    while(1)\n    {\n        printIntLine(100 % data);\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-498a79dec716",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The first loop executes, assigns data = 0, and breaks. The second loop then reaches the remainder operation with data equal to zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "4affe79ac4a5c47db7c79fff76fc8ec4448bdda38553db2eae35cb101ec41e97",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-498a79dec716",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The first loop executes, assigns data = 0, and breaks. The second loop then reaches the remainder operation with data equal to zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-94eb-7252-9240-c724398e6b2b"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-498a79dec716\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The first loop executes, assigns data = 0, and breaks. The second loop then reaches the remainder operation with data equal to zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17585,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 78,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:02.450715Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:02.452735Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17585,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 78,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.607587124999995
+      },
+      "input_tokens": 17585,
+      "output_tokens": 78,
+      "client_elapsed_seconds": 7.607587124999995,
+      "symbolic_seconds": 0.02994258399999694,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 7.673635250000004
+    },
+    {
+      "id": "j012",
+      "file": "sources/j012.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b9ce16956b8c",
+            "file": "sources/j012.c",
+            "function": "fn_001",
+            "line": 12,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    data = 0;\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b9ce16956b8c",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "The outer data is assigned 0, copied into dataCopy, and then used to initialize the inner shadowing data. The remainder operation is therefore reached with denominator 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0",
+              "at_site:dataCopy": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0",
+              "at_site:dataCopy": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "a52689e39c571de1c2637374c1f4e3de740e131592590dd7a21a7f7bdb9f00e1",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-b9ce16956b8c",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "The outer data is assigned 0, copied into dataCopy, and then used to initialize the inner shadowing data. The remainder operation is therefore reached with denominator 0.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-b2eb-7d33-9989-afa46e1b72ed"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-b9ce16956b8c\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"The outer data is assigned 0, copied into dataCopy, and then used to initialize the inner shadowing data. The remainder operation is therefore reached with denominator 0.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17573,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 92,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:10.131657Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:10.134037Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17573,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 92,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 8.376730375000008
+      },
+      "input_tokens": 17573,
+      "output_tokens": 92,
+      "client_elapsed_seconds": 8.376730375000008,
+      "symbolic_seconds": 0.020430875000002402,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 8.430216833000003
+    },
+    {
+      "id": "j013",
+      "file": "sources/j013.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e8b50fcacd19",
+            "file": "sources/j013.c",
+            "function": "fn_001",
+            "line": 9,
+            "column": 18,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    data = 0;\n    printIntLine(100 / data);\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e8b50fcacd19",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The unconditional assignment data = 0 immediately precedes the division, so the site is reached with a zero denominator.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "ecea5f6493925ba36818c232e9567614c261681a9a669112516fafe63cc5c6ee",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-e8b50fcacd19",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The unconditional assignment data = 0 immediately precedes the division, so the site is reached with a zero denominator.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-d3d7-73e1-8774-d9fc2b7a9e05"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-e8b50fcacd19\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The unconditional assignment data = 0 immediately precedes the division, so the site is reached with a zero denominator.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17557,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 74,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:18.558060Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:18.559847Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17557,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 74,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 10.39748170899999
+      },
+      "input_tokens": 17557,
+      "output_tokens": 74,
+      "client_elapsed_seconds": 10.39748170899999,
+      "symbolic_seconds": 0.0264425000000017,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 10.460077874999996
+    },
+    {
+      "id": "j014",
+      "file": "sources/j014.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4f9ad058cf57",
+            "file": "sources/j014.c",
+            "function": "fn_002",
+            "line": 17,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int i,k;\n    int data;\n    data = -1;\n    for(i = 0; i < 1; i++)\n    {\n        data = 0;\n    }\n    for(k = 0; k < 1; k++)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4f9ad058cf57",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is guarded by data != 0; when data is zero, execution takes the else branch.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-8d2640982cbf",
+            "file": "sources/j014.c",
+            "function": "fn_003",
+            "line": 36,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int h,j;\n    int data;\n    data = -1;\n    for(h = 0; h < 1; h++)\n    {\n        data = 7;\n    }\n    for(j = 0; j < 1; j++)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-8d2640982cbf",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The first loop executes once and assigns 7 to data before the division loop executes once.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "e5abad645a3d0aaa9cb54bcb343eaca539b2924b48d7648a9c238d1b71dd47bc",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4f9ad058cf57",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is guarded by data != 0; when data is zero, execution takes the else branch.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-8d2640982cbf",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The first loop executes once and assigns 7 to data before the division loop executes once.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0edde-fcb5-7772-9ecd-564ccbbbc1be"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4f9ad058cf57\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is guarded by data != 0; when data is zero, execution takes the else branch.\",\"confidence\":1.0},{\"site_id\":\"div-8d2640982cbf\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The first loop executes once and assigns 7 to data before the division loop executes once.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17768,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 137,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:29.020338Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:29.021878Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17768,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 137,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.942696332999986
+      },
+      "input_tokens": 17768,
+      "output_tokens": 137,
+      "client_elapsed_seconds": 9.942696332999986,
+      "symbolic_seconds": 0.02725337499998659,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 10.000687959000004
+    },
+    {
+      "id": "j015",
+      "file": "sources/j015.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4a78bc829cd3",
+            "file": "sources/j015.c",
+            "function": "fn_002",
+            "line": 17,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int i,k;\n    int data;\n    data = -1;\n    for(i = 0; i < 1; i++)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    for(k = 0; k < 1; k++)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4a78bc829cd3",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is executed only within the branch guarded by data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-dcf1363b6eb2",
+            "file": "sources/j015.c",
+            "function": "fn_003",
+            "line": 36,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int h,j;\n    int data;\n    data = -1;\n    for(h = 0; h < 1; h++)\n    {\n        data = 7;\n    }\n    for(j = 0; j < 1; j++)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-dcf1363b6eb2",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The preceding single-iteration loop assigns data = 7 before the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "bce449be94f315fecd938dc98308b3b682f49f69844c213e68911880b7ba2617",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4a78bc829cd3",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is executed only within the branch guarded by data != 0.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-dcf1363b6eb2",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The preceding single-iteration loop assigns data = 7 before the division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-23c7-7c21-aa06-31f004250ae8"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4a78bc829cd3\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is executed only within the branch guarded by data != 0.\",\"confidence\":1.0},{\"site_id\":\"div-dcf1363b6eb2\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The preceding single-iteration loop assigns data = 7 before the division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17818,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 128,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:39.022165Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:39.024664Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17818,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 128,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.760774249999997
+      },
+      "input_tokens": 17818,
+      "output_tokens": 128,
+      "client_elapsed_seconds": 7.760774249999997,
+      "symbolic_seconds": 0.5379436660000181,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 8.336117833000003
+    },
+    {
+      "id": "j016",
+      "file": "sources/j016.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-4234675835be",
+            "file": "sources/j016.c",
+            "function": "fn_001",
+            "line": 12,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    {\n        int dataCopy = data;\n        int data = dataCopy;\n        printIntLine(100 % data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-4234675835be",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "A feasible sequence of rand() results makes the generated outer data zero; that value is copied into the shadowed data used as the remainder denominator.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0",
+              "at_site:dataCopy": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0",
+              "at_site:dataCopy": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "afaf4ab5c4702a21b7bd352461f7f8f737e7e60db7707d450e0cd1eb50c04386",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-4234675835be",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "A feasible sequence of rand() results makes the generated outer data zero; that value is copied into the shadowed data used as the remainder denominator.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-4457-73d1-8d52-571df7b0b3b8"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-4234675835be\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"A feasible sequence of rand() results makes the generated outer data zero; that value is copied into the shadowed data used as the remainder denominator.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17619,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 283,
+              "reasoning_output_tokens": 197
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:47.358431Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:47.360078Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17619,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 283,
+          "reasoning_output_tokens": 197
+        },
+        "_client_elapsed_seconds": 11.0792395
+      },
+      "input_tokens": 17619,
+      "output_tokens": 283,
+      "client_elapsed_seconds": 11.0792395,
+      "symbolic_seconds": 0.17257212499998786,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 11.287849292000004
+    },
+    {
+      "id": "j017",
+      "file": "sources/j017.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-0d3402e6257d",
+            "file": "sources/j017.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = 0;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-0d3402e6257d",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "Both constant-true branches execute; the first assigns data = 0 before the division is reached.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:STATIC_CONST_FIVE": "5",
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:STATIC_CONST_FIVE": "5",
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0f6bc947aa2cff2ed1533ff4e9f06f1281995d45186ecc25e3dbf72219f71922",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-0d3402e6257d",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "Both constant-true branches execute; the first assigns data = 0 before the division is reached.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-706f-7542-be0b-549b58ad30b3"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-0d3402e6257d\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"Both constant-true branches execute; the first assigns data = 0 before the division is reached.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17600,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 78,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:53:58.646465Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:53:58.649733Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17600,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 78,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 6.580688041999991
+      },
+      "input_tokens": 17600,
+      "output_tokens": 78,
+      "client_elapsed_seconds": 6.580688041999991,
+      "symbolic_seconds": 0.02776270800001157,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 6.644323708000002
+    },
+    {
+      "id": "j018",
+      "file": "sources/j018.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-63cdbfd95243",
+            "file": "sources/j018.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n        break;\n    }\n    while(1)\n    {\n        printIntLine(100 % data);\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-63cdbfd95243",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The site is reached unconditionally, and the assignment can produce zero: the conditional may take its true branch and all three payload rand() calls may return 0.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "e79b2a9781b444921c744d47f1ce69239b92c455b7164fd17fe6bde24cca8a49",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-63cdbfd95243",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The site is reached unconditionally, and the assignment can produce zero: the conditional may take its true branch and all three payload rand() calls may return 0.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-8a6a-7b60-82f5-8b524ee7f892"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-63cdbfd95243\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The site is reached unconditionally, and the assignment can produce zero: the conditional may take its true branch and all three payload rand() calls may return 0.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17630,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 324,
+              "reasoning_output_tokens": 238
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:54:05.297439Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:54:05.299343Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17630,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 324,
+          "reasoning_output_tokens": 238
+        },
+        "_client_elapsed_seconds": 13.415413041999983
+      },
+      "input_tokens": 17630,
+      "output_tokens": 324,
+      "client_elapsed_seconds": 13.415413041999983,
+      "symbolic_seconds": 0.23253245899999797,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 13.68618570800001
+    },
+    {
+      "id": "j019",
+      "file": "sources/j019.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-b5417d28cb92",
+            "file": "sources/j019.c",
+            "function": "fn_001",
+            "line": 9,
+            "column": 18,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    printIntLine(100 / data);\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-b5417d28cb92",
+            "verdict": "bug",
+            "path_conditions": [
+              "data == 0"
+            ],
+            "denominator": "data",
+            "rationale": "A feasible execution takes the conditional's true branch and has all three value-producing rand() calls return 0, assigning 0 to data before the division.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "4df03eda80845a5127c24749ada759311600b12f5265cc61beb1bccee9add25a",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-b5417d28cb92",
+              "verdict": "bug",
+              "path_conditions": [
+                "data == 0"
+              ],
+              "denominator": "data",
+              "rationale": "A feasible execution takes the conditional's true branch and has all three value-producing rand() calls return 0, assigning 0 to data before the division.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-bfdf-77c3-9cbc-ccba6bf2e6e1"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-b5417d28cb92\",\"verdict\":\"bug\",\"path_conditions\":[\"data == 0\"],\"denominator\":\"data\",\"rationale\":\"A feasible execution takes the conditional's true branch and has all three value-producing rand() calls return 0, assigning 0 to data before the division.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17607,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 331,
+              "reasoning_output_tokens": 242
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:54:18.982334Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:54:18.984689Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17607,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 331,
+          "reasoning_output_tokens": 242
+        },
+        "_client_elapsed_seconds": 12.71020333300001
+      },
+      "input_tokens": 17607,
+      "output_tokens": 331,
+      "client_elapsed_seconds": 12.71020333300001,
+      "symbolic_seconds": 0.066503584000003,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 12.813849292000015
+    },
+    {
+      "id": "j020",
+      "file": "sources/j020.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-23f4271a2ecc",
+            "file": "sources/j020.c",
+            "function": "fn_002",
+            "line": 17,
+            "column": 26,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n        break;\n    }\n    while(1)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 % data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-23f4271a2ecc",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The remainder operation is executed only inside the branch guarded by data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-5d0f9d3605c4",
+            "file": "sources/j020.c",
+            "function": "fn_003",
+            "line": 37,
+            "column": 22,
+            "operator": "%",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    while(1)\n    {\n        data = 7;\n        break;\n    }\n    while(1)\n    {\n        printIntLine(100 % data);\n        break;\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-5d0f9d3605c4",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The only assignment reaching the remainder operation sets data to 7.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "0a801c713b6461a2df447f8f04fb8ff20b5b13b0d157072ad2a8633a253346e4",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-23f4271a2ecc",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The remainder operation is executed only inside the branch guarded by data != 0.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-5d0f9d3605c4",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The only assignment reaching the remainder operation sets data to 7.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0eddf-f1f0-7781-b65a-e9d33192f33e"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-23f4271a2ecc\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The remainder operation is executed only inside the branch guarded by data != 0.\",\"confidence\":1.0},{\"site_id\":\"div-5d0f9d3605c4\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The only assignment reaching the remainder operation sets data to 7.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17785,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 183,
+              "reasoning_output_tokens": 51
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:54:31.798818Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:54:31.801522Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17785,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 183,
+          "reasoning_output_tokens": 51
+        },
+        "_client_elapsed_seconds": 11.069579250000004
+      },
+      "input_tokens": 17785,
+      "output_tokens": 183,
+      "client_elapsed_seconds": 11.069579250000004,
+      "symbolic_seconds": 0.427101332999996,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 11.533944666999986
+    },
+    {
+      "id": "j021",
+      "file": "sources/j021.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-110dea4ef6b3",
+            "file": "sources/j021.c",
+            "function": "fn_003",
+            "line": 9,
+            "column": 18,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    data = 7;\n    printIntLine(100 / data);\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-110dea4ef6b3",
+            "verdict": "safe",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The final assignment before the division sets data to 7, so the denominator is nonzero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-e78084f8d250",
+            "file": "sources/j021.c",
+            "function": "fn_002",
+            "line": 18,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    data = 0;\n    if( data != 0 )\n    {\n        printIntLine(100 / data);\n    }\n    else\n    {\n        printLine(\"message\");\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e78084f8d250",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is reachable only inside the data != 0 branch; with data assigned 0, that branch is not taken.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "52aa4ddc026d34fadddde5f3224f8d314b6ac2d1bb557fe24e42781b4f49df6d",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-110dea4ef6b3",
+              "verdict": "safe",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The final assignment before the division sets data to 7, so the denominator is nonzero.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-e78084f8d250",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is reachable only inside the data != 0 branch; with data assigned 0, that branch is not taken.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0ede0-1eff-7c72-8080-32a81e87afd9"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-110dea4ef6b3\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The final assignment before the division sets data to 7, so the denominator is nonzero.\",\"confidence\":1.0},{\"site_id\":\"div-e78084f8d250\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is reachable only inside the data != 0 branch; with data assigned 0, that branch is not taken.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17681,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 136,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:54:43.333770Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:54:43.336169Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17681,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 136,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.877492125000003
+      },
+      "input_tokens": 17681,
+      "output_tokens": 136,
+      "client_elapsed_seconds": 7.877492125000003,
+      "symbolic_seconds": 0.02836562499999218,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 7.9430112080000015
+    },
+    {
+      "id": "j022",
+      "file": "sources/j022.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-c0d8d0641cf1",
+            "file": "sources/j022.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-c0d8d0641cf1",
+            "verdict": "bug",
+            "path_conditions": [
+              "STATIC_CONST_FIVE == 5"
+            ],
+            "denominator": "data",
+            "rationale": "The first branch is always taken, and a feasible sequence of rand() results makes the generated value zero; execution then reaches 100 / data.",
+            "confidence": 0.99
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:STATIC_CONST_FIVE": "5",
+              "at_site:data": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "fn_001:rand:1": "1",
+              "fn_001:rand:2": "0",
+              "fn_001:rand:3": "0",
+              "fn_001:rand:4": "0",
+              "fn_001:rand:5": "0",
+              "fn_001:rand:6": "0",
+              "fn_001:rand:7": "0",
+              "at_site:STATIC_CONST_FIVE": "5",
+              "at_site:data": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "8933caf70360f59cba8aaa134cb331059f90506d9cccdf87389391ff7614463b",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-c0d8d0641cf1",
+              "verdict": "bug",
+              "path_conditions": [
+                "STATIC_CONST_FIVE == 5"
+              ],
+              "denominator": "data",
+              "rationale": "The first branch is always taken, and a feasible sequence of rand() results makes the generated value zero; execution then reaches 100 / data.",
+              "confidence": 0.99
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0ede0-3e0a-7c11-876d-aafa2db61caa"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-c0d8d0641cf1\",\"verdict\":\"bug\",\"path_conditions\":[\"STATIC_CONST_FIVE == 5\"],\"denominator\":\"data\",\"rationale\":\"The first branch is always taken, and a feasible sequence of rand() results makes the generated value zero; execution then reaches 100 / data.\",\"confidence\":0.99}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17648,
+              "cached_input_tokens": 0,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 276,
+              "reasoning_output_tokens": 184
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:54:51.281213Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:54:51.284490Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17648,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 276,
+          "reasoning_output_tokens": 184
+        },
+        "_client_elapsed_seconds": 10.714706290999999
+      },
+      "input_tokens": 17648,
+      "output_tokens": 276,
+      "client_elapsed_seconds": 10.714706290999999,
+      "symbolic_seconds": 0.12926466600001163,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 10.883303875000024
+    },
+    {
+      "id": "j023",
+      "file": "sources/j023.c",
+      "prediction": true,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-e4f376b36400",
+            "file": "sources/j023.c",
+            "function": "fn_001",
+            "line": 15,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "void fn_001()\n{\n    int i,j;\n    int data;\n    data = -1;\n    for(i = 0; i < 1; i++)\n    {\n        data = 0;\n    }\n    for(j = 0; j < 1; j++)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-e4f376b36400",
+            "verdict": "bug",
+            "path_conditions": [],
+            "denominator": "data",
+            "rationale": "The first loop executes once and assigns data = 0. The second loop then executes once and reaches the division with data equal to zero.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0",
+              "at_site:i": "1",
+              "at_site:j": "0"
+            }
+          },
+          "symbolic_only": {
+            "status": "verified_sat",
+            "accepted": true,
+            "reason": "concrete inputs satisfy the source path and hypothesis",
+            "model": {
+              "at_site:data": "0",
+              "at_site:i": "1",
+              "at_site:j": "0"
+            }
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "ea0e9bb18b1f1e66888b10112bb08815d69b8002a8c2c77dbc327e8e001457f5",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-e4f376b36400",
+              "verdict": "bug",
+              "path_conditions": [],
+              "denominator": "data",
+              "rationale": "The first loop executes once and assigns data = 0. The second loop then executes once and reaches the division with data equal to zero.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0ede0-688f-7640-938d-1bc53352f676"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-e4f376b36400\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"data\",\"rationale\":\"The first loop executes once and assigns data = 0. The second loop then executes once and reaches the division with data equal to zero.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 17602,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 79,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:55:02.166048Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:55:02.167782Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 17602,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 79,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 7.109972958000014
+      },
+      "input_tokens": 17602,
+      "output_tokens": 79,
+      "client_elapsed_seconds": 7.109972958000014,
+      "symbolic_seconds": 0.02644504200000597,
+      "llm_prediction": true,
+      "symbolic_prediction": true,
+      "elapsed_seconds": 7.165157749999992
+    },
+    {
+      "id": "j024",
+      "file": "sources/j024.c",
+      "prediction": false,
+      "completed": true,
+      "findings": [
+        {
+          "site": {
+            "site_id": "div-53912c4833bf",
+            "file": "sources/j024.c",
+            "function": "fn_002",
+            "line": 21,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_002()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(STATIC_CONST_FIVE!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-53912c4833bf",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is guarded by data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-a7bc41a72f0c",
+            "file": "sources/j024.c",
+            "function": "fn_003",
+            "line": 41,
+            "column": 26,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_003()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = ((int)(rand() & 1 ? (((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) : -(((unsigned)rand()<<30) ^ ((unsigned)rand()<<15) ^ rand()) - 1));\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        if( data != 0 )\n        {\n            printIntLine(100 / data);\n        }\n        else\n        {\n            printLine(\"message\");\n        }\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-a7bc41a72f0c",
+            "verdict": "safe",
+            "path_conditions": [
+              "data != 0"
+            ],
+            "denominator": "data",
+            "rationale": "The division is guarded by data != 0.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-a4ab7de06bb3",
+            "file": "sources/j024.c",
+            "function": "fn_004",
+            "line": 63,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_004()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE!=5)\n    {\n        printLine(\"message\");\n    }\n    else\n    {\n        data = 7;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-a4ab7de06bb3",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant condition selects the branch assigning data = 7 before the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        },
+        {
+          "site": {
+            "site_id": "div-97a8fb356723",
+            "file": "sources/j024.c",
+            "function": "fn_005",
+            "line": 76,
+            "column": 22,
+            "operator": "/",
+            "denominator": "data",
+            "function_source": "static void fn_005()\n{\n    int data;\n    data = -1;\n    if(STATIC_CONST_FIVE==5)\n    {\n        data = 7;\n    }\n    if(STATIC_CONST_FIVE==5)\n    {\n        printIntLine(100 / data);\n    }\n}"
+          },
+          "hypothesis": {
+            "site_id": "div-97a8fb356723",
+            "verdict": "safe",
+            "path_conditions": [
+              "data == 7"
+            ],
+            "denominator": "data",
+            "rationale": "The constant condition assigns data = 7, and the same condition reaches the division.",
+            "confidence": 1.0
+          },
+          "verification": {
+            "status": "model_safe",
+            "accepted": false,
+            "reason": "model supplied no bug hypothesis; safety is not proved",
+            "model": {}
+          },
+          "symbolic_only": {
+            "status": "refuted_unsat",
+            "accepted": false,
+            "reason": "no source-feasible path satisfies this zero-denominator hypothesis",
+            "model": {}
+          },
+          "exploration_incomplete": []
+        }
+      ],
+      "attempts": 1,
+      "source_sha256": "7e3c757963e3bf78a97b10e4d370fb1d8a2c105a10b8dcbc8cc9d5cd643b82d4",
+      "raw_response": {
+        "provider": "codex_exec",
+        "codex_version": "codex-cli 0.155.0-alpha.16.4",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "output": {
+          "findings": [
+            {
+              "site_id": "div-53912c4833bf",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is guarded by data != 0.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-a7bc41a72f0c",
+              "verdict": "safe",
+              "path_conditions": [
+                "data != 0"
+              ],
+              "denominator": "data",
+              "rationale": "The division is guarded by data != 0.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-a4ab7de06bb3",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant condition selects the branch assigning data = 7 before the division.",
+              "confidence": 1.0
+            },
+            {
+              "site_id": "div-97a8fb356723",
+              "verdict": "safe",
+              "path_conditions": [
+                "data == 7"
+              ],
+              "denominator": "data",
+              "rationale": "The constant condition assigns data = 7, and the same condition reaches the division.",
+              "confidence": 1.0
+            }
+          ]
+        },
+        "events": [
+          {
+            "type": "thread.started",
+            "thread_id": "01a0ede0-8492-78d1-89a6-8e25d0e6e089"
+          },
+          {
+            "type": "turn.started"
+          },
+          {
+            "type": "item.completed",
+            "item": {
+              "id": "item_0",
+              "type": "agent_message",
+              "text": "{\"findings\":[{\"site_id\":\"div-53912c4833bf\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is guarded by data != 0.\",\"confidence\":1.0},{\"site_id\":\"div-a7bc41a72f0c\",\"verdict\":\"safe\",\"path_conditions\":[\"data != 0\"],\"denominator\":\"data\",\"rationale\":\"The division is guarded by data != 0.\",\"confidence\":1.0},{\"site_id\":\"div-a4ab7de06bb3\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant condition selects the branch assigning data = 7 before the division.\",\"confidence\":1.0},{\"site_id\":\"div-97a8fb356723\",\"verdict\":\"safe\",\"path_conditions\":[\"data == 7\"],\"denominator\":\"data\",\"rationale\":\"The constant condition assigns data = 7, and the same condition reaches the division.\",\"confidence\":1.0}]}"
+            }
+          },
+          {
+            "type": "turn.completed",
+            "usage": {
+              "input_tokens": 18131,
+              "cached_input_tokens": 16000,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 231,
+              "reasoning_output_tokens": 0
+            }
+          }
+        ],
+        "stderr": "2026-09-29T15:55:09.337157Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-09-29T15:55:09.339512Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+        "usage": {
+          "input_tokens": 18131,
+          "cached_input_tokens": 16000,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 231,
+          "reasoning_output_tokens": 0
+        },
+        "_client_elapsed_seconds": 9.834112874999988
+      },
+      "input_tokens": 18131,
+      "output_tokens": 231,
+      "client_elapsed_seconds": 9.834112874999988,
+      "symbolic_seconds": 0.5339456669999834,
+      "llm_prediction": false,
+      "symbolic_prediction": false,
+      "elapsed_seconds": 10.407537458000007
+    }
+  ],
+  "total_tokens": 430183,
+  "model_calls": 24,
+  "stop_reason": null,
+  "schema_sha256": "c336ebfdf94756aea98c0a10d382637701c14dd398ef2b960ea5faa4fd0888f8",
+  "elapsed_seconds": 241.062022208,
+  "failed_cases": []
+}

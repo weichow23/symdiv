@@ -1,0 +1,6 @@
+{
+  "CWE369_Divide_by_Zero__int_rand_divide_02.c": "83baa1a7e7c684c3ec2179cf2dd251303203bb3e822664b64ddd0ce4b001e63b",
+  "CWE369_Divide_by_Zero__int_rand_modulo_04.c": "30e73187bb6ca0fbb1f96d57493bba8f17eeb48e0106af79a04d93305918e0d6",
+  "CWE369_Divide_by_Zero__int_zero_divide_02.c": "1773afed94b4b3088109edd8ce398c6aa6de33e54b74845e6a35e764917f26b9",
+  "CWE369_Divide_by_Zero__int_zero_modulo_04.c": "a9a1ef5b8a111062b20b9c159bfad00b686ccde903c39d2e2d67b34dab1b41a6"
+}

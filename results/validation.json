@@ -1,0 +1,81 @@
+{
+  "recorded_at_utc": "2026-09-29T16:07:39.511453+00:00",
+  "tests_passed": 62,
+  "working_checkout_reproduction": {
+    "passed": true,
+    "new_model_calls": 0,
+    "materialized_files_identical": 24,
+    "checks": [
+      {
+        "stratum": "pilot",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      },
+      {
+        "stratum": "juliet",
+        "metrics_identical": true,
+        "site_dispositions_identical": true
+      }
+    ],
+    "elapsed_seconds": 11.682697625,
+    "workspace": "[local workspace]"
+  },
+  "witness_confirmed": {
+    "pilot": 12,
+    "juliet": 12
+  },
+  "report_reproduction_summary": "A clean Git clone with a newly created virtual environment passed all 62 tests, regenerated the 24 Juliet files byte for byte, reproduced every file prediction and site disposition in both strata without a new model call, and rebuilt the PDF. This was an isolated checkout on the same machine and compiler, not a reproduction by a second person or on a different platform.",
+  "test_seconds": 1.468,
+  "clean_clone": {
+    "source_commit": "b380d99dc599c8bbfe44861ae2d855ccd8283971",
+    "fresh_virtual_environment": true,
+    "tests_passed": 62,
+    "report_built": true,
+    "reproduction": {
+      "passed": true,
+      "new_model_calls": 0,
+      "materialized_files_identical": 24,
+      "checks": [
+        {
+          "stratum": "pilot",
+          "metrics_identical": true,
+          "site_dispositions_identical": true
+        },
+        {
+          "stratum": "juliet",
+          "metrics_identical": true,
+          "site_dispositions_identical": true
+        }
+      ],
+      "elapsed_seconds": 11.684756417000001,
+      "workspace": "[local workspace]/tmp/clean-clone"
+    },
+    "same_host_and_compiler": true
+  },
+  "credential_pattern_scan": {
+    "scope": "all blobs reachable from local Git history",
+    "scanned_blobs": 166,
+    "credential_pattern_hits": [],
+    "note": "Pattern scan only; not a guarantee that all possible secret formats are recognized."
+  },
+  "pdf_quality_review": {
+    "reviewed_at_utc": "2026-09-29T16:20:27.253957+00:00",
+    "path": "output/pdf/symdiv-report-final.pdf",
+    "sha256": "7d6c6492c9a19defec47414789087419a042aad1d8f436d6f173cdcafd6e3e8a",
+    "total_pages": 8,
+    "body_pages_including_ai_statement": 7,
+    "reference_pages": 1,
+    "rendered_pages_visually_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "visible_clipping_or_overlap": false,
+    "note": "All eight rendered final pages were visually inspected. References occupy the final page."
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "key": "timing-corrected-s011-0-selective",
+  "source_sha256": "ddcda64bb837ca2a9802f4ed5a0295708d45ead813f7c1903c7a740bf4d8def5",
+  "feedback": null,
+  "raw": {
+    "provider": "codex_exec",
+    "codex_version": "codex-cli 0.159.0",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "output": {
+      "findings": [
+        {
+          "site_id": "div-5e67b57b61f6",
+          "verdict": "safe",
+          "path_conditions": [],
+          "denominator": "3",
+          "rationale": "The denominator is the nonzero constant 3.",
+          "confidence": 1.0
+        },
+        {
+          "site_id": "div-45c80357d5d1",
+          "verdict": "bug",
+          "path_conditions": [],
+          "denominator": "(d-(36))",
+          "rationale": "Choose the true branch for weights 8, 17, 20, and 23 and false for 2, 5, 11, and 14. Then d=(8+17+20+23)-(2+5+11+14)=36, so the denominator is zero without earlier undefined behavior.",
+          "confidence": 1.0
+        }
+      ],
+      "choices": [
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 1,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 2,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 3,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 4,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 5,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 6,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 7,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 8,
+          "take": true
+        },
+        {
+          "branch_id": "br-b31e225b2be2",
+          "visit": 9,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 1,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 2,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 3,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 4,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 5,
+          "take": false
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 6,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 7,
+          "take": true
+        },
+        {
+          "branch_id": "br-114230874211",
+          "visit": 8,
+          "take": true
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "thread.started",
+        "thread_id": "01a0f6fc-2abb-7243-b2d2-150a613415a8"
+      },
+      {
+        "type": "turn.started"
+      },
+      {
+        "type": "item.completed",
+        "item": {
+          "id": "item_0",
+          "type": "agent_message",
+          "text": "{\"findings\":[{\"site_id\":\"div-5e67b57b61f6\",\"verdict\":\"safe\",\"path_conditions\":[],\"denominator\":\"3\",\"rationale\":\"The denominator is the nonzero constant 3.\",\"confidence\":1.0},{\"site_id\":\"div-45c80357d5d1\",\"verdict\":\"bug\",\"path_conditions\":[],\"denominator\":\"(d-(36))\",\"rationale\":\"Choose the true branch for weights 8, 17, 20, and 23 and false for 2, 5, 11, and 14. Then d=(8+17+20+23)-(2+5+11+14)=36, so the denominator is zero without earlier undefined behavior.\",\"confidence\":1.0}],\"choices\":[{\"branch_id\":\"br-b31e225b2be2\",\"visit\":1,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":2,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":3,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":4,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":5,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":6,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":7,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":8,\"take\":true},{\"branch_id\":\"br-b31e225b2be2\",\"visit\":9,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":1,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":2,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":3,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":4,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":5,\"take\":false},{\"branch_id\":\"br-114230874211\",\"visit\":6,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":7,\"take\":true},{\"branch_id\":\"br-114230874211\",\"visit\":8,\"take\":true}]}"
+        }
+      },
+      {
+        "type": "turn.completed",
+        "usage": {
+          "input_tokens": 17981,
+          "cached_input_tokens": 16384,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 693,
+          "reasoning_output_tokens": 184
+        }
+      }
+    ],
+    "stderr": "2026-10-01T10:21:56.289105Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:56.291334Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:56.293030Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:56.294378Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n2026-10-01T10:21:56.295539Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back\n",
+    "usage": {
+      "input_tokens": 17981,
+      "cached_input_tokens": 16384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 693,
+      "reasoning_output_tokens": 184
+    },
+    "_client_elapsed_seconds": 18.679035250000002
+  },
+  "elapsed_seconds": 18.703587833
+}

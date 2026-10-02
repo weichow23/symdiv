@@ -1,0 +1,230 @@
+{
+  "historical_cases_checked": 56,
+  "all_catalogs_identical": true,
+  "cases": [
+    {
+      "file": "benchmarks/pilot/sources/c01_constant_zero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c02_constant_nonzero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c03_guarded_equal.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c04_guarded_return.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c05_opposing_bounds.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c06_impossible_bounds.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c07_difference_equal.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c08_difference_unequal.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c09_affine_boundary.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c10_affine_strict.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c11_nested_equalities.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c12_nested_contradiction.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c13_else_zero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c14_else_nonzero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c15_modulo_zero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c16_modulo_guarded.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c17_assignment_zero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c18_assignment_guarded.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c19_two_variable_equal.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c20_two_variable_unequal.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c21_unconstrained.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c22_bitwise_nonzero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c23_loop_to_zero.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/pilot/sources/c24_loop_guarded.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j001.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j002.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j003.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j004.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j005.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j006.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j007.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j008.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j009.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j010.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j011.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j012.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j013.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j014.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j015.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j016.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j017.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j018.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j019.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j020.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j021.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j022.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j023.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/juliet/sources/j024.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j001.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j002.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j003.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j004.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j005.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j006.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j007.c",
+      "catalog_identical": true
+    },
+    {
+      "file": "benchmarks/v3-juliet/sources/j008.c",
+      "catalog_identical": true
+    }
+  ]
+}
