@@ -7,7 +7,7 @@
   "timing_clock_correction_commit": "d9e1ce0",
   "smt_first_extension_freeze_commit": "02d1ea4",
   "video_changes": "none; no video files targeted or staged",
-  "publication_status": "local artifact; public repository URL pending",
+  "publication_status": "public repository URL verified; v4 report includes the clickable URL; Canvas submission pending",
   "original_v2_pdf_sha256": "7d6c6492c9a19defec47414789087419a042aad1d8f436d6f173cdcafd6e3e8a",
   "original_v3_pdf_sha256": "01da4fbfd242dbb84075a760105fdafc1e10f4eef527e45b44d6c0f866b67982",
   "primary_witnesses": {
@@ -69,8 +69,8 @@
     "body_pages": 8,
     "reference_pages": 1,
     "format": "ACM sigconf",
-    "sha256": "7dba88bfff72e36b93eb93aed8a5df3e76846c24336b63e680360846a93a27eb",
-    "layout_review": "All nine final rendered pages reviewed, including the GPT-Image teaser, native workflow, three Python data figures and both tables. No clipped or overlapping text, labels or graphics.",
+    "sha256": "67f81c53123796880e45e01a5869eec383edfb8b4a865b294d16a5e6ec8bc2ca",
+    "layout_review": "All nine final rendered pages reviewed after adding the clickable repository URL on page 8; no clipped or overlapping content.",
     "overfull_hboxes": 0,
     "internal_bibliography_balance_warning_points": 1.54099,
     "warning_review": "TeX reports a 1.54pt internal vertical box warning at the final bibliography output. The rendered reference page has ample space and no clipped content.",
@@ -187,6 +187,25 @@
         9
       ],
       "previous_version_reports_unchanged": true
+    },
+    "repository_url": "https://github.com/weichow23/symdiv",
+    "repository_link_page": 8,
+    "repository_link_clickable": true,
+    "editorial_link_revision": {
+      "recorded_at_utc": "2026-10-02T06:25:37+00:00",
+      "rendered_pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "tests_rerun": false,
+      "experimental_records_changed": false
     }
   }
 }
